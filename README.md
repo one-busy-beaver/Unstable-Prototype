@@ -1,2 +1,2 @@
-# Metroidvania Melee 2D Platform
+# Metroidvania Melee 2D Platformer
 

@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Metroidvania-Melee-2D-Platform.sln"
+    "dotnet.defaultSolution": "Metroidvania-Melee-2D-Platformer.sln"
 }

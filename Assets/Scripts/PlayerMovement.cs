@@ -5,33 +5,20 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [Header("Player Settings")]
-    [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private float walkSpeed = 8f;
-    private float xAxis;
-    private Animator anim;
     public static PlayerMovement Instance;
 
-    [Header("Movement Settings")]
-    [SerializeField] private float jumpForce = 10f;
-    private float curJumpForce = 0f;
-    [SerializeField] private float maxFallSpeed = 15f;
-    [SerializeField] private float fallMultiplier = 3f;    // faster fall
-    [SerializeField] private float riseMultiplier = 2f; // slower rise if jump released early
-
-    [Header("Ground Check Settings")]
-    [SerializeField] private Transform groundCheckPoint;
-    [SerializeField] private float groundCheckY = 0.1f;
-    [SerializeField] private float groundCheckX= 0.25f;
-    [SerializeField] private LayerMask whatIsGround;
-
+    private Rigidbody2D rb;
+    private Animator anim;
+    private PlayerStateList pState;
+    private LineRenderer lineRenderer;
 
     void Awake()
     {
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
-        } else
+        }
+        else
         {
             Instance = this;
         }
@@ -40,10 +27,13 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //rb = GetComponent<Rigidbody2D>();
-        //anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+        pState = GetComponent<PlayerStateList>();
 
-        //lineRenderer = GetComponent<LineRenderer>();
+        gravity = rb.gravityScale;
+
+        lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.positionCount = 0;
     }
 
@@ -52,21 +42,34 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         GetInputs();
+        UpdateJumpVariables();
+        if (pState.dashing) return; // Movement won't be triggered if the player is dashing
+        Flip();
         Move();
         Jump();
-        Flip();
+        StartDash();
 
-        UpdateTrajectory();
+        DrawTrail();
     }
 
     void FixedUpdate()
     {
-        AirBorneConstraint();
+        UpdateAirBorneState();
     }
     
-    // ====================================================================
-    // Movements
-    // ====================================================================
+    // ================================================================================
+    //                              Horizontal Movements
+    // ================================================================================
+
+    [Header("Horizontal Movement Settings")]
+    [SerializeField] private float walkSpeed = 8f;
+    [SerializeField] private float dashSpeed;
+    [SerializeField] private float dashTime;
+    [SerializeField] private float dashCooldown;
+    private float xAxis;
+    private bool canDash = true;
+    private bool dashed = false;
+
 
     void GetInputs() 
     {
@@ -77,6 +80,38 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.velocity = new Vector2(walkSpeed * xAxis, rb.velocity.y);
         anim.SetBool("Walking", rb.velocity.x != 0 && Grounded());
+    }
+
+    void StartDash()
+    {
+        if (Input.GetButtonDown("Dash") && canDash && !dashed)
+        {
+            StartCoroutine(Dash());
+            dashed = true;
+        }
+        
+        if (Grounded())
+        {
+            dashed = false;
+        }
+    }
+
+    IEnumerator Dash()
+    {
+        canDash = false;
+        pState.dashing = true;
+        anim.SetTrigger("Dashing");
+        rb.gravityScale = 0;
+        rb.velocity = new Vector2(transform.localScale.x * dashSpeed, 0); // dash at the direction the character is facing
+
+        yield return new WaitForSeconds(dashTime);
+
+        rb.gravityScale = gravity;
+        pState.dashing = false;
+
+        yield return new WaitForSeconds(dashCooldown);
+
+        canDash = true;
     }
 
     void Flip()
@@ -90,7 +125,113 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = new Vector2(1, transform.localScale.y);
         }
     }
-    
+
+    // ================================================================================
+    //                              Vertical Movements
+    // ================================================================================
+
+    [Header("Vertical Movement Settings")]
+    [SerializeField] private float jumpForce = 10f;
+    private float jumpBufferCounter = 0f; // extend jump register before touching the ground
+    [SerializeField] private float jumpBufferTime = 10f;
+    private float coyoteTimeCounter = 0; // extend jump register after leaving the ground
+    [SerializeField] private float coyoteTime = 0.1f; 
+    private int airJumpCounter = 0;
+    [SerializeField] private int maxAirJumps = 1;
+    [SerializeField] private float maxFallSpeed = 15f;
+    [SerializeField] private float fallMultiplier = 3f; // faster fall
+    [SerializeField] private float riseMultiplier = 2f; // slower rise if jump released early
+    private float gravity;
+
+    void Jump()
+    {
+        if (!pState.jumping)
+        {
+            if (jumpBufferCounter > 0 && coyoteTimeCounter > 0)
+            {
+                // Jump
+                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+
+                pState.jumping = true;
+            }
+            else if (!Grounded() && airJumpCounter < maxAirJumps && Input.GetButtonDown("Jump"))
+            {
+                // Air jump
+                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+                
+                pState.jumping = true;
+                airJumpCounter++;
+            }
+        }
+
+        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0)
+        {
+            // Cancel jump (same line of code for released jump)
+            rb.velocity += Vector2.up * Physics2D.gravity.y * (riseMultiplier - 1) * Time.fixedDeltaTime;
+
+            pState.jumping = false;
+        }
+
+        anim.SetBool("Jumping", !Grounded());
+    }
+
+    void UpdateJumpVariables()
+    {
+        if (Grounded())
+        {
+            pState.jumping = false;
+            coyoteTimeCounter = coyoteTime;
+            airJumpCounter = 0;
+        }
+        else
+        {
+            coyoteTimeCounter -= Time.deltaTime;
+        }
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            // set jump buffer to the max
+            jumpBufferCounter = jumpBufferTime;
+        }
+        else
+        {
+            // Decrease jump buffer by one every frame
+            jumpBufferCounter -= Time.deltaTime * 10;
+        }
+    }
+
+    void UpdateAirBorneState()
+    {
+        if (rb.velocity.y < 0)
+        {
+            if (Math.Abs(rb.velocity.y) < maxFallSpeed)
+            {
+                // Falling: increase gravity to fall faster
+                rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.fixedDeltaTime;
+            }
+            else
+            {
+                // Falling: reached the max fall speed
+                rb.velocity = new Vector2(rb.velocity.x, -maxFallSpeed);
+            }
+        }
+        else if (rb.velocity.y > 0 && !Input.GetButton("Jump"))
+        {
+            // Released jump: slower rise
+            rb.velocity += Vector2.up * Physics2D.gravity.y * (riseMultiplier - 1) * Time.fixedDeltaTime;
+        }
+    }
+
+    // ================================================================================
+    //                              Check Ground
+    // ================================================================================
+
+    [Header("Ground Check Settings")]
+    [SerializeField] private Transform groundCheckPoint;
+    [SerializeField] private float groundCheckY = 0.1f;
+    [SerializeField] private float groundCheckX= 0.25f;
+    [SerializeField] private LayerMask whatIsGround;
+
     public bool Grounded() 
     {
         if (
@@ -106,51 +247,19 @@ public class PlayerMovement : MonoBehaviour
         }
         return false;
     }
-
-    void Jump()
-    {
-        if (Input.GetButtonDown("Jump") && Grounded())
-        {
-            // Jump
-            curJumpForce = jumpForce;
-            rb.velocity = new Vector2(rb.velocity.x, curJumpForce);
-            curJumpForce = Math.Max(curJumpForce--, 0);
-        }
-
-        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0)
-        {
-            // Cancel jump
-            rb.velocity += Vector2.up * Physics2D.gravity.y * (riseMultiplier - 1) * Time.fixedDeltaTime;
-        }
-
-        anim.SetBool("Jumping", !Grounded());
-    }
-
-    void AirBorneConstraint()
-    {
-        if (rb.velocity.y < 0)
-        {
-            // Falling: increase gravity to fall faster
-            rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.fixedDeltaTime;
-
-        }
-        else if (rb.velocity.y > 0 && !Input.GetButton("Jump"))
-        {
-            // Released jump: slower rise
-            rb.velocity += Vector2.up * Physics2D.gravity.y * (riseMultiplier - 1) * Time.fixedDeltaTime;
-        }
-
-        // TODO: I'll need to set up a max fall speed as well
-    }
     
-    [SerializeField] LineRenderer lineRenderer;
-    [SerializeField] int maxPoints = 15;  // how long the trail lasts
+    // ================================================================================
+    //                              Visualization
+    // ================================================================================
+
+    [Header("Visualization Settings")]
+    [SerializeField] int maxPoints = 20;  // how long the trail lasts
     [SerializeField] float recordInterval = 0.05f;
 
     private float recordTimer;
     private List<Vector3> points = new List<Vector3>();
 
-    void UpdateTrajectory()
+    void DrawTrail()
     {
         recordTimer += Time.deltaTime;
 

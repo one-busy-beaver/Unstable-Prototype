@@ -3,9 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
-    public static PlayerMovement Instance;
+    public static PlayerController Instance;
 
     private Rigidbody2D rb;
     private Animator anim;
@@ -66,6 +66,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float dashSpeed;
     [SerializeField] private float dashTime;
     [SerializeField] private float dashCooldown;
+    [SerializeField] GameObject dashEffect;
     private float xAxis;
     private bool canDash = true;
     private bool dashed = false;
@@ -102,7 +103,15 @@ public class PlayerMovement : MonoBehaviour
         pState.dashing = true;
         anim.SetTrigger("Dashing");
         rb.gravityScale = 0;
-        rb.velocity = new Vector2(transform.localScale.x * dashSpeed, 0); // dash at the direction the character is facing
+
+        // Dash at the direction the character is facing
+        rb.velocity = new Vector2(transform.localScale.x * dashSpeed, 0); 
+
+        if (Grounded())
+        {
+            // Instanstiate dash effect as a child object
+            Instantiate(dashEffect, transform); 
+        }
 
         yield return new WaitForSeconds(dashTime);
 
@@ -136,7 +145,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpBufferTime = 10f;
     private float coyoteTimeCounter = 0; // extend jump register after leaving the ground
     [SerializeField] private float coyoteTime = 0.1f; 
-    private int airJumpCounter = 0;
+    [SerializeField] private int airJumpCounter = 0;
     [SerializeField] private int maxAirJumps = 1;
     [SerializeField] private float maxFallSpeed = 15f;
     [SerializeField] private float fallMultiplier = 3f; // faster fall

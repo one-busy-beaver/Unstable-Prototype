@@ -659,9 +659,11 @@ MonoBehaviour:
   dashSpeed: 20
   dashTime: 0.15
   dashCooldown: 0.3
+  dashEffect: {fileID: 5577193781993967511, guid: 6469b2cac5cc59d4e93c11f8540134a4, type: 3}
   jumpForce: 11
   jumpBufferTime: 1
   coyoteTime: 0.1
+  airJumpCounter: 0
   maxAirJumps: 1
   maxFallSpeed: 15
   fallMultiplier: 3

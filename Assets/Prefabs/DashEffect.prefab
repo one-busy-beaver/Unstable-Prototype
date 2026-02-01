@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4161230847788823873}
   - component: {fileID: 1493288464711364755}
   m_Layer: 0
-  m_Name: Dash Effect
+  m_Name: DashEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

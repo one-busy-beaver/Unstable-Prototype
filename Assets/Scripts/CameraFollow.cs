@@ -4,18 +4,114 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    [SerializeField] private float followSpeed = 0.1f;
-    [SerializeField] private Vector3 offset;
 
-    // Start is called before the first frame update
-    void Start()
+    public static CameraFollow Instance;
+
+    [Header("Follow")]
+    [SerializeField] private float followSpeed = 5f;
+    [SerializeField] private Vector3 offset = new Vector3(0, 0, -10f);
+
+    [Header("Zoom")]
+    [SerializeField] float zoomSpeed = 5f;
+    [SerializeField] float minZoom = 3f;
+    [SerializeField] float maxZoom = 8f;
+    private float targetZoom;
+
+    [Header("Pan")]
+    [SerializeField] float panSpeed = 8f;
+    [SerializeField] float recenterSpeed = 8f;
+
+
+    [Header("Player Bounds")]
+    [SerializeField] float maxHorizontalOffset = 3f;
+    [SerializeField] float maxVerticalOffset = 2f;
+
+    Camera cam;
+    Vector2 manualOffset;
+
+    void Awake()
     {
-        
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+        }
+        cam = GetComponent<Camera>();
+        // Set targetZoom to the camera's actual size so it doesn't start at 0
+        targetZoom = cam.orthographicSize;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.Lerp(transform.position, PlayerController.Instance.transform.position + offset, followSpeed);
+        HandleZoom();
+        HandlePan();
+    }
+
+    void LateUpdate()
+    {
+        FollowPlayer();
+    }
+
+    void HandleZoom()
+    {
+        float zoom = InputManager.Instance.Controls.Camera.Zoom.ReadValue<float>();
+
+        if (Mathf.Abs(zoom) > 0.01f)
+        {
+            // Update the target based on input
+            targetZoom -= zoom * zoomSpeed * Time.deltaTime;
+            targetZoom = Mathf.Clamp(targetZoom, minZoom, maxZoom);
+        }
+
+        // Smoothly transition the actual camera size to the target
+        cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, targetZoom, Time.deltaTime * zoomSpeed * 10f);
+    }
+
+    void HandlePan()
+    {
+        Vector2 input = InputManager.Instance.Controls.Camera.Pan.ReadValue<Vector2>();
+
+        // Handle X axis independently
+        if (Mathf.Abs(input.x) > 0.01f)
+        {
+            manualOffset.x += input.x * panSpeed * Time.deltaTime;
+        }
+        else
+        {
+            manualOffset.x = Mathf.Lerp(manualOffset.x, 0, recenterSpeed * Time.deltaTime);
+        }
+
+        // Handle Y axis independently
+        if (Mathf.Abs(input.y) > 0.01f)
+        {
+            manualOffset.y += input.y * panSpeed * Time.deltaTime;
+        }
+        else
+        {
+            manualOffset.y = Mathf.Lerp(manualOffset.y, 0, recenterSpeed * Time.deltaTime);
+        }
+
+        manualOffset.x = Mathf.Clamp(manualOffset.x, -maxHorizontalOffset, maxHorizontalOffset);
+        manualOffset.y = Mathf.Clamp(manualOffset.y, -maxVerticalOffset, maxVerticalOffset);
+    }
+
+    void FollowPlayer()
+    {
+        // Ensure PlayerMovements.Instance exists before accessing
+        if (PlayerMovements.Instance == null) return;
+
+        Vector3 target =
+            PlayerMovements.Instance.transform.position +
+            offset +
+            (Vector3)manualOffset;
+
+        transform.position = Vector3.Lerp(
+            transform.position,
+            new Vector3(target.x, target.y, transform.position.z),
+            followSpeed * Time.deltaTime
+        );
     }
 }

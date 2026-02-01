@@ -3,17 +3,81 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerMovements : MonoBehaviour
 {
-    public static PlayerController Instance;
-
+    public static PlayerMovements Instance;
+    public bool isMainPlayer;
     private Rigidbody2D rb;
     private Animator anim;
     private PlayerStateList pState;
     private LineRenderer lineRenderer;
 
+
+    [Header("Horizontal Movement Settings")]
+    [SerializeField] private float walkSpeed = 8f;
+    [SerializeField] private float dashSpeed = 20f;
+    [SerializeField] private float dashTime = 0.15f;
+    [SerializeField] private float dashCooldown = 0.3f;
+    [SerializeField] private GameObject dashEffect;
+    private float xAxis;
+    private bool canDash = true;
+    private bool dashed = false;
+    private bool dashPressed;
+
+
+    [Header("Vertical Movement Settings")]
+    [SerializeField] private float jumpForce = 11f;
+    [SerializeField] private float jumpBufferTime = 10f;
+    [SerializeField] private float coyoteTime = 0.1f; 
+    [SerializeField] private int airJumpCounter = 0;
+    [SerializeField] private int maxAirJumps = 1;
+    [SerializeField] private float maxFallSpeed = 15f;
+    [SerializeField] private float fallMultiplier = 3f; // faster fall
+    [SerializeField] private float riseMultiplier = 8f; // slower rise if jump released early
+    private float jumpBufferCounter = 1f; // extend jump register before touching the ground
+    private float coyoteTimeCounter = 0.1f; // extend jump register after leaving the ground
+    private float gravity;
+    private bool jumpPressed; // For the initial jump
+    private bool jumpHeld;      // For variable jump height
+
+
+    [Header("Ground Check Settings")]
+    [SerializeField] private Transform groundCheckPoint;
+    [SerializeField] private float groundCheckY = 0.1f;
+    [SerializeField] private float groundCheckX= 0.27f;
+    [SerializeField] private LayerMask whatIsGround;
+
+
+    [Header("Attacking Settings")]
+    //[SerializeField] private Transform sideAttackTransform;
+    //[SerializeField] private Transform upAttackTransform;
+    //[SerializeField] private Transform downAttackTransform;
+    [SerializeField] private Vector2 sideAttackArea = new Vector2(4.5f, 3.5f); 
+    [SerializeField] private Vector2 upAttackArea = new Vector2(3.5f, 4.5f);
+    [SerializeField] private Vector2 downAttackArea = new Vector2(3.5f, 4.5f);
+    private bool attack = false;
+    private float timeBetweenAttack;
+    private float timeSinceAttack;
+
+
+    [Header("Visualization Settings")]
+    [SerializeField] private int maxPoints = 15;  // how long the trail lasts
+    [SerializeField] private float recordInterval = 0.05f;
+    private float recordTimer;
+    private List<Vector3> points = new List<Vector3>();
+
+    // ================================================================================
+    //                          Unity Lifecycle
+    // ================================================================================
+
     void Awake()
     {
+        if (!isMainPlayer)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -24,7 +88,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -37,45 +100,65 @@ public class PlayerController : MonoBehaviour
         lineRenderer.positionCount = 0;
     }
 
+    /*void OnDrawGizmos()
+    {
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireCube(sideAttackTransform.position, sideAttackArea);
+        Gizmos.DrawWireCube(upAttackTransform.position, upAttackArea);
+        Gizmos.DrawWireCube(downAttackTransform.position, downAttackArea);
+    }*/
 
-    // Update is called once per frame
     void Update()
     {
         GetInputs();
         UpdateJumpVariables();
-        if (pState.dashing) return; // Movement won't be triggered if the player is dashing
-        Flip();
-        Move();
+        //if (pState.dashing) return; // Movement won't be triggered if the player is dashing
+        if (!pState.dashing)
+        {
+            Flip();
+            Move();
+        }
         Jump();
         StartDash();
+        Attack();
 
         DrawTrail();
+    }
+
+    void GetInputs() 
+    {
+        Vector2 moveInput = InputManager.Instance.Controls.Player.Move.ReadValue<Vector2>();
+        xAxis = moveInput.x;
+
+        jumpPressed = InputManager.Instance.Controls.Player.Jump.triggered; 
+        jumpHeld = InputManager.Instance.Controls.Player.Jump.IsPressed();
+
+        dashPressed = InputManager.Instance.Controls.Player.Dash.triggered;
+
+        // attack = InputManager.Instance.Controls.Player.Attack.IsPressed();
     }
 
     void FixedUpdate()
     {
         UpdateAirBorneState();
     }
+
+    // ================================================================================
+    //                          Attack
+    // ================================================================================
+
+    void Attack()
+    {
+        timeSinceAttack += Time.deltaTime;
+
+        if (attack && timeSinceAttack >= timeBetweenAttack) {
+            timeSinceAttack = 0;
+        }
+    }
     
     // ================================================================================
-    //                              Horizontal Movements
+    //                          Horizontal Movements
     // ================================================================================
-
-    [Header("Horizontal Movement Settings")]
-    [SerializeField] private float walkSpeed = 8f;
-    [SerializeField] private float dashSpeed;
-    [SerializeField] private float dashTime;
-    [SerializeField] private float dashCooldown;
-    [SerializeField] GameObject dashEffect;
-    private float xAxis;
-    private bool canDash = true;
-    private bool dashed = false;
-
-
-    void GetInputs() 
-    {
-        xAxis = Input.GetAxisRaw("Horizontal");
-    }
 
     void Move()
     {
@@ -85,7 +168,7 @@ public class PlayerController : MonoBehaviour
 
     void StartDash()
     {
-        if (Input.GetButtonDown("Dash") && canDash && !dashed)
+        if (dashPressed && canDash && !dashed)
         {
             StartCoroutine(Dash());
             dashed = true;
@@ -136,21 +219,8 @@ public class PlayerController : MonoBehaviour
     }
 
     // ================================================================================
-    //                              Vertical Movements
+    //                          Vertical Movements
     // ================================================================================
-
-    [Header("Vertical Movement Settings")]
-    [SerializeField] private float jumpForce = 10f;
-    private float jumpBufferCounter = 0f; // extend jump register before touching the ground
-    [SerializeField] private float jumpBufferTime = 10f;
-    private float coyoteTimeCounter = 0; // extend jump register after leaving the ground
-    [SerializeField] private float coyoteTime = 0.1f; 
-    [SerializeField] private int airJumpCounter = 0;
-    [SerializeField] private int maxAirJumps = 1;
-    [SerializeField] private float maxFallSpeed = 15f;
-    [SerializeField] private float fallMultiplier = 3f; // faster fall
-    [SerializeField] private float riseMultiplier = 2f; // slower rise if jump released early
-    private float gravity;
 
     void Jump()
     {
@@ -163,7 +233,7 @@ public class PlayerController : MonoBehaviour
 
                 pState.jumping = true;
             }
-            else if (!Grounded() && airJumpCounter < maxAirJumps && Input.GetButtonDown("Jump"))
+            else if (!Grounded() && airJumpCounter < maxAirJumps && jumpPressed)
             {
                 // Air jump
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
@@ -173,7 +243,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0)
+        if (!jumpHeld && rb.velocity.y > 0)
         {
             // Cancel jump (same line of code for released jump)
             rb.velocity += Vector2.up * Physics2D.gravity.y * (riseMultiplier - 1) * Time.fixedDeltaTime;
@@ -197,7 +267,7 @@ public class PlayerController : MonoBehaviour
             coyoteTimeCounter -= Time.deltaTime;
         }
 
-        if (Input.GetButtonDown("Jump"))
+        if (jumpPressed)
         {
             // set jump buffer to the max
             jumpBufferCounter = jumpBufferTime;
@@ -224,7 +294,7 @@ public class PlayerController : MonoBehaviour
                 rb.velocity = new Vector2(rb.velocity.x, -maxFallSpeed);
             }
         }
-        else if (rb.velocity.y > 0 && !Input.GetButton("Jump"))
+        else if (rb.velocity.y > 0 && !jumpHeld)
         {
             // Released jump: slower rise
             rb.velocity += Vector2.up * Physics2D.gravity.y * (riseMultiplier - 1) * Time.fixedDeltaTime;
@@ -232,14 +302,8 @@ public class PlayerController : MonoBehaviour
     }
 
     // ================================================================================
-    //                              Check Ground
+    //                          Check Ground
     // ================================================================================
-
-    [Header("Ground Check Settings")]
-    [SerializeField] private Transform groundCheckPoint;
-    [SerializeField] private float groundCheckY = 0.1f;
-    [SerializeField] private float groundCheckX= 0.25f;
-    [SerializeField] private LayerMask whatIsGround;
 
     public bool Grounded() 
     {
@@ -258,15 +322,8 @@ public class PlayerController : MonoBehaviour
     }
     
     // ================================================================================
-    //                              Visualization
+    //                          Visualization
     // ================================================================================
-
-    [Header("Visualization Settings")]
-    [SerializeField] int maxPoints = 20;  // how long the trail lasts
-    [SerializeField] float recordInterval = 0.05f;
-
-    private float recordTimer;
-    private List<Vector3> points = new List<Vector3>();
 
     void DrawTrail()
     {

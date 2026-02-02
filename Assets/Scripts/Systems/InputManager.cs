@@ -9,14 +9,13 @@ public class InputManager : MonoBehaviour
 
     private void Awake()
     {
+        // Only allow one InputManager to exist
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
             return;
         }
-
         Instance = this;
-        DontDestroyOnLoad(gameObject);
 
         Controls = new PlayerControls();
     }

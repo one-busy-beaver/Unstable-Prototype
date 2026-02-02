@@ -6,6 +6,7 @@ public class CameraFollow : MonoBehaviour
 {
 
     public static CameraFollow Instance;
+    private GameObject targetObject;
 
     [Header("Follow")]
     [SerializeField] private float followSpeed = 5f;
@@ -28,20 +29,35 @@ public class CameraFollow : MonoBehaviour
 
     Camera cam;
     Vector2 manualOffset;
+    
 
     void Awake()
     {
+        // Only allow one CameraFollow to exist
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
+            return;
         }
-        else
-        {
-            Instance = this;
-        }
+        Instance = this;
+
         cam = GetComponent<Camera>();
+
         // Set targetZoom to the camera's actual size so it doesn't start at 0
         targetZoom = cam.orthographicSize;
+    }
+
+    void Start()
+    {
+        // If the camera wakes up and has no target, try to find one immediately
+        if (targetObject == null)
+        {
+            GameObject existingPlayer = GameObject.FindWithTag("Player");
+            if (existingPlayer != null)
+            {
+                SetTarget(existingPlayer);
+            }
+        }
     }
 
     void Update()
@@ -53,6 +69,11 @@ public class CameraFollow : MonoBehaviour
     void LateUpdate()
     {
         FollowPlayer();
+    }
+
+    public void SetTarget(GameObject newTarget)
+    {
+        targetObject = newTarget;
     }
 
     void HandleZoom()
@@ -101,10 +122,10 @@ public class CameraFollow : MonoBehaviour
     void FollowPlayer()
     {
         // Ensure PlayerMovements.Instance exists before accessing
-        if (PlayerMovements.Instance == null) return;
+        if (targetObject == null) return;
 
         Vector3 target =
-            PlayerMovements.Instance.transform.position +
+            targetObject.transform.position +
             offset +
             (Vector3)manualOffset;
 

@@ -2,7 +2,11 @@
 
 A 2D low horror game featured with exploration, secrets, and combat.
 
-## Implemented
+## Goal of Prototype Stage
+
+Even though the main icon/theme of this game is to ascend a tower, psychologically, it makes sense for the player to first descend down in order to face the deepest fear in the subconsciousness. Something like "the final obstacle is always there at the very beginning" sounds like the right progression of this game. For level design, I should first focus on designing a vertical platformer challenge as well as many horizontal areas that serve as side stories.
+
+## Features Implemented
 
 ### System
 
@@ -21,7 +25,7 @@ A 2D low horror game featured with exploration, secrets, and combat.
 
 - floor (currently named as ground)
 
-## Will Implement
+## Features to be Implemented
 
 ### System 
 

@@ -54,5 +54,6 @@ public class SceneLoader : MonoBehaviour
         targetSpawnID = spawnPoint;
         // Async does not pause the current scene
         SceneManager.LoadSceneAsync(sceneName);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

@@ -316,8 +316,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4287078130
+  m_fontColor: {r: 0.9490196, g: 0.61960787, b: 0.5294118, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -398,7 +398,7 @@ GameObject:
   - component: {fileID: 1323630666}
   - component: {fileID: 1323630670}
   m_Layer: 5
-  m_Name: Start Menu Canvas
+  m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -502,7 +502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0de836e9b420be24ca3a3e16fbc5c7cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: Dev Scene 1
+  sceneToLoad: wics 1
   pointToSpawn: Initial Spawn
 --- !u!1 &1666365947
 GameObject:
@@ -695,8 +695,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4287012338
+  m_fontColor: {r: 0.94716984, g: 0.6167004, b: 0.52719826, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

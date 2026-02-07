@@ -12,6 +12,7 @@ Even though the main icon/theme of this game is to ascend a tower, psychological
 
 - camera follow
 - scene transition
+- start menu
 
 ### Character
 
@@ -24,13 +25,14 @@ Even though the main icon/theme of this game is to ascend a tower, psychological
 ### Environment
 
 - floor (currently named as ground)
+- dev scene 1 (for hackathon)
+- level 1 (for hackathon)
 
 ## Features to be Implemented
 
 ### System 
 
 - camera confiner
-- start manu
 - scene fade
 - audio player
 - inventory
@@ -64,7 +66,7 @@ Even though the main icon/theme of this game is to ascend a tower, psychological
 
 ### Environment
 
-- a simple map
+- collectables (activate double jump and dash)
 - hazard 
 
 ### NPC

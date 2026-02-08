@@ -20,6 +20,15 @@ public class InputManager : MonoBehaviour
         Controls = new PlayerControls();
     }
 
-    private void OnEnable() => Controls.Enable();
-    private void OnDisable() => Controls.Disable();
+    private void OnEnable()
+    {
+        // Use conditional access to prevent errors if Enable is called during setup
+        Controls?.Enable();
+    }
+
+    private void OnDisable()
+    {
+        // The null-conditional operator (?.) prevents the NullReferenceException
+        Controls?.Disable();
+    }
 }

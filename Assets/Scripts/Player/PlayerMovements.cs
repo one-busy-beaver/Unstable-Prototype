@@ -61,6 +61,7 @@ public class PlayerMovements : MonoBehaviour
 
 
     [Header("Visualization Settings")]
+    [SerializeField] bool visualize = true;
     [SerializeField] private int maxPoints = 15;  // how long the trail lasts
     [SerializeField] private float recordInterval = 0.05f;
     private float recordTimer;
@@ -122,7 +123,7 @@ public class PlayerMovements : MonoBehaviour
         StartDash();
         Attack();
 
-        DrawTrail();
+        if (visualize) DrawTrail();
     }
 
     void GetInputs() 
@@ -221,6 +222,11 @@ public class PlayerMovements : MonoBehaviour
     // ================================================================================
     //                          Vertical Movements
     // ================================================================================
+
+    public void SetMaxAirJumps(int amount)
+    {
+        maxAirJumps = amount;
+    }
 
     void Jump()
     {

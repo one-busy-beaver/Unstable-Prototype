@@ -7,6 +7,7 @@ public class SceneExit : MonoBehaviour
     [SerializeField] private string sceneToLoad;
     [SerializeField] private string targetSpawnID;
     [SerializeField] private Color gizmoColor = Color.green;
+    [SerializeField] private bool goesToStartMenu = false;
 
     private void OnValidate()
     {
@@ -21,6 +22,7 @@ public class SceneExit : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            GameState.ShowThanksMessage = goesToStartMenu;
             SceneLoader.Instance.LoadScene(sceneToLoad, targetSpawnID);
         }
     }

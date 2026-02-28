@@ -33,20 +33,36 @@ public class SceneLoader : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // Find the spawn point by name
+
+        // Safety: Don't spawn players in the Bootstrap scene itself
+        if (scene.name == "_Bootstrap") return;
+
+        // 2. If targetSpawnID is empty (like when first hitting Play), 
+        // look for a default spawn point instead
+        if (string.IsNullOrEmpty(targetSpawnID))
+        {
+            // Change "DefaultSpawn" to whatever you name your starting point in the levels
+            targetSpawnID = "DefaultSpawn"; 
+        }
+
         GameObject spawnPoint = GameObject.Find(targetSpawnID);
 
         if (spawnPoint != null)
         {
-            // Create the player at the spawn point's location
-            GameObject newPlayer = Instantiate(
-                playerPrefab, 
-                spawnPoint.transform.position, 
-                Quaternion.identity);
+            GameObject newPlayer = Instantiate(playerPrefab, spawnPoint.transform.position, Quaternion.identity);
             
-            // Link the camera to this specific new player
-            Camera.main.GetComponent<CameraFollow>().SetTarget(newPlayer);
+            if (Camera.main != null && Camera.main.TryGetComponent<CameraFollow>(out var follow))
+            {
+                follow.SetTarget(newPlayer);
+            }
         }
+        else
+        {
+            Debug.LogWarning($"SceneLoader: Could not find spawn point '{targetSpawnID}' in {scene.name}");
+        }
+        
+        // 3. Clear the ID so it doesn't accidentally reuse an old one next time
+        targetSpawnID = null;
     }
 
     public void LoadScene(string sceneName, string spawnPoint)

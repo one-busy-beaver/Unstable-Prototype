@@ -37,19 +37,33 @@ public class SceneLoader : MonoBehaviour
         // Safety: Don't spawn players in the Bootstrap scene itself
         if (scene.name == "_Bootstrap") return;
 
-        // 2. If targetSpawnID is empty (like when first hitting Play), 
-        // look for a default spawn point instead
-        if (string.IsNullOrEmpty(targetSpawnID))
+        // 1. Find every SpawnPoint component in the new scene
+        SpawnPoint[] allSpawns = Object.FindObjectsByType<SpawnPoint>(FindObjectsSortMode.None);
+        SpawnPoint selectedSpawn = null;
+
+        // 2. Look for the specific ID we requested
+        if (!string.IsNullOrEmpty(targetSpawnID))
         {
-            // Change "DefaultSpawn" to whatever you name your starting point in the levels
-            targetSpawnID = "DefaultSpawn"; 
+            foreach (SpawnPoint sp in allSpawns)
+            {
+                if (sp.spawnID == targetSpawnID)
+                {
+                    selectedSpawn = sp;
+                    break;
+                }
+            }
         }
 
-        GameObject spawnPoint = GameObject.Find(targetSpawnID);
-
-        if (spawnPoint != null)
+        // 3. FALLBACK: If ID not found or empty, take the first one available
+        if (selectedSpawn == null && allSpawns.Length > 0)
         {
-            GameObject newPlayer = Instantiate(playerPrefab, spawnPoint.transform.position, Quaternion.identity);
+            selectedSpawn = allSpawns[0];
+        }
+
+        // 4. Spawn the Player
+        if (selectedSpawn != null)
+        {
+            GameObject newPlayer = Instantiate(playerPrefab, selectedSpawn.transform.position, selectedSpawn.transform.rotation);
             
             if (Camera.main != null && Camera.main.TryGetComponent<CameraFollow>(out var follow))
             {
@@ -58,11 +72,10 @@ public class SceneLoader : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning($"SceneLoader: Could not find spawn point '{targetSpawnID}' in {scene.name}");
+            Debug.LogError($"SceneLoader: No SpawnPoints found in {scene.name}!");
         }
-        
-        // 3. Clear the ID so it doesn't accidentally reuse an old one next time
-        targetSpawnID = null;
+
+        targetSpawnID = null; // Reset for next time
     }
 
     public void LoadScene(string sceneName, string spawnPoint)

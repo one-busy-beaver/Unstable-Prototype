@@ -42,16 +42,23 @@ public class SceneExit : MonoBehaviour
     private void OnDrawGizmos()
     {
         BoxCollider2D box = GetComponent<BoxCollider2D>();
-        if (box != null)
-        {
-            Gizmos.color = gizmoColor;
-            // Draw a solid cube so it's easier to see in the Scene view
-            Vector3 center = transform.position + (Vector3)box.offset;
-            Gizmos.DrawCube(center, box.size);
-            
-            // Draw a wireframe outline for clarity
-            Gizmos.color = new Color(gizmoColor.r, gizmoColor.g, gizmoColor.b, 1.0f);
-            Gizmos.DrawWireCube(center, box.size);
-        }
+        if (box == null) return;
+
+        // Capture current matrix to reset it later
+        Matrix4x4 oldMatrix = Gizmos.matrix;
+
+        // Apply the object's transform to the Gizmos matrix
+        Gizmos.matrix = transform.localToWorldMatrix;
+
+        Gizmos.color = gizmoColor;
+        // Draw relative to the local origin (0,0,0) plus the collider's offset
+        Gizmos.DrawCube(box.offset, box.size);
+
+        // Draw outline
+        Gizmos.color = new Color(gizmoColor.r, gizmoColor.g, gizmoColor.b, 1.0f);
+        Gizmos.DrawWireCube(box.offset, box.size);
+
+        // Reset matrix so other gizmos aren't affected
+        Gizmos.matrix = oldMatrix;
     }
 }

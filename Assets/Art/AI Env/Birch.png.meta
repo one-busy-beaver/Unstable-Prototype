@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9c2bfe47a4208e742826980b639b35ee
+guid: 9a251bfe25bb3d844a01be080e44406c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tile_0
+      name: Birch_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1024
-        height: 129
+        x: 189
+        y: 39
+        width: 1398
+        height: 2329
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5d94366d1ff67e4da0bba3204687ce8
-      internalID: -1683519905
+      spriteID: dd91a3d6688c85d4ab12abba77e366c5
+      internalID: 345754754
       vertices: []
       indices: 
       edges: []
@@ -141,7 +141,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Tile_0: -1683519905
+      Birch_0: 345754754
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

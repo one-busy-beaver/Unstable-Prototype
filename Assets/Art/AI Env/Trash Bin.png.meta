@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9c2bfe47a4208e742826980b639b35ee
+guid: e05db4bbee1c422439e3290928b9e17f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tile_0
+      name: Trash Bin_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1024
-        height: 129
+        x: 39
+        y: 142
+        width: 528
+        height: 866
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5d94366d1ff67e4da0bba3204687ce8
-      internalID: -1683519905
+      spriteID: 5662abbd68210f74aab3b353a44ece31
+      internalID: -1900436649
       vertices: []
       indices: 
       edges: []
@@ -141,7 +141,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Tile_0: -1683519905
+      Trash Bin_0: -1900436649
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

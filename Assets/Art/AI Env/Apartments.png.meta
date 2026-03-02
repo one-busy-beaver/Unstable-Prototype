@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9c2bfe47a4208e742826980b639b35ee
+guid: 988821eaa4e8c6646a11e8a26dca7e66
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tile_0
+      name: Apartments_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 62
         y: 0
-        width: 1024
-        height: 129
+        width: 832
+        height: 1091
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,8 +124,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5d94366d1ff67e4da0bba3204687ce8
-      internalID: -1683519905
+      spriteID: 10257e8aea1d6a44ca7e78de93a6c53e
+      internalID: 188532054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Apartments_1
+      rect:
+        serializedVersion: 2
+        x: 1058
+        y: 0
+        width: 775
+        height: 1071
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d9b7d9b536c90c4eba98781050f2732
+      internalID: 895102280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Apartments_2
+      rect:
+        serializedVersion: 2
+        x: 1997
+        y: 0
+        width: 785
+        height: 1052
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 452ddfe0b454c1e4296cd05fb212ff2f
+      internalID: 2076788534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Apartments_3
+      rect:
+        serializedVersion: 2
+        x: 2925
+        y: 0
+        width: 792
+        height: 1066
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01294da8e837dce4b9672e61557749f5
+      internalID: 1747328876
       vertices: []
       indices: 
       edges: []
@@ -141,7 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Tile_0: -1683519905
+      Apartments_0: 188532054
+      Apartments_1: 895102280
+      Apartments_2: 2076788534
+      Apartments_3: 1747328876
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

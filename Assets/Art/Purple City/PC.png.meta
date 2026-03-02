@@ -93,857 +93,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: purplecity_enlarged_0
+      name: PC_0
       rect:
         serializedVersion: 2
-        x: 262
-        y: 1745
-        width: 226
-        height: 180
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 570e84b6fc24a284e911fbebf25534af
-      internalID: -1456602121
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: purplecity_enlarged_1
-      rect:
-        serializedVersion: 2
-        x: 580
-        y: 1745
-        width: 341
-        height: 229
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 78a9ad6be45e9ea40a8e0d47709e67ef
-      internalID: 1198928122
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: purplecity_enlarged_2
-      rect:
-        serializedVersion: 2
-        x: 995
-        y: 1745
-        width: 341
-        height: 211
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d9b0f380a9a7eb1459a10463521d91a9
-      internalID: -1382871729
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: purplecity_enlarged_3
-      rect:
-        serializedVersion: 2
-        x: 1429
-        y: 1745
-        width: 164
-        height: 267
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 888cbc4ca1c370e4faeff7e96a04de60
-      internalID: -1236245881
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: purplecity_enlarged_4
-      rect:
-        serializedVersion: 2
-        x: 1686
-        y: 1745
-        width: 250
-        height: 319
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 16a8660cfd3dc564b8d2ff50d3771361
-      internalID: -766326480
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: purplecity_enlarged_5
-      rect:
-        serializedVersion: 2
-        x: 2029
-        y: 1745
-        width: 223
-        height: 406
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d70aeb0a5471ba242ad87bb56ba2c773
-      internalID: -1628776384
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: purplecity_enlarged_6
-      rect:
-        serializedVersion: 2
-        x: 2348
-        y: 1745
-        width: 409
-        height: 422
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a4bf5457e1a16c145ab42d2ef1e50217
-      internalID: -2015786646
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: purplecity_enlarged_7
-      rect:
-        serializedVersion: 2
-        x: 2943
-        y: 1745
-        width: 194
-        height: 195
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: febcb561c553f6843a5351754155055f
-      internalID: 1966637444
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: purplecity_enlarged_8
-      rect:
-        serializedVersion: 2
-        x: 3224
-        y: 1745
-        width: 201
-        height: 195
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c8b1c9094b92d244c89b33f0f8c60f0b
-      internalID: -758181189
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: purplecity_enlarged_9
-      rect:
-        serializedVersion: 2
-        x: 3475
-        y: 1755
-        width: 186
-        height: 179
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5f21d3b30a4bfeb498f1fc6d3d4ab430
-      internalID: 1087882455
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: purplecity_enlarged_10
-      rect:
-        serializedVersion: 2
-        x: 3846
-        y: 1745
-        width: 273
-        height: 251
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: af29b7cc7f01a484c9c9c364aa379386
-      internalID: -1103357741
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: purplecity_enlarged_11
-      rect:
-        serializedVersion: 2
-        x: 4243
-        y: 1745
-        width: 520
-        height: 319
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: de304edb68570604db15a098871f3de0
-      internalID: -673415778
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: purplecity_enlarged_12
-      rect:
-        serializedVersion: 2
-        x: 4967
-        y: 1745
-        width: 536
-        height: 443
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 23e2c8a36ebc46840b3eda3a3ed201e5
-      internalID: 2132866495
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: purplecity_enlarged_13
-      rect:
-        serializedVersion: 2
-        x: 5688
-        y: 1745
-        width: 390
-        height: 477
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a65e4b89f5a83aa4bb560d16cc3cfd1d
-      internalID: 890055542
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: purplecity_enlarged_14
-      rect:
-        serializedVersion: 2
-        x: 255
-        y: 931
-        width: 133
-        height: 133
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 725f26152a0fb5c4dba4da9296971f5f
-      internalID: 477447345
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: purplecity_enlarged_15
-      rect:
-        serializedVersion: 2
-        x: 494
-        y: 937
-        width: 133
-        height: 133
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1a7404e13eef7e545901c2bfb1f3561d
-      internalID: -1857854308
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: purplecity_enlarged_16
-      rect:
-        serializedVersion: 2
-        x: 751
-        y: 931
-        width: 133
-        height: 133
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b5f21e0114cde5a40a0c20af9c54b6da
-      internalID: -736951577
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: purplecity_enlarged_17
-      rect:
-        serializedVersion: 2
-        x: 1002
-        y: 931
-        width: 129
-        height: 133
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 21dde047c586ad84c8c762335da7e6ce
-      internalID: 1212767455
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: purplecity_enlarged_18
-      rect:
-        serializedVersion: 2
-        x: 255
-        y: 348
-        width: 381
-        height: 378
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eaf2a37e12bc0a84fb8a8aa545df6eab
-      internalID: 1310427248
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: purplecity_enlarged_19
-      rect:
-        serializedVersion: 2
-        x: 698
-        y: 348
-        width: 381
-        height: 378
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: efd798e7205f22141a391b8021f71c88
-      internalID: 411900451
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: purplecity_enlarged_20
-      rect:
-        serializedVersion: 2
-        x: 2503
-        y: 448
-        width: 161
-        height: 328
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e8c606c89386afd4c98dac7dc5d6ae87
-      internalID: -2110733937
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: purplecity_enlarged_21
-      rect:
-        serializedVersion: 2
-        x: 2741
-        y: 448
-        width: 157
-        height: 257
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 49c668b93ba73a54b8dfd2c048b18dd9
-      internalID: 995018052
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: purplecity_enlarged_22
-      rect:
-        serializedVersion: 2
-        x: 2961
-        y: 677
-        width: 56
-        height: 68
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4cf8d1320a4fb4a41b9f34568d9461f5
-      internalID: -1150723799
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: purplecity_enlarged_23
-      rect:
-        serializedVersion: 2
-        x: 3038
-        y: 643
-        width: 149
-        height: 161
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8e025d94fd5f85f46b7de88b4e5e4e85
-      internalID: -200443107
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: purplecity_enlarged_24
-      rect:
-        serializedVersion: 2
-        x: 5147
-        y: 448
-        width: 222
-        height: 257
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bcc6696a1b1eeb74bb246c4acb3f60c5
-      internalID: 519217413
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: purplecity_enlarged_25
-      rect:
-        serializedVersion: 2
-        x: 2229
-        y: 534
-        width: 131
-        height: 47
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a676b923c4fa68141871dfa33c2348d5
-      internalID: -307355736
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: purplecity_enlarged_26
-      rect:
-        serializedVersion: 2
-        x: 2952
-        y: 448
-        width: 148
-        height: 164
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0c7e7689ca30d724fb6b8d4b51d2fac7
-      internalID: 760733554
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: purplecity_enlarged_27
-      rect:
-        serializedVersion: 2
-        x: 3203
-        y: 448
-        width: 145
-        height: 133
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 680f4e111144cfa49a5327b3ff548e41
-      internalID: 510821325
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: purplecity_enlarged_28
-      rect:
-        serializedVersion: 2
-        x: 3506
-        y: 448
-        width: 340
-        height: 102
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e2f4a33fe2fb4a147860eb592490fe43
-      internalID: -657869103
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: purplecity_enlarged_29
-      rect:
-        serializedVersion: 2
-        x: 3893
-        y: 448
-        width: 297
-        height: 102
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4a8bec39c22591d4993dff34ebc6535a
-      internalID: 1515851187
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: purplecity_enlarged_30
-      rect:
-        serializedVersion: 2
-        x: 4258
-        y: 448
-        width: 155
-        height: 102
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8eabb19f4e0500b4a9e00e1eac8f7eeb
-      internalID: -920177500
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: purplecity_enlarged_31
-      rect:
-        serializedVersion: 2
-        x: 4509
-        y: 448
-        width: 139
-        height: 201
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9a100e8e4958a37409df242f26ac3b83
-      internalID: -577693669
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: purplecity_enlarged_32
-      rect:
-        serializedVersion: 2
-        x: 4726
-        y: 448
-        width: 130
-        height: 117
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2091a4cca534003459e4396592476dcf
-      internalID: -770268552
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: purplecity_enlarged_33
-      rect:
-        serializedVersion: 2
-        x: 4911
-        y: 448
-        width: 226
-        height: 148
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 21ca4839cb29e5b43a032ef11c684582
-      internalID: -438026088
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: purplecity_enlarged_34
-      rect:
-        serializedVersion: 2
-        x: 1218
-        y: 448
-        width: 180
-        height: 86
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7002cbbd7fbc71d43b64308662cc28ea
-      internalID: -1921243931
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: purplecity_enlarged_35
-      rect:
-        serializedVersion: 2
-        x: 1475
-        y: 364
-        width: 186
-        height: 147
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 149298cf1b8c40e4f8fbcb12dfea04ed
-      internalID: -893065574
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: purplecity_enlarged_36
-      rect:
-        serializedVersion: 2
-        x: 1732
-        y: 448
-        width: 170
-        height: 86
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1e2dad90981543448a83f789d44a84a3
-      internalID: 377646529
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: purplecity_enlarged_37
-      rect:
-        serializedVersion: 2
-        x: 1933
-        y: 448
-        width: 172
-        height: 86
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c127ee006dcf0b14a93378a2aa5d84b8
-      internalID: 1953923170
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: purplecity_enlarged_38
-      rect:
-        serializedVersion: 2
-        x: 2212
-        y: 448
-        width: 173
-        height: 49
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 23a2d81add55a794a9c5f50ebcbcb139
-      internalID: -1104000778
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: purplecity_enlarged_39
-      rect:
-        serializedVersion: 2
-        x: 1556
-        y: 218
-        width: 31
-        height: 96
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a7170a963e97a5e42a98715fd418c8bd
-      internalID: -1574100098
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: purplecity_enlarged_40
-      rect:
-        serializedVersion: 2
-        x: 1475
-        y: 483
-        width: 186
-        height: 27
+        x: 266
+        y: 1750
+        width: 218
+        height: 170
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -951,8 +124,827 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8baca33d9b3c87c479f5c6a9b7f3d5c8
-      internalID: -937535671
+      spriteID: caf472b7e0d5efd40a22ee9fa424f82e
+      internalID: 852402197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_1
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 1750
+        width: 334
+        height: 219
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98d853cc7c404b540b0ae3c19a8c4c96
+      internalID: -997380645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_2
+      rect:
+        serializedVersion: 2
+        x: 998
+        y: 1750
+        width: 334
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0d1c0f91490c1f4187703e1b92b9947
+      internalID: 1548333584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_3
+      rect:
+        serializedVersion: 2
+        x: 1433
+        y: 1750
+        width: 155
+        height: 257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 045ae78be3e0eae45bee83565e7caadf
+      internalID: 1136980434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_4
+      rect:
+        serializedVersion: 2
+        x: 1689
+        y: 1750
+        width: 242
+        height: 311
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb73a3aada4d2ba498a1d2f08a7fba3e
+      internalID: 1073700966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_5
+      rect:
+        serializedVersion: 2
+        x: 2032
+        y: 1750
+        width: 217
+        height: 397
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41724f0a52bc18e448de6ccf510e79ec
+      internalID: 2018279168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_6
+      rect:
+        serializedVersion: 2
+        x: 2351
+        y: 1750
+        width: 402
+        height: 413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b48aa9fcc4de80b4a82baaa5b42dc077
+      internalID: -2105168254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_7
+      rect:
+        serializedVersion: 2
+        x: 2948
+        y: 1750
+        width: 187
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80674f8b02cee1e498a9b3f9bd052ec5
+      internalID: 2049498870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_8
+      rect:
+        serializedVersion: 2
+        x: 3229
+        y: 1750
+        width: 194
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1334fd863f0a88b46905573c75e92269
+      internalID: 214403831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_9
+      rect:
+        serializedVersion: 2
+        x: 3477
+        y: 1759
+        width: 179
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e7e58938ccb091438f5804cd3c6ca6c
+      internalID: 2141930823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_10
+      rect:
+        serializedVersion: 2
+        x: 3851
+        y: 1750
+        width: 264
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0675f81a76903714389a08f73b07a011
+      internalID: -1753150389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_11
+      rect:
+        serializedVersion: 2
+        x: 4248
+        y: 1750
+        width: 511
+        height: 311
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a393e94415b978f4486b63572ba00dea
+      internalID: -1976443819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_12
+      rect:
+        serializedVersion: 2
+        x: 4971
+        y: 1750
+        width: 527
+        height: 436
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 063eb57a4e191c84d8e2431c161ecfb4
+      internalID: -1728877180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_13
+      rect:
+        serializedVersion: 2
+        x: 5693
+        y: 1750
+        width: 381
+        height: 467
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c23be689b446284a94f4ba12dded1d2
+      internalID: 526906994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_14
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 934
+        width: 125
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eea2ce47e19cf6e4696a3ff2ede366d8
+      internalID: 1502699320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_15
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 941
+        width: 124
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14a0265adfaa595499e6d54b45b48079
+      internalID: -1288939007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_16
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 934
+        width: 125
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f96789d899d6384288778f725cfc942
+      internalID: 1455088931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_17
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 934
+        width: 123
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 706f4b356ab939b40a30ec629c35f9ef
+      internalID: -418027156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_18
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 351
+        width: 373
+        height: 373
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 398b42c0055aace419f013282529912d
+      internalID: 1751641392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_19
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 351
+        width: 373
+        height: 373
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6656e794d70a7fa4890e832684213025
+      internalID: 419630507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_20
+      rect:
+        serializedVersion: 2
+        x: 2506
+        y: 452
+        width: 155
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18710e7143611794db28f603f4ceed3b
+      internalID: -773529161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_21
+      rect:
+        serializedVersion: 2
+        x: 2746
+        y: 452
+        width: 148
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 176cfaf2cc316814a8be380fffdb59ad
+      internalID: 473024692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_22
+      rect:
+        serializedVersion: 2
+        x: 2964
+        y: 679
+        width: 48
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b839fad345fc2246b3afc5d3bdb9731
+      internalID: 481712255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_23
+      rect:
+        serializedVersion: 2
+        x: 3042
+        y: 646
+        width: 140
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c533e35d4a36bc6419dcaeb6fa3e29e6
+      internalID: 1006046858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_24
+      rect:
+        serializedVersion: 2
+        x: 5150
+        y: 452
+        width: 217
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c6a5b5374bac1044b1681e4d2370e80
+      internalID: -1012045015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_25
+      rect:
+        serializedVersion: 2
+        x: 2233
+        y: 538
+        width: 125
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc1ce98c9d9a6c04eb854871c11f623f
+      internalID: -697308512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_26
+      rect:
+        serializedVersion: 2
+        x: 2955
+        y: 452
+        width: 141
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f23dc938d3b3dc409da7b113b411ff7
+      internalID: -1629046652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_27
+      rect:
+        serializedVersion: 2
+        x: 3206
+        y: 452
+        width: 140
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c68df9579d0f96f42a9ac4598b67f0af
+      internalID: 1183350879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_28
+      rect:
+        serializedVersion: 2
+        x: 3509
+        y: 452
+        width: 334
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd8417a5a4658d14b8b08aaf0c72811a
+      internalID: 285823414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_29
+      rect:
+        serializedVersion: 2
+        x: 3897
+        y: 452
+        width: 288
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eca9790642d78d04b8643818641c2595
+      internalID: -677522453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_30
+      rect:
+        serializedVersion: 2
+        x: 4263
+        y: 452
+        width: 147
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d6debbbd8ffeea47b4888983d2b2c19
+      internalID: -356545905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_31
+      rect:
+        serializedVersion: 2
+        x: 4512
+        y: 452
+        width: 132
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d90d2dad2fd8ffa4a981264fd955e09b
+      internalID: 1542415372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_32
+      rect:
+        serializedVersion: 2
+        x: 4729
+        y: 452
+        width: 124
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c154130402b57a841a105fc5974e6f92
+      internalID: 1874963104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_33
+      rect:
+        serializedVersion: 2
+        x: 4915
+        y: 452
+        width: 218
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dccd46839c69b85408867e1180c71a43
+      internalID: -1922109016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_34
+      rect:
+        serializedVersion: 2
+        x: 1223
+        y: 452
+        width: 172
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af088be4d57a00a49ad25b182c4550e8
+      internalID: 1770728000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_35
+      rect:
+        serializedVersion: 2
+        x: 1478
+        y: 367
+        width: 180
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a63afb7794a2afc4281eef1010c3de12
+      internalID: 983263176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_36
+      rect:
+        serializedVersion: 2
+        x: 1736
+        y: 452
+        width: 162
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b4fafe0150d6764bbcf70266cd594d3
+      internalID: 1004576601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_37
+      rect:
+        serializedVersion: 2
+        x: 1938
+        y: 452
+        width: 163
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66a97319f303e2b45a1d1025cc1ed414
+      internalID: 21687892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_38
+      rect:
+        serializedVersion: 2
+        x: 2217
+        y: 452
+        width: 164
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6502e22884321d46a61ea3dd54e397f
+      internalID: -137201529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_39
+      rect:
+        serializedVersion: 2
+        x: 1560
+        y: 223
+        width: 23
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3ed9d7a5b7eab0478ed8a7194a03887
+      internalID: -1297454852
       vertices: []
       indices: 
       edges: []
@@ -968,47 +960,46 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      purplecity_enlarged_0: -1456602121
-      purplecity_enlarged_1: 1198928122
-      purplecity_enlarged_10: -1103357741
-      purplecity_enlarged_11: -673415778
-      purplecity_enlarged_12: 2132866495
-      purplecity_enlarged_13: 890055542
-      purplecity_enlarged_14: 477447345
-      purplecity_enlarged_15: -1857854308
-      purplecity_enlarged_16: -736951577
-      purplecity_enlarged_17: 1212767455
-      purplecity_enlarged_18: 1310427248
-      purplecity_enlarged_19: 411900451
-      purplecity_enlarged_2: -1382871729
-      purplecity_enlarged_20: -2110733937
-      purplecity_enlarged_21: 995018052
-      purplecity_enlarged_22: -1150723799
-      purplecity_enlarged_23: -200443107
-      purplecity_enlarged_24: 519217413
-      purplecity_enlarged_25: -307355736
-      purplecity_enlarged_26: 760733554
-      purplecity_enlarged_27: 510821325
-      purplecity_enlarged_28: -657869103
-      purplecity_enlarged_29: 1515851187
-      purplecity_enlarged_3: -1236245881
-      purplecity_enlarged_30: -920177500
-      purplecity_enlarged_31: -577693669
-      purplecity_enlarged_32: -770268552
-      purplecity_enlarged_33: -438026088
-      purplecity_enlarged_34: -1921243931
-      purplecity_enlarged_35: -893065574
-      purplecity_enlarged_36: 377646529
-      purplecity_enlarged_37: 1953923170
-      purplecity_enlarged_38: -1104000778
-      purplecity_enlarged_39: -1574100098
-      purplecity_enlarged_4: -766326480
-      purplecity_enlarged_40: -937535671
-      purplecity_enlarged_5: -1628776384
-      purplecity_enlarged_6: -2015786646
-      purplecity_enlarged_7: 1966637444
-      purplecity_enlarged_8: -758181189
-      purplecity_enlarged_9: 1087882455
+      PC_0: 852402197
+      PC_1: -997380645
+      PC_10: -1753150389
+      PC_11: -1976443819
+      PC_12: -1728877180
+      PC_13: 526906994
+      PC_14: 1502699320
+      PC_15: -1288939007
+      PC_16: 1455088931
+      PC_17: -418027156
+      PC_18: 1751641392
+      PC_19: 419630507
+      PC_2: 1548333584
+      PC_20: -773529161
+      PC_21: 473024692
+      PC_22: 481712255
+      PC_23: 1006046858
+      PC_24: -1012045015
+      PC_25: -697308512
+      PC_26: -1629046652
+      PC_27: 1183350879
+      PC_28: 285823414
+      PC_29: -677522453
+      PC_3: 1136980434
+      PC_30: -356545905
+      PC_31: 1542415372
+      PC_32: 1874963104
+      PC_33: -1922109016
+      PC_34: 1770728000
+      PC_35: 983263176
+      PC_36: 1004576601
+      PC_37: 21687892
+      PC_38: -137201529
+      PC_39: -1297454852
+      PC_4: 1073700966
+      PC_5: 2018279168
+      PC_6: -2105168254
+      PC_7: 2049498870
+      PC_8: 214403831
+      PC_9: 2141930823
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

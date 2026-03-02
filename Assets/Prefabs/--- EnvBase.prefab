@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 607816445363177317}
   - component: {fileID: 827587702862300854}
   m_Layer: 0
-  m_Name: Background
+  m_Name: OneWay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 5934084613509363351}
   - component: {fileID: 7692937210895412958}
   m_Layer: 0
-  m_Name: EnvBase
+  m_Name: --- EnvBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

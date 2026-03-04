@@ -10,7 +10,7 @@ public class PlayerAbilities : MonoBehaviour
 
     //private bool _hasWallJump = false;
 
-    // Public Getters
+    // Public "Getters"
     public bool HasDash => _hasDash;
     public bool HasDoubleJump => _hasDoubleJump;
 

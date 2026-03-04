@@ -6,7 +6,14 @@ public class PlayerInteraction : MonoBehaviour
 
     private void Update()
     {
-        if (_currentInteractable != null && Input.GetKeyDown(KeyCode.E))
+        // 1. Check if InputManager exists
+        if (InputManager.Instance == null || InputManager.Instance.Controls == null) return;
+
+        // 2. Use the "Interact" trigger from your Input Action Asset
+        // Replace '.Interact' with whatever you named your button in the PlayerControls asset
+        bool interactPressed = InputManager.Instance.Controls.Player.Interact.triggered;
+
+        if (_currentInteractable != null && interactPressed)
         {
             _currentInteractable.Interact();
         }
@@ -14,21 +21,28 @@ public class PlayerInteraction : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        var interactable = other.GetComponent<Interactable>();
-        if (interactable != null)
+        // Use TryGetComponent for better performance and cleaner code
+        if (other.TryGetComponent(out Interactable interactable))
         {
             _currentInteractable = interactable;
-            // Tell UI to show "Press E to [PromptText]"
-            UIManager.Instance.ShowPrompt(interactable.promptText);
+            
+            if (UIManager.Instance != null)
+            {
+                UIManager.Instance.ShowPrompt(interactable.promptText);
+            }
         }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.GetComponent<Interactable>() == _currentInteractable)
+        if (other.TryGetComponent(out Interactable interactable) && interactable == _currentInteractable)
         {
             _currentInteractable = null;
-            UIManager.Instance.HidePrompt();
+            
+            if (UIManager.Instance != null)
+            {
+                UIManager.Instance.HidePrompt();
+            }
         }
     }
 }

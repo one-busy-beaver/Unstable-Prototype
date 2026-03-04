@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using TMPro;
 
 public class UIManager : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class UIManager : MonoBehaviour
     // These two lines create the "empty boxes" in the Unity Inspector
     [SerializeField] private GameObject interactionPrompt; 
     [SerializeField] private CanvasGroup messagePanelGroup;
+    [SerializeField] private TextMeshProUGUI promptTextComponent;
 
     private void Awake()
     {
@@ -23,8 +25,13 @@ public class UIManager : MonoBehaviour
     public void ShowPrompt(string text)
     {
         if (interactionPrompt == null) return;
+
+        if (promptTextComponent != null) 
+        {
+            promptTextComponent.text = text;
+        }
+
         interactionPrompt.SetActive(true);
-        // If you want the text to change dynamically, you'd update a TMP component here
     }
     public void HidePrompt()
     {

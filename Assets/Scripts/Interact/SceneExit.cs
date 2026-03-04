@@ -13,30 +13,22 @@ public class SceneExit : MonoBehaviour
     [Header("Visuals (Editor Only)")]
     [SerializeField] private Color gizmoColor = new Color(0.65f, 0.89f, 0.34f, 0.5f); // #a6e356 with alpha
 
-    private void Awake()
-    {
-        // Ensure the collider is set to trigger so it doesn't block the player
-        GetComponent<BoxCollider2D>().isTrigger = true;
-    }
+    // Ensure the collider is set to trigger so it doesn't block the player
+    private void Awake() => GetComponent<BoxCollider2D>().isTrigger = true;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         // Use the tag we agreed on for the player
-        if (other.CompareTag("Player"))
-        {
-            // Logic for end-game message
-            GameState.ShowThanksMessage = goesToStartMenu;
+        if (other.CompareTag("Player")) ExecuteTransition();
+    }
 
-            // Call the Singleton we set up in the Bootstrap scene
-            if (SceneLoader.Instance != null)
-            {
-                SceneLoader.Instance.LoadScene(sceneToLoad, targetSpawnID);
-            }
-            else
-            {
-                Debug.LogError("SceneExit: No SceneLoader found! Are you starting from the _Bootstrap scene?");
-            }
-        }
+    public void ExecuteTransition()
+    {
+        GameState.ShowThanksMessage = goesToStartMenu;
+        if (SceneLoader.Instance != null)
+            SceneLoader.Instance.LoadScene(sceneToLoad, targetSpawnID);
+        else
+            Debug.LogError("SceneLoader missing!");
     }
 
     private void OnDrawGizmos()

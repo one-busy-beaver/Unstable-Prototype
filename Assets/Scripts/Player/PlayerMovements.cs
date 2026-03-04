@@ -114,7 +114,7 @@ public class PlayerMovements : MonoBehaviour
         GetInputs();
         UpdateJumpVariables();
         //if (pState.dashing) return; // Movement won't be triggered if the player is dashing
-        if (!pState.dashing)
+        if (!pState.isDashing)
         {
             Flip();
             Move();
@@ -184,7 +184,7 @@ public class PlayerMovements : MonoBehaviour
     IEnumerator Dash()
     {
         canDash = false;
-        pState.dashing = true;
+        pState.isDashing = true;
         anim.SetTrigger("Dashing");
         rb.gravityScale = 0;
 
@@ -200,7 +200,7 @@ public class PlayerMovements : MonoBehaviour
         yield return new WaitForSeconds(dashTime);
 
         rb.gravityScale = gravity;
-        pState.dashing = false;
+        pState.isDashing = false;
 
         yield return new WaitForSeconds(dashCooldown);
 
@@ -230,21 +230,21 @@ public class PlayerMovements : MonoBehaviour
 
     void Jump()
     {
-        if (!pState.jumping)
+        if (!pState.isJumping)
         {
             if (jumpBufferCounter > 0 && coyoteTimeCounter > 0)
             {
                 // Jump
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
 
-                pState.jumping = true;
+                pState.isJumping = true;
             }
             else if (!Grounded() && airJumpCounter < maxAirJumps && jumpPressed)
             {
                 // Air jump
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
                 
-                pState.jumping = true;
+                pState.isJumping = true;
                 airJumpCounter++;
             }
         }
@@ -254,7 +254,7 @@ public class PlayerMovements : MonoBehaviour
             // Cancel jump (same line of code for released jump)
             rb.velocity += Vector2.up * Physics2D.gravity.y * (riseMultiplier - 1) * Time.fixedDeltaTime;
 
-            pState.jumping = false;
+            pState.isJumping = false;
         }
 
         anim.SetBool("Jumping", !Grounded());
@@ -264,7 +264,7 @@ public class PlayerMovements : MonoBehaviour
     {
         if (Grounded())
         {
-            pState.jumping = false;
+            pState.isJumping = false;
             coyoteTimeCounter = coyoteTime;
             airJumpCounter = 0;
         }

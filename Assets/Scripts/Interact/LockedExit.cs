@@ -7,7 +7,8 @@ public class LockedExit : Interactable
 
     public override void Interact()
     {
-        if (Inventory.Instance.HasItem(requiredKey))
+        // If we don't require a key, or if we have it
+        if (string.IsNullOrEmpty(requiredKey) || Inventory.Instance.HasItem(requiredKey))
         {
             if (useDecisionPanel)
             {

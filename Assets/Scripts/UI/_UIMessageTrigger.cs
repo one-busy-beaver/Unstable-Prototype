@@ -8,17 +8,8 @@ public class UIMessageTrigger : MonoBehaviour
 
     void Start()
     {
-        // This handles the "Thanks for playing" when returning to menu
-        if (GameState.ShowThanksMessage) 
-        {
-            ShowMessage();
-            GameState.ShowThanksMessage = false; 
-        }
-        else
-        {
-            // Ensure it's invisible if not triggered
-            canvasGroup.alpha = 0;
-        }
+        // Ensure it's invisible if not triggered
+        canvasGroup.alpha = 0;
     }
 
     // This handles the Double Jump item or any manual trigger

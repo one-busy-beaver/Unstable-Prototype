@@ -165,10 +165,10 @@ MonoBehaviour:
   promptText: Interact
   useDecisionPanel: 0
   decisionMessage: Press E to Interact
+  localCanvas: {fileID: 3981211219180336485}
+  localTextComponent: {fileID: 860997481796375974}
   requiredKey: 
   sceneExit: {fileID: 8376382893290187454}
-  localCanvas: {fileID: 3981211219180336485}
-  localText: {fileID: 860997481796375974}
 --- !u!114 &-2539870076553886529
 MonoBehaviour:
   m_ObjectHideFlags: 0

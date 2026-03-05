@@ -10,21 +10,22 @@ public class Entrance : Interactable
     {
         bool hasKey = string.IsNullOrEmpty(requiredKey) || Inventory.Instance.HasItem(requiredKey);
 
-        if (hasKey)
+        if (useDecisionPanel)
         {
-            if (useDecisionPanel)
-            {
-                // Open UI with Yes/No
-                UIManager.Instance.ShowDecision(decisionMessage, ConfirmInteraction);
-            }
-            else
-            {
-                ConfirmInteraction();
-            }
+            // Show the panel. Pass 'hasKey' so the UI knows if "Yes" should be clickable.
+            UIManager.Instance.ShowDecision(decisionMessage, hasKey, ConfirmInteraction);
         }
         else
         {
-            UIManager.Instance.ShowTimedMessage($"It's locked. Needs {requiredKey}.");
+            // Fallback for doors that don't use the UI panel
+            if (hasKey)
+            {
+                ConfirmInteraction(); // Instantly go to next scene
+            }
+            else
+            {
+                UIManager.Instance.ShowTimedMessage($"It's locked. Needs {requiredKey}.");
+            }
         }
     }
 

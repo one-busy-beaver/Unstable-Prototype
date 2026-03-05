@@ -191,7 +191,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6422279701890135183, guid: 417cb33dda5099b4683eb9a49cb22202, type: 3}
       propertyPath: requiredKey
-      value: LakeKey
+      value: GarageKey
       objectReference: {fileID: 0}
     - target: {fileID: 6422279701890135183, guid: 417cb33dda5099b4683eb9a49cb22202, type: 3}
       propertyPath: decisionMessage

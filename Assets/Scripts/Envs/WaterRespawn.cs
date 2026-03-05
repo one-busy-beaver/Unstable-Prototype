@@ -1,27 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WaterRespawn : MonoBehaviour
 {
-    // Drag your spawn point transform here in the Inspector
-    [SerializeField] Transform spawnPoint;
-
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // Check if the object entering the water is the Player
         if (other.CompareTag("Player"))
         {
-            Respawn(other.gameObject);
+            // Try to find the tracker on the player
+            LastSafeGround tracker = other.GetComponent<LastSafeGround>();
+
+            Debug.Log("on trigger enter");
+
+            if (tracker != null)
+            {
+                Respawn(other.gameObject, tracker.GetLastSafePosition());
+            }
+            else
+            {
+                // Fallback: If no tracker is found, stay at current position or 
+                // handle logic for a default spawn point.
+                Debug.LogWarning("Player missing LastSafeGround component!");
+            }
         }
     }
 
-    private void Respawn(GameObject player)
+    private void Respawn(GameObject player, Vector3 targetPosition)
     {
-        // Move the player to the spawn point position
-        player.transform.position = spawnPoint.position;
+        player.transform.position = targetPosition;
 
-        // Reset velocity if the player has a Rigidbody2D to prevent carrying momentum
         Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
         if (rb != null)
         {

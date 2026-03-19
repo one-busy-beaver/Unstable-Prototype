@@ -6,8 +6,13 @@ public class PlayerClimb : MonoBehaviour
     [SerializeField] private float climbSpeed = 6f;
     [SerializeField] private Vector2 jumpOffForce = new Vector2(10f, 10f);
 
+    // Player components
     private Rigidbody2D rb;
     private PlayerStates pState;
+
+    // Private variables
+    Vector2 moveInput;
+    bool jumpPressed;
     private float originalGravity;
     private Transform currentRope; // Stores the rope to snap to
 
@@ -20,10 +25,14 @@ public class PlayerClimb : MonoBehaviour
 
     void Update()
     {
-        // Read inputs using your existing InputManager
-        Vector2 moveInput = InputManager.Instance.Controls.Player.Move.ReadValue<Vector2>();
-        bool jumpPressed = InputManager.Instance.Controls.Player.Jump.triggered;
+        moveInput = InputManager.Instance.Controls.Player.Move.ReadValue<Vector2>();
+        jumpPressed = InputManager.Instance.Controls.Player.Jump.triggered;
 
+        HandleClimb();
+    }
+
+    private void HandleClimb()
+    {
         // Attach to rope (Ignore unless pressing UP)
         if (pState.canClimb && !pState.isClimbing && moveInput.y > 0.5f)
         {

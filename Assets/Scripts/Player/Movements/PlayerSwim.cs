@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class PlayerSwim : MonoBehaviour
 {
-    [Header("Config for Swim")]
+    [Header("Swimming Settings")]
     [SerializeField] private float swimSinkSpeed = 4f;
     [SerializeField] private float swimUpForce = 7f;
     [SerializeField] private float swimSubmergeTime = 7f;
 
-    [Header("Config for No Swim")]
+    [Header("Drowning Settings")]
     [SerializeField] private float drownSinkSpeed = 2f;
     [SerializeField] private float noSwimUpForce = 0f;
     [SerializeField] private float drownSubmergeTime = 0.5f;
@@ -17,10 +17,13 @@ public class PlayerSwim : MonoBehaviour
     [SerializeField] private float activeSwimUpForce;
     [SerializeField] private float activeMaxSubmergeTime;
     
-    private float currentSubmergeTime;
+    // Player components
     private Rigidbody2D rb;
     private PlayerStates pState;
     private LastSafeGround tracker;
+
+    // Private variables
+    private float currentSubmergeTime;    
     private float originalGravity;
 
     void Start()
@@ -43,11 +46,11 @@ public class PlayerSwim : MonoBehaviour
 
         if (!pState.onGround)
         {
-            HandleSwimming();
+            HandleSwim();
         }
 
         if (pState.isSubmerged) 
-            HandleDrowning();
+            HandleDrown();
         else
             currentSubmergeTime = 0f;
     }
@@ -61,7 +64,7 @@ public class PlayerSwim : MonoBehaviour
         activeMaxSubmergeTime = hasSwim ? swimSubmergeTime : drownSubmergeTime;
     }
 
-    private void HandleSwimming()
+    private void HandleSwim()
     {
         // Use your existing InputManager
         if (InputManager.Instance.Controls.Player.Jump.triggered)
@@ -75,7 +78,7 @@ public class PlayerSwim : MonoBehaviour
         }
     }
 
-    private void HandleDrowning()
+    private void HandleDrown()
     {
         currentSubmergeTime += Time.deltaTime;
 

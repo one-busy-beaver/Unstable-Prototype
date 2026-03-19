@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerTrai : MonoBehaviour
+public class PlayerVisualization : MonoBehaviour
 {
     [Header("Visualization Settings")]
     [SerializeField] bool visualize = true;

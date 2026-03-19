@@ -5,10 +5,9 @@ public class PlayerJump : MonoBehaviour
 {
     [Header("Jumping Settings")]
     [SerializeField] private float jumpForce = 11f;
-    [SerializeField] private float jumpBufferTime = 10f;
+    [SerializeField] private float jumpBufferTime = 1f;
     [SerializeField] private float coyoteTime = 0.1f; 
-    [SerializeField] private int airJumpCounter = 0;
-    [SerializeField] private int maxAirJumps = 1;
+    [SerializeField] private int maxAirJumps = 0;
     [SerializeField] private float maxFallSpeed = 15f;
     [SerializeField] private float fallMultiplier = 3f; // faster fall
     [SerializeField] private float riseMultiplier = 8f; // slower rise if jump released early
@@ -19,6 +18,7 @@ public class PlayerJump : MonoBehaviour
     private PlayerStates pState;
 
     // Private variables
+    private int airJumpCounter = 0;
     private float jumpBufferCounter = 1f; // extend jump register before touching the ground
     private float coyoteTimeCounter = 0.1f; // extend jump register after leaving the ground
     
@@ -61,16 +61,16 @@ public class PlayerJump : MonoBehaviour
             {
                 // Jump
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-
                 pState.isJumping = true;
+                jumpBufferCounter = 0f;
             }
             else if (!pState.onGround && airJumpCounter < maxAirJumps && jumpPressed)
             {
                 // Air jump
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-                
                 pState.isJumping = true;
                 airJumpCounter++;
+                jumpBufferCounter = 0f;
             }
         }
 

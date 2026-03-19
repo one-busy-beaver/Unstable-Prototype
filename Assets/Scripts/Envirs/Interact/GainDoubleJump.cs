@@ -10,11 +10,11 @@ public class GainDoubleJump : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            PlayerMovements player = other.GetComponent<PlayerMovements>();
+            PlayerJump jumpScript = other.GetComponent<PlayerJump>();
             
-            if (player != null)
+            if (jumpScript != null)
             {
-                player.SetMaxAirJumps(1);
+                jumpScript.SetMaxAirJumps(1);
 
                 if (panel != null)
                 {

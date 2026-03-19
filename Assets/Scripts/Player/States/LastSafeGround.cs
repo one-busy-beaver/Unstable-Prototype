@@ -7,12 +7,12 @@ public class LastSafeGround : MonoBehaviour
 
     private PlayerStates pState;
     private Vector3 lastSafePosition;
-    private PlayerMovements playerMovements;
+    private UniquePlayer player;
     private float timer;
 
     void Start()
     {
-        playerMovements = GetComponent<PlayerMovements>();
+        player = GetComponent<UniquePlayer>();
         // Initialize with starting position
         lastSafePosition = transform.position;
         pState = GetComponent<PlayerStates>();
@@ -27,7 +27,7 @@ public class LastSafeGround : MonoBehaviour
         // and a small interval has passed to avoid saving "cliff edge" frames.
         if (timer >= updateInterval)
         {
-            if (playerMovements != null && pState.onGround && !pState.inWater)
+            if (player != null && pState.onGround && !pState.inWater)
             {
                 lastSafePosition = transform.position;
             }

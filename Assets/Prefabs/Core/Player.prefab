@@ -146,8 +146,13 @@ GameObject:
   - component: {fileID: 3382100159990578332}
   - component: {fileID: 2460139203488574833}
   - component: {fileID: 849481730276301194}
+  - component: {fileID: 1466120380951991599}
+  - component: {fileID: 1364351675922517713}
+  - component: {fileID: 3660030220399106210}
+  - component: {fileID: 4011736607006245582}
   - component: {fileID: 3792904348860893158}
   - component: {fileID: 8766499525630223019}
+  - component: {fileID: 4374004544040625091}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -452,25 +457,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMainPlayer: 1
-  walkSpeed: 8
-  dashSpeed: 20
-  dashTime: 0.15
-  dashCooldown: 0.3
-  dashEffect: {fileID: 5577193781993967511, guid: 6469b2cac5cc59d4e93c11f8540134a4, type: 3}
-  jumpForce: 11
-  jumpBufferTime: 1
-  coyoteTime: 0.1
-  airJumpCounter: 0
-  maxAirJumps: 0
-  maxFallSpeed: 15
-  fallMultiplier: 3
-  riseMultiplier: 8
-  sideAttackArea: {x: 4.5, y: 3.5}
-  upAttackArea: {x: 3.5, y: 4.5}
-  downAttackArea: {x: 3.5, y: 4.5}
-  visualize: 0
-  maxPoints: 15
-  recordInterval: 0.05
 --- !u!114 &6784365950957363238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -540,6 +526,69 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   updateInterval: 0.5
+--- !u!114 &1466120380951991599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6095308487931501148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b183ed26023acb74a895825097b42cb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visualize: 1
+  maxPoints: 15
+  recordInterval: 0.05
+--- !u!114 &1364351675922517713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6095308487931501148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f01cd65bcc9e907489e44532bb2afcbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkSpeed: 8
+--- !u!114 &3660030220399106210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6095308487931501148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 586ec45e3173815409e3e12c54a55ac3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpForce: 11
+  jumpBufferTime: 1
+  coyoteTime: 0.1
+  maxAirJumps: 0
+  maxFallSpeed: 15
+  fallMultiplier: 3
+  riseMultiplier: 8
+--- !u!114 &4011736607006245582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6095308487931501148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff638564950c48c4e8b60a263ba8d96c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dashSpeed: 20
+  dashTime: 0.15
+  dashCooldown: 0.3
+  dashEffect: {fileID: 0}
 --- !u!114 &3792904348860893158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -575,6 +624,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   climbSpeed: 6
   jumpOffForce: {x: 10, y: 10}
+--- !u!114 &4374004544040625091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6095308487931501148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e6bf491effbc354ba7d2b119a6d17b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sideAttackArea: {x: 4.5, y: 3.5}
+  upAttackArea: {x: 3.5, y: 4.5}
+  downAttackArea: {x: 3.5, y: 4.5}
 --- !u!1 &7871733578589014881
 GameObject:
   m_ObjectHideFlags: 0

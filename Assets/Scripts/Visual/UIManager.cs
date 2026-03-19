@@ -2,6 +2,7 @@ using UnityEngine;
 using System;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class UIManager : MonoBehaviour
 {
@@ -48,10 +49,39 @@ public class UIManager : MonoBehaviour
         noButton.onClick.AddListener(HideDecision);
 
         decisionPanel.SetActive(true);
+
+        // --- Switch control to UI ---
+
+        // Disable player movement/interaction controls
+        if (InputManager.Instance != null && InputManager.Instance.Controls != null)
+        {
+            InputManager.Instance.Controls.Player.Disable();
+            // If you have a specific UI action map, enable it here:
+            // InputManager.Instance.Controls.UI.Enable(); 
+        }
+
+        // Select the correct button so keyboard/gamepad arrows work instantly
+        EventSystem.current.SetSelectedGameObject(null); // Clear selection first
+        
+        if (canConfirm)
+        {
+            EventSystem.current.SetSelectedGameObject(yesButton.gameObject);
+        }
+        else
+        {
+            EventSystem.current.SetSelectedGameObject(noButton.gameObject);
+        }
     }
 
     public void HideDecision()
     {
         if (decisionPanel != null) decisionPanel.SetActive(false);
+
+        // --- Restore control to Player ---
+        if (InputManager.Instance != null && InputManager.Instance.Controls != null)
+        {
+            InputManager.Instance.Controls.Player.Enable();
+            // InputManager.Instance.Controls.UI.Disable(); 
+        }
     }
 }

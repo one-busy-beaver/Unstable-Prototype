@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 69bfce44b30f4f948960f55a012146f6
+guid: a1c304f9981ab3140bf458dedd617a45
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Props_0
+      name: PC(7)_0
       rect:
         serializedVersion: 2
-        x: 721
-        y: 109
-        width: 117
-        height: 462
+        x: 32
+        y: 61
+        width: 194
+        height: 122
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f6a0a6d43fc6c041b83d5fb6d0e6009
-      internalID: 1824303820
+      spriteID: 91aaba43b73b2814a8d802ba51583d69
+      internalID: 450562345
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Props_1
+      name: PC(7)_1
       rect:
         serializedVersion: 2
-        x: 888
-        y: 113
-        width: 376
-        height: 444
+        x: 32
+        y: 285
+        width: 198
+        height: 198
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d436d5aaaf24f1445bc83b056f6e4b30
-      internalID: 850561964
+      spriteID: d4531e67a9dcd1c4e95cc15925997099
+      internalID: 1120797799
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Props_2
+      name: PC(7)_2
       rect:
         serializedVersion: 2
-        x: 1317
-        y: 369
-        width: 442
-        height: 116
+        x: 32
+        y: 524
+        width: 198
+        height: 199
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f6794e99014b4d148ae59b2a3a813732
-      internalID: -316864368
+      spriteID: 43696f1cac88c8a43867107acaff892f
+      internalID: 1854015805
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Props_3
+      name: PC(7)_3
       rect:
         serializedVersion: 2
-        x: 1273
+        x: 274
+        y: 524
+        width: 214
+        height: 199
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d686d3b3539352d478d076be4fca1107
+      internalID: -549973125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC(7)_4
+      rect:
+        serializedVersion: 2
+        x: 283
         y: 112
-        width: 515
-        height: 130
+        width: 23
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,8 +208,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e22373cbfb3b9a94fbe9cb4a7f1a823e
-      internalID: 293822997
+      spriteID: 7edfbeb7a3b376f4fbcd894ed918deac
+      internalID: -841768169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC(7)_5
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 150
+        width: 167
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20e41b39d74441a49bb626a47788b360
+      internalID: -137579923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC(7)_6
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 285
+        width: 35
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88bd08b3e7dd8b646956989671c59db6
+      internalID: 137889151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC(7)_7
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 112
+        width: 284
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 288699aa5b7a3ef488388143442c2393
+      internalID: 1700045995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC(7)_8
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 526
+        width: 196
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b7730d343f74f34ca569c47562f8bc4
+      internalID: -668999912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC(7)_9
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 284
+        width: 198
+        height: 199
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a59da777860cec247aef2c6245329fc4
+      internalID: 376146629
       vertices: []
       indices: 
       edges: []
@@ -204,10 +330,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Props_0: 1824303820
-      Props_1: 850561964
-      Props_2: -316864368
-      Props_3: 293822997
+      PC(7)_0: 450562345
+      PC(7)_1: 1120797799
+      PC(7)_2: 1854015805
+      PC(7)_3: -549973125
+      PC(7)_4: -841768169
+      PC(7)_5: -137579923
+      PC(7)_6: 137889151
+      PC(7)_7: 1700045995
+      PC(7)_8: -668999912
+      PC(7)_9: 376146629
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

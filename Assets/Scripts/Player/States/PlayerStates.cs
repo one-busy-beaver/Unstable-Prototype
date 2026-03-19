@@ -8,6 +8,7 @@ public class PlayerStates : MonoBehaviour
     [Header("Current States")]
     public bool isJumping = false;
     public bool isDashing = false;
+    public bool isClimbing = false;
     public bool inWater = false;
     public bool isSubmerged = false; // checked by head sensor
     public bool onGround = false; // checked by ground sensor

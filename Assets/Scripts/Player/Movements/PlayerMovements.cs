@@ -109,9 +109,9 @@ public class PlayerMovements : MonoBehaviour
         if (!pState.isDashing)
         {
             Flip();
-            Move();
+            if (!pState.isClimbing) Move();
         }
-        if (!pState.inWater || pState.onGround) 
+        if ((!pState.inWater || pState.onGround) && !pState.isClimbing) 
         {
             Jump();
         }
@@ -136,7 +136,7 @@ public class PlayerMovements : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!pState.inWater) 
+        if (!pState.inWater && !pState.isClimbing) 
         {
             UpdateAirBorneState();
         }

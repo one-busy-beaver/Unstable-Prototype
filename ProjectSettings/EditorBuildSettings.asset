@@ -6,10 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
+    path: Assets/Scenes/Level 0/MainMenu.unity
     guid: 375720926b347d24d8ab10ac859bbae3
   - enabled: 1
-    path: Assets/Scenes/Level 0/L0.unity
+    path: Assets/Scenes/Level 1/Remote Village.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/L0-2.unity
@@ -18,10 +18,10 @@ EditorBuildSettings:
     path: Assets/Scenes/L0-1.unity
     guid: fc80d4320e5fb794789d8237497480ae
   - enabled: 1
-    path: Assets/Scenes/Level 0/L0-H.unity
+    path: Assets/Scenes/Level 1/Village House.unity
     guid: 41b1a85ad49c55f4b85c8169f427b168
   - enabled: 1
-    path: Assets/Scenes/Level 1/L1.unity
+    path: Assets/Scenes/Level 2/Tower Front.unity
     guid: f9819875dca312845ae13f10d870fd90
   - enabled: 0
     path: Assets/Scenes/wics 1.unity
@@ -30,6 +30,6 @@ EditorBuildSettings:
     path: Assets/Scenes/wics 2.unity
     guid: 641033630466ede40bf99a1ea129ce08
   - enabled: 1
-    path: Assets/Scenes/_Bootstrap.unity
+    path: Assets/Scenes/Level 0/_Bootstrap.unity
     guid: 5f103d43d059fea46b0bbc67212a81f2
   m_configObjects: {}

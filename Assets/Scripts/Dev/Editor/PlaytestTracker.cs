@@ -5,7 +5,7 @@ using UnityEngine;
 [InitializeOnLoad]
 public static class PlaytestTracker
 {
-    private const string BootstrapScenePath = "Assets/Scenes/_Bootstrap.unity"; // Ensure this path is correct
+    private const string BootstrapScenePath = "Assets/Scenes/Level 0/_Bootstrap.unity"; // Ensure this path is correct
     private const string LastSceneKey = "LastOpenedScene";
 
     static PlaytestTracker()

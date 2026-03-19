@@ -9,7 +9,7 @@ public class PlayerMovements : MonoBehaviour
     public bool isMainPlayer;
     private Rigidbody2D rb;
     private Animator anim;
-    private PlayerStateList pState;
+    private PlayerStates pState;
     private LineRenderer lineRenderer;
 
 
@@ -38,14 +38,7 @@ public class PlayerMovements : MonoBehaviour
     private float coyoteTimeCounter = 0.1f; // extend jump register after leaving the ground
     private float gravity;
     private bool jumpPressed; // For the initial jump
-    private bool jumpHeld;      // For variable jump height
-
-
-    [Header("Ground Check Settings")]
-    [SerializeField] private Transform groundCheckPoint;
-    [SerializeField] private float groundCheckY = 0.1f;
-    [SerializeField] private float groundCheckX= 0.27f;
-    [SerializeField] private LayerMask whatIsGround;
+    private bool jumpHeld; // For variable jump height
 
 
     [Header("Attacking Settings")]
@@ -93,7 +86,7 @@ public class PlayerMovements : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        pState = GetComponent<PlayerStateList>();
+        pState = GetComponent<PlayerStates>();
 
         gravity = rb.gravityScale;
 
@@ -118,7 +111,7 @@ public class PlayerMovements : MonoBehaviour
             Flip();
             Move();
         }
-        if (!pState.inWater) 
+        if (!pState.inWater || pState.onGround) 
         {
             Jump();
         }
@@ -169,7 +162,7 @@ public class PlayerMovements : MonoBehaviour
     void Move()
     {
         rb.velocity = new Vector2(walkSpeed * xAxis, rb.velocity.y);
-        anim.SetBool("Walking", rb.velocity.x != 0 && Grounded());
+        anim.SetBool("Walking", rb.velocity.x != 0 && pState.onGround);
     }
 
     void StartDash()
@@ -180,7 +173,7 @@ public class PlayerMovements : MonoBehaviour
             dashed = true;
         }
         
-        if (Grounded())
+        if (pState.onGround)
         {
             dashed = false;
         }
@@ -196,7 +189,7 @@ public class PlayerMovements : MonoBehaviour
         // Dash at the direction the character is facing
         rb.velocity = new Vector2(transform.localScale.x * dashSpeed, 0); 
 
-        if (Grounded())
+        if (pState.onGround)
         {
             // Instanstiate dash effect as a child object
             Instantiate(dashEffect, transform); 
@@ -244,7 +237,7 @@ public class PlayerMovements : MonoBehaviour
 
                 pState.isJumping = true;
             }
-            else if (!Grounded() && airJumpCounter < maxAirJumps && jumpPressed)
+            else if (!pState.onGround && airJumpCounter < maxAirJumps && jumpPressed)
             {
                 // Air jump
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
@@ -262,12 +255,12 @@ public class PlayerMovements : MonoBehaviour
             pState.isJumping = false;
         }
 
-        anim.SetBool("Jumping", !Grounded());
+        anim.SetBool("Jumping", !pState.onGround);
     }
 
     void UpdateJumpVariables()
     {
-        if (Grounded())
+        if (pState.onGround)
         {
             pState.isJumping = false;
             coyoteTimeCounter = coyoteTime;
@@ -310,26 +303,6 @@ public class PlayerMovements : MonoBehaviour
             // Released jump: slower rise
             rb.velocity += Vector2.up * Physics2D.gravity.y * (riseMultiplier - 1) * Time.fixedDeltaTime;
         }
-    }
-
-    // ================================================================================
-    //                          Check Ground
-    // ================================================================================
-
-    public bool Grounded() 
-    {
-        if (
-            Physics2D.Raycast(groundCheckPoint.position,
-                              Vector2.down, groundCheckY, whatIsGround) 
-            || Physics2D.Raycast(groundCheckPoint.position + new Vector3(groundCheckX, 0, 0),
-                                 Vector2.down, groundCheckY, whatIsGround)
-            || Physics2D.Raycast(groundCheckPoint.position + new Vector3(-groundCheckX, 0, 0),
-                                 Vector2.down, groundCheckY, whatIsGround)
-        )
-        {
-            return true;
-        }
-        return false;
     }
     
     // ================================================================================

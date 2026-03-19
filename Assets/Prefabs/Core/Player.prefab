@@ -433,12 +433,6 @@ MonoBehaviour:
   maxFallSpeed: 15
   fallMultiplier: 3
   riseMultiplier: 8
-  groundCheckPoint: {fileID: 1820784873338373850}
-  groundCheckY: 0.1
-  groundCheckX: 0.27
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 8
   sideAttackArea: {x: 4.5, y: 3.5}
   upAttackArea: {x: 3.5, y: 4.5}
   downAttackArea: {x: 3.5, y: 4.5}
@@ -475,6 +469,18 @@ MonoBehaviour:
   isJumping: 0
   isDashing: 0
   inWater: 0
+  isSubmerged: 0
+  onGround: 0
+  groundSensor: {fileID: 1820784873338373850}
+  groundCheckY: 0.1
+  groundCheckX: 0.1
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  headSensor: {fileID: 8817662664141713333}
+  waterLayer:
+    serializedVersion: 2
+    m_Bits: 16
 --- !u!114 &2460139203488574833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -512,14 +518,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d58ad1682c4355646bdc227f7724dc39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  headSensor: {fileID: 8817662664141713333}
-  waterLayer:
-    serializedVersion: 2
-    m_Bits: 16
   swimSinkSpeed: 4
   swimUpForce: 7
   swimSubmergeTime: 7
-  drownSinkSpeed: 1
+  drownSinkSpeed: 2
   noSwimUpForce: 0
   drownSubmergeTime: 0.5
   activeSinkSpeed: 0

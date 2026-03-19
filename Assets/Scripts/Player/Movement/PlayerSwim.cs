@@ -2,36 +2,31 @@ using UnityEngine;
 
 public class PlayerSwim : MonoBehaviour
 {
-    [Header("Sensors")]
-    [SerializeField] private Transform headSensor;
-    [SerializeField] private LayerMask waterLayer;
-    private bool isSubmerged;
-
-    [Header("Configs With Swim")]
+    [Header("Config for Swim")]
     [SerializeField] private float swimSinkSpeed = 4f;
     [SerializeField] private float swimUpForce = 7f;
     [SerializeField] private float swimSubmergeTime = 7f;
 
-    [Header("Configs Without Swim")]
+    [Header("Config for No Swim")]
     [SerializeField] private float drownSinkSpeed = 1f;
     [SerializeField] private float noSwimUpForce = 0f;
     [SerializeField] private float drownSubmergeTime = 1f;
 
-    [Header("Active Configs")]
+    [Header("Active Config")]
     [SerializeField] private float activeSinkSpeed;
     [SerializeField] private float activeSwimUpForce;
     [SerializeField] private float activeMaxSubmergeTime;
     
     private float currentSubmergeTime;
     private Rigidbody2D rb;
-    private PlayerStateList pState;
+    private PlayerStates pState;
     private LastSafeGround tracker;
     private float originalGravity;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        pState = GetComponent<PlayerStateList>();
+        pState = GetComponent<PlayerStates>();
         tracker = GetComponent<LastSafeGround>();
         originalGravity = rb.gravityScale;
     }
@@ -43,7 +38,6 @@ public class PlayerSwim : MonoBehaviour
         if (!pState.inWater) 
         {
             currentSubmergeTime = 0f;
-            isSubmerged = false;
             return;
         }
 
@@ -52,9 +46,7 @@ public class PlayerSwim : MonoBehaviour
             HandleSwimming();
         }
 
-        isSubmerged = Physics2D.OverlapPoint(headSensor.position, waterLayer);
-
-        if (isSubmerged) 
+        if (pState.isSubmerged) 
             HandleDrowning();
         else
             currentSubmergeTime = 0f;

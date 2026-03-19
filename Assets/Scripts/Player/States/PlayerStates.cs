@@ -5,14 +5,6 @@ using UnityEngine;
 
 public class PlayerStates : MonoBehaviour
 {
-    [Header("Current States")]
-    public bool isJumping = false;
-    public bool isDashing = false;
-    public bool isClimbing = false;
-    public bool inWater = false;
-    public bool isSubmerged = false; // checked by head sensor
-    public bool onGround = false; // checked by ground sensor
-
     [Header("Ground Sensor")]
     [SerializeField] private Transform groundSensor;
     [SerializeField] private float groundCheckY = 0.1f;
@@ -22,6 +14,15 @@ public class PlayerStates : MonoBehaviour
     [Header("Water Sensor")]
     [SerializeField] private Transform headSensor;
     [SerializeField] private LayerMask waterLayer;
+
+    [Header("Current States")]
+    public bool isJumping = false;
+    public bool isDashing = false;
+    public bool canClimb = false;
+    public bool isClimbing = false;
+    public bool inWater = false;
+    public bool isSubmerged = false; // checked by head sensor
+    public bool onGround = false; // checked by ground sensor
 
     void Update()
     {

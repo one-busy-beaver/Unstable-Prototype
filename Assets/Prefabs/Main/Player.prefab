@@ -34,37 +34,6 @@ Transform:
   - {fileID: 8319246731274327532}
   m_Father: {fileID: 967022338603152300}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1159730189503527908
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 266327662369003857}
-  m_Layer: 0
-  m_Name: Rope Sensor
-  m_TagString: Untagged
-  m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &266327662369003857
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1159730189503527908}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.635, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5882942666763323773}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1777976609075726216
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,12 +498,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8f502799f8eb894fb60be317b45f46a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isJumping: 0
-  isDashing: 0
-  isClimbing: 0
-  inWater: 0
-  isSubmerged: 0
-  onGround: 0
   groundSensor: {fileID: 1820784873338373850}
   groundCheckY: 0.1
   groundCheckX: 0.1
@@ -545,6 +508,13 @@ MonoBehaviour:
   waterLayer:
     serializedVersion: 2
     m_Bits: 16
+  isJumping: 0
+  isDashing: 0
+  canClimb: 0
+  isClimbing: 0
+  inWater: 0
+  isSubmerged: 0
+  onGround: 0
 --- !u!114 &2460139203488574833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -605,10 +575,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   climbSpeed: 6
   jumpOffForce: {x: 10, y: 10}
-  ropeSensor: {fileID: 266327662369003857}
-  ropeLayer:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!1 &7871733578589014881
 GameObject:
   m_ObjectHideFlags: 0
@@ -670,7 +636,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8817662664141713333}
-  - {fileID: 266327662369003857}
   - {fileID: 1820784873338373850}
   m_Father: {fileID: 967022338603152300}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

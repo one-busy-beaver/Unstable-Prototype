@@ -338,10 +338,10 @@ GameObject:
   - component: {fileID: 8607967353826110799}
   - component: {fileID: 6716910725454112583}
   - component: {fileID: 5205696756399954243}
-  - component: {fileID: 1739215284551069930}
   - component: {fileID: 7544859687345710090}
   - component: {fileID: 2969038632223453775}
   - component: {fileID: 5945173735796336648}
+  - component: {fileID: 1155540870399701740}
   m_Layer: 4
   m_Name: Water
   m_TagString: Untagged
@@ -451,19 +451,6 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
---- !u!114 &1739215284551069930
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7050059822198129268}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80ff93d01e7ef1041b7b3f54be4bd67a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 0}
 --- !u!19719996 &7544859687345710090
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -560,7 +547,7 @@ CompositeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_GeometryType: 0
+  m_GeometryType: 1
   m_GenerationType: 0
   m_EdgeRadius: 0
   m_ColliderPaths:
@@ -572,6 +559,18 @@ CompositeCollider2D:
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
   m_CompositeGameObject: {fileID: 7050059822198129268}
+--- !u!114 &1155540870399701740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7050059822198129268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9aebac6cd7138d4e996cd265118b065, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7224502477228275240
 GameObject:
   m_ObjectHideFlags: 0

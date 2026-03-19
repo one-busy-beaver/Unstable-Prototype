@@ -113,13 +113,15 @@ public class PlayerMovements : MonoBehaviour
     {
         GetInputs();
         UpdateJumpVariables();
-        //if (pState.dashing) return; // Movement won't be triggered if the player is dashing
         if (!pState.isDashing)
         {
             Flip();
             Move();
         }
-        Jump();
+        if (!pState.inWater) 
+        {
+            Jump();
+        }
         StartDash();
         Attack();
 
@@ -141,7 +143,10 @@ public class PlayerMovements : MonoBehaviour
 
     void FixedUpdate()
     {
-        UpdateAirBorneState();
+        if (!pState.inWater) 
+        {
+            UpdateAirBorneState();
+        }
     }
 
     // ================================================================================

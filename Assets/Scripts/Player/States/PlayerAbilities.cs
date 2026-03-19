@@ -7,12 +7,12 @@ public class PlayerAbilities : MonoBehaviour
     [Header("Unlocked Abilities")]
     [SerializeField] private bool _hasDash = false;
     [SerializeField] private bool _hasDoubleJump = false;
-
-    //private bool _hasWallJump = false;
+    [SerializeField] private bool _hasSwim = false;
 
     // Public "Getters"
     public bool HasDash => _hasDash;
     public bool HasDoubleJump => _hasDoubleJump;
+    public bool HasSwim => _hasSwim;
 
     private void Awake() { if (Instance == null) Instance = this; }
 
@@ -23,7 +23,7 @@ public class PlayerAbilities : MonoBehaviour
         {
             case "Dash": _hasDash = true; break;
             case "DoubleJump": _hasDoubleJump = true; break;
-            //case "WallSlide": _hasWallJump = true; break;
+            case "Swim": _hasSwim = true; break;
             default: Debug.LogWarning($"Ability {abilityID} not found!"); break;
         }
     }

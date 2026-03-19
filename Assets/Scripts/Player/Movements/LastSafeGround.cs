@@ -27,7 +27,7 @@ public class LastSafeGround : MonoBehaviour
         // and a small interval has passed to avoid saving "cliff edge" frames.
         if (timer >= updateInterval)
         {
-            if (playerMovements != null && pState.onGround)
+            if (playerMovements != null && pState.onGround && !pState.inWater)
             {
                 lastSafePosition = transform.position;
             }

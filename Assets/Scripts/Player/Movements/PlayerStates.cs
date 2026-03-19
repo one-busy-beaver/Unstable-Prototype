@@ -37,7 +37,7 @@ public class PlayerStates : MonoBehaviour
 
     private void CheckSubmersion()
     {
-        if (inWater && headSensor != null)
+        if (headSensor != null)
         {
             isSubmerged = Physics2D.OverlapPoint(headSensor.position, waterLayer);
         }

@@ -8,9 +8,9 @@ public class PlayerSwim : MonoBehaviour
     [SerializeField] private float swimSubmergeTime = 7f;
 
     [Header("Config for No Swim")]
-    [SerializeField] private float drownSinkSpeed = 1f;
+    [SerializeField] private float drownSinkSpeed = 2f;
     [SerializeField] private float noSwimUpForce = 0f;
-    [SerializeField] private float drownSubmergeTime = 1f;
+    [SerializeField] private float drownSubmergeTime = 0.5f;
 
     [Header("Active Config")]
     [SerializeField] private float activeSinkSpeed;

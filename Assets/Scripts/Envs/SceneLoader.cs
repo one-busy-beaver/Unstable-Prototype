@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class SceneLoader : MonoBehaviour
 {
     public static SceneLoader Instance;
-    private string targetSpawnID;
+    private SceneID exitedSceneID;
     [SerializeField] private GameObject playerPrefab;
     
 
@@ -19,22 +19,11 @@ public class SceneLoader : MonoBehaviour
         Instance = this;
     }
 
-    private void OnEnable()
-    {
-        // This connects your method to the Unity Engine
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-
-    private void OnDisable()
-    {
-        // This disconnects it when the object is destroyed
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
+    private void OnEnable() => SceneManager.sceneLoaded += OnSceneLoaded; // Connect the method to the Unity Engine
+    private void OnDisable() => SceneManager.sceneLoaded -= OnSceneLoaded; // Disconnect it when the object is destroyed
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-
-        // Safety: Don't spawn players in the Bootstrap scene itself
         if (scene.name == "_Bootstrap") return;
 
         // Find every SpawnPoint component in the new scene
@@ -42,11 +31,11 @@ public class SceneLoader : MonoBehaviour
         SpawnPoint selectedSpawn = null;
 
         // Priority 1: Look for the specific ID we requested
-        if (!string.IsNullOrEmpty(targetSpawnID))
+        if (!string.IsNullOrEmpty(exitedSceneID.ToString()))
         {
             foreach (SpawnPoint sp in allSpawns)
             {
-                if (sp.spawnID == targetSpawnID)
+                if (sp.exitedSceneID == exitedSceneID)
                 {
                     selectedSpawn = sp;
                     break;
@@ -88,14 +77,14 @@ public class SceneLoader : MonoBehaviour
             Debug.LogError($"SceneLoader: No SpawnPoints found in {scene.name}!");
         }
 
-        targetSpawnID = null; // Reset for next time
+        exitedSceneID = 0; // Reset for next time
     }
 
-    public void LoadScene(string sceneName, string spawnPoint)
+    public void LoadScene(SceneID sceneToLoad, SceneID pointToSpawn)
     {
-        targetSpawnID = spawnPoint;
+        exitedSceneID = pointToSpawn;
         // Async does not pause the current scene
-        SceneManager.LoadSceneAsync(sceneName);
+        SceneManager.LoadSceneAsync(sceneToLoad.ToString());
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

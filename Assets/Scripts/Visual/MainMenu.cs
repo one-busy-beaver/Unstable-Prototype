@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
 
-    [SerializeField] string sceneToLoad;
-    [SerializeField] string pointToSpawn;
+    [SerializeField] SceneID sceneToLoad;
+    [SerializeField] SceneID pointToSpawn;
 
     public void PlayGame()
     {

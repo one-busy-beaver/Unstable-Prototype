@@ -34,8 +34,6 @@ public class PlayerClimb : MonoBehaviour
             atRope = Physics2D.OverlapPoint(ropeSensor.position, ropeLayer);
         }
 
-        Debug.Log($"climb update: atRope? {atRope}, ropeSensor? {ropeSensor} ");
-
         // 2. Attach to rope (Ignore unless pressing UP)
         if (atRope && !pState.isClimbing && moveInput.y > 0.5f)
         {

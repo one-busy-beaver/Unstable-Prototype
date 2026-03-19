@@ -4,20 +4,17 @@ using UnityEngine;
 public class SceneExit : MonoBehaviour
 {
     [Header("Transition Settings")]
-    [SerializeField] private string sceneToLoad;
-    [SerializeField] private string targetSpawnID;
+    [SerializeField] private SceneID sceneToLoad;
+    [SerializeField] private SceneID exitedSceneID;
     [SerializeField] private bool autoTrigger = true;
 
     [Header("Visuals (Editor Only)")]
     [SerializeField] private Color gizmoColor = new Color(0.65f, 0.89f, 0.34f, 0.5f); // #a6e356 with alpha
 
-
-    // Ensure the collider is set to trigger so it doesn't block the player
-    private void Awake() => GetComponent<BoxCollider2D>().isTrigger = true;
+    private void Awake() => GetComponent<BoxCollider2D>().isTrigger = true; // Ensure collider is set to trigger
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // Only trigger automatically if autoTrigger is true
         if (autoTrigger && other.CompareTag("Player"))
         {
             ExecuteTransition();
@@ -27,7 +24,7 @@ public class SceneExit : MonoBehaviour
     public void ExecuteTransition()
     {
         if (SceneLoader.Instance != null)
-            SceneLoader.Instance.LoadScene(sceneToLoad, targetSpawnID);
+            SceneLoader.Instance.LoadScene(sceneToLoad, exitedSceneID);
         else
             Debug.LogError("SceneLoader missing!");
     }

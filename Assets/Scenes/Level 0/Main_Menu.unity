@@ -609,8 +609,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0de836e9b420be24ca3a3e16fbc5c7cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: wics 1
-  pointToSpawn: Initial Spawn
+  sceneToLoad: 2
+  pointToSpawn: 1
 --- !u!1 &1666365947
 GameObject:
   m_ObjectHideFlags: 0

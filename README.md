@@ -13,7 +13,6 @@ A 2D low horror game featured with exploration, secrets, and combat.
 - scene loader
 - exit-spawn id match
 - persistant items
-- bootstrap scene
 
 ### Character
 
@@ -42,6 +41,12 @@ A 2D low horror game featured with exploration, secrets, and combat.
 - tower front
 - tower entry (working)
 
+### Helpers
+
+- bootstrap scene
+- align and sync text
+- asset stack (row and column)
+
 
 
 ## Features to be Implemented
@@ -51,13 +56,6 @@ A 2D low horror game featured with exploration, secrets, and combat.
 - item pickup
 - ability pickup
 - hazard 
-
-### System 
-
-- camera confiner
-- scene fade
-- inventory
-- shader / illumination
 
 ### Character
 
@@ -71,6 +69,21 @@ A 2D low horror game featured with exploration, secrets, and combat.
 
 - enemy
 - boss
+
+### Fun Stuff
+
+- stochastic / cellular automata corruption
+- harmonic resonance platforms
+- particle systems
+- the "anxiety" vector field
+- procedural animation
+
+### System 
+
+- camera confiner
+- scene fade
+- inventory
+- shader / illumination
 
 
 

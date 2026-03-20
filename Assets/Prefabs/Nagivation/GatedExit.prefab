@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 9157499590315058783}
   - component: {fileID: 5039657650780611593}
   - component: {fileID: 8130209505463484259}
-  - component: {fileID: 8376382893290187454}
-  - component: {fileID: 6422279701890135183}
   - component: {fileID: -2539870076553886529}
+  - component: {fileID: 1421471847283050128}
+  - component: {fileID: 8376382893290187454}
   m_Layer: 0
-  m_Name: Entrance
+  m_Name: GatedExit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -134,41 +134,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8376382893290187454
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 856283577005959118}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fee1ef80e2e37f148b9b55e8c357bbbf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneToLoad: 
-  targetSpawnID: 0
-  autoTrigger: 0
-  gizmoColor: {r: 0.6509804, g: 0.8901961, b: 0.3372549, a: 0.44313726}
---- !u!114 &6422279701890135183
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 856283577005959118}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a85a97302751b744cb9f572e132505fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  promptText: Interact
-  useDecisionPanel: 0
-  decisionMessage: Press E to Interact
-  localCanvas: {fileID: 3981211219180336485}
-  localTextComponent: {fileID: 860997481796375974}
-  requiredKey: 
-  sceneExit: {fileID: 8376382893290187454}
 --- !u!114 &-2539870076553886529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,6 +149,38 @@ MonoBehaviour:
   localText: {fileID: 860997481796375974}
   colliderToFollow: {fileID: 5039657650780611593}
   offsetHeight: 0.5
+--- !u!114 &1421471847283050128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856283577005959118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8fc16684a437d2488c90edd939041a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promptText: Enter
+  interaction: {fileID: 8376382893290187454}
+  localCanvas: {fileID: 3981211219180336485}
+  localTextComponent: {fileID: 860997481796375974}
+--- !u!114 &8376382893290187454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856283577005959118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fee1ef80e2e37f148b9b55e8c357bbbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoTrigger: 0
+  sceneToLoad: 0
+  exitedSceneID: 0
+  gizmoColor: {r: 0.6509804, g: 0.8901961, b: 0.3372549, a: 0.44313726}
 --- !u!1 &2113300191195696723
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,7 +246,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: Enter
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

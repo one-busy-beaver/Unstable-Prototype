@@ -16,7 +16,7 @@ public class PlayerAbilities : MonoBehaviour
 
     private void Awake() { if (Instance == null) Instance = this; }
 
-    // Call this from your ItemPickup script!
+    // Call this from your ItemPickup script
     public void Unlock(string abilityID)
     {
         switch (abilityID)

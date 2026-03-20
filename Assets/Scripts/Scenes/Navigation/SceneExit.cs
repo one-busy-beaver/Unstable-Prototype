@@ -1,17 +1,27 @@
 using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider2D))]
-public class SceneExit : MonoBehaviour
+public class SceneExit : GatedInteraction
 {
     [Header("Transition Settings")]
     [SerializeField] private SceneID sceneToLoad;
     [SerializeField] private SceneID exitedSceneID;
-    [SerializeField] private bool autoTrigger = true;
 
     [Header("Visuals (Editor Only)")]
     [SerializeField] private Color gizmoColor = new Color(0.65f, 0.89f, 0.34f, 0.5f); // #a6e356 with alpha
 
+    public override void Execute()
+    {
+        ExecuteTransition();
+    }
+
+    void Reset()
+    {
+        autoTrigger = true;
+    }
+
     private void Awake() => GetComponent<BoxCollider2D>().isTrigger = true; // Ensure collider is set to trigger
+    
 
     private void OnTriggerEnter2D(Collider2D other)
     {

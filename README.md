@@ -45,12 +45,16 @@ A 2D low horror game featured with exploration, secrets, and combat. To check ou
 
 ### Scenes
 
-- main menu
 - remote village
     - house
     - garage
 - tower front
 - tower entry (working)
+
+### UI
+
+- main menu
+- pause menu (ESC)
 
 ### Dev Helpers
 
@@ -131,7 +135,6 @@ A 2D low horror game featured with exploration, secrets, and combat. To check ou
 ### UI
 
 - main canvas
-    - pause menu (return to main menu)
     - scene transition fade
     - ability and item unlock
     - inventory and abilities

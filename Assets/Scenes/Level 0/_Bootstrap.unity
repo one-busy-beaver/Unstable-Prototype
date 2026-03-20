@@ -123,6 +123,24 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &784316729 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 13679107337373771, guid: 259fff037ab90ac408090f97a4e143d7, type: 3}
+  m_PrefabInstance: {fileID: 973654827}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &784316734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 784316729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2da17af72a2584595bd7cd3d924b27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenuUI: {fileID: 1452761974}
 --- !u!1001 &973654827
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -173,15 +191,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7996059210525331306, guid: 259fff037ab90ac408090f97a4e143d7, type: 3}
       propertyPath: m_Name
-      value: --- Persistant
+      value: Persistant
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5909968876098350723, guid: 259fff037ab90ac408090f97a4e143d7, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7996059210525331306, guid: 259fff037ab90ac408090f97a4e143d7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 973654829}
+    - targetCorrespondingSourceObject: {fileID: 13679107337373771, guid: 259fff037ab90ac408090f97a4e143d7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 784316734}
   m_SourcePrefab: {fileID: 100100000, guid: 259fff037ab90ac408090f97a4e143d7, type: 3}
 --- !u!1 &973654828 stripped
 GameObject:
@@ -201,6 +223,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultScene: MainMenu
+--- !u!1 &1452761974 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8058543326902281315, guid: 259fff037ab90ac408090f97a4e143d7, type: 3}
+  m_PrefabInstance: {fileID: 973654827}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

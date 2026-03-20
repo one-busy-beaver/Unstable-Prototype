@@ -1,6 +1,6 @@
 # Unstable Prototype
 
-A 2D low horror game featured with exploration, secrets, and combat.
+A 2D low horror game featured with exploration, secrets, and combat. To check out the Unity web build, see [Unity Web Game](https://github.com/one-busy-beaver/Unity-Web-Game).
 
 
 
@@ -30,8 +30,11 @@ A 2D low horror game featured with exploration, secrets, and combat.
 - ground 
 - water
 - rope
+
+### Interactables
+
 - door
-- locked door
+- ability pickup
 
 ### Scenes
 
@@ -52,19 +55,30 @@ A 2D low horror game featured with exploration, secrets, and combat.
 
 ## Features to be Implemented
 
-### Environment
+### Interactables
 
 - item pickup
-- ability pickup
-- hazard 
+- locked door
+
+### Environment
+
+- spikes
+- moving platforms
 
 ### Character
 
 - jump buffer
-- death
 - attack
+- death
 - health
 - hurt
+- item attacks
+- (ledge climb)
+- (glide)
+- (zipline) 
+- (run)
+- (wall jump)
+- (wall climb)
 
 ### NPC
 
@@ -78,35 +92,21 @@ A 2D low horror game featured with exploration, secrets, and combat.
 - particle systems
 - the "anxiety" vector field
 - procedural animation
+- roguelike map
 
 ### System 
 
-- camera confiner
+- character data save on scene load
 - inventory
+- camera confiner
 - shader / illumination
+- audio player
+- save file
 
 ### UI
 
 - scene transition fade
 - ability and item unlock
-- locked door
 - inventory and abilities
-
-
-
-## Wishlist
-
-### System 
-
-- audio player
-- character data
-- save file
-
-### Character
-
-- ledge climb
-- glide
-- zipline 
-- run
-- wall jump
-- wall climb
+- control remap page
+- load save

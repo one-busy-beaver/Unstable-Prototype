@@ -14,7 +14,17 @@ public class PlayerAbilities : MonoBehaviour
     public bool HasDoubleJump => _hasDoubleJump;
     public bool HasSwim => _hasSwim;
 
-    private void Awake() { if (Instance == null) Instance = this; }
+    private void Awake() 
+    { 
+        if (Instance == null) 
+        {
+            Instance = this;
+        }
+        else if (Instance != this)
+        {
+            Destroy(gameObject);
+        }
+    }
 
     // Call this from your ItemPickup script
     public void Unlock(AbilityType ability)

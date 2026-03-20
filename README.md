@@ -17,12 +17,19 @@ A 2D low horror game featured with exploration, secrets, and combat. To check ou
 
 ### Character
 
-- walk & flip
-- jump & double jump
-- dash
-- swim & drown
-- rope climb
-- line renderer
+- movements
+    - walk & flip (A, D)
+    - jump & double jump (Space)
+    - dash (Shift)
+    - swim & drown (Space)
+    - rope climb (W, S)
+    - interaction (E)
+- data
+    - player abilities (persistant)
+    - player states (FSM)
+    - last safe ground storage
+- visualization
+    - line renderer
 
 ### Environment
 
@@ -45,11 +52,12 @@ A 2D low horror game featured with exploration, secrets, and combat. To check ou
 - tower front
 - tower entry (working)
 
-### Helpers
+### Dev Helpers
 
 - bootstrap scene
-- align and sync text
-- asset stack (row and column)
+- scene enum generator
+- align and sync text for display
+- auto asset stack (row and column)
 
 
 
@@ -79,20 +87,22 @@ A 2D low horror game featured with exploration, secrets, and combat. To check ou
 
 ### Character
 
-- jump buffer
-- jump not moving forward bug
-- opposite key pressed bug
+- bug fix
+    - jump buffer
+    - jump not moving forward bug
+    - opposite key pressed not moving bug
 - attack
 - death
 - health
 - hurt
 - item attacks
-- (ledge climb)
-- (glide)
-- (zipline) 
-- (run)
-- (wall jump)
-- (wall climb)
+- wishlist
+    - (ledge climb)
+    - (glide)
+    - (zipline) 
+    - (run)
+    - (wall jump)
+    - (wall climb)
 
 ### NPC
 
@@ -110,7 +120,6 @@ A 2D low horror game featured with exploration, secrets, and combat. To check ou
 
 ### System 
 
-- character data save on scene load
 - inventory
 - camera confiner
     - find player

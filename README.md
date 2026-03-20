@@ -2,6 +2,8 @@
 
 A 2D low horror game featured with exploration, secrets, and combat.
 
+
+
 ## Features Implemented
 
 ### System
@@ -10,7 +12,7 @@ A 2D low horror game featured with exploration, secrets, and combat.
 - scene transition
 - scene loader
 - exit-spawn id match
-- persistent items
+- persistant items
 - bootstrap scene
 
 ### Character
@@ -18,16 +20,18 @@ A 2D low horror game featured with exploration, secrets, and combat.
 - walk & flip
 - jump & double jump
 - dash
-- swim
-- climb
+- swim & drown
+- rope climb
 - line renderer
 
 ### Environment
 
+- tile map
 - ground 
 - water
 - rope
-- tile maps
+- door
+- locked door
 
 ### Scenes
 
@@ -38,26 +42,15 @@ A 2D low horror game featured with exploration, secrets, and combat.
 - tower front
 - tower entry (working)
 
-### Interactable
 
-- door
-- locked door
-
-### Environment
-
-- hazard 
-
-### NPC
-
-- enemy
-- boss
 
 ## Features to be Implemented
 
-### Interactable
+### Environment
 
 - item pickup
 - ability pickup
+- hazard 
 
 ### System 
 
@@ -73,6 +66,13 @@ A 2D low horror game featured with exploration, secrets, and combat.
 - attack
 - health
 - hurt
+
+### NPC
+
+- enemy
+- boss
+
+
 
 ## Wishlist
 

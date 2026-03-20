@@ -87,6 +87,11 @@ public class PlayerJump : MonoBehaviour
 
     void UpdateJumpVariables()
     {
+        if (PlayerAbilities.Instance != null)
+        {
+            maxAirJumps = PlayerAbilities.Instance.HasDoubleJump ? 1 : 0;
+        }
+
         if (pState.onGround)
         {
             pState.isJumping = false;
@@ -130,10 +135,5 @@ public class PlayerJump : MonoBehaviour
             // Released jump: slower rise
             rb.velocity += Vector2.up * Physics2D.gravity.y * (riseMultiplier - 1) * Time.fixedDeltaTime;
         }
-    }
-
-    public void SetMaxAirJumps(int amount)
-    {
-        maxAirJumps = amount;
     }
 }

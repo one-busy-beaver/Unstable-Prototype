@@ -36,8 +36,6 @@ public class PlayerSwim : MonoBehaviour
 
     void Update()
     {
-        UpdateActiveAbilities();
-
         if (!pState.inWater) 
         {
             currentSubmergeTime = 0f;
@@ -55,17 +53,10 @@ public class PlayerSwim : MonoBehaviour
             currentSubmergeTime = 0f;
     }
 
-    public void UpdateActiveAbilities()
-    {
-        bool hasSwim = PlayerAbilities.Instance != null && PlayerAbilities.Instance.HasSwim;
-
-        activeSinkSpeed = hasSwim ? swimSinkSpeed : drownSinkSpeed;
-        activeSwimUpForce = hasSwim ? swimUpForce : noSwimUpForce;
-        activeMaxSubmergeTime = hasSwim ? swimSubmergeTime : drownSubmergeTime;
-    }
-
     private void HandleSwim()
     {
+        UpdateActiveAbilities();
+
         // Use your existing InputManager
         if (InputManager.Instance.Controls.Player.Jump.triggered)
         {
@@ -76,6 +67,15 @@ public class PlayerSwim : MonoBehaviour
             // Clamp downward velocity so you sink slowly instead of dropping like a rock
             rb.velocity = new Vector2(rb.velocity.x, -activeSinkSpeed);
         }
+    }
+
+    public void UpdateActiveAbilities()
+    {
+        bool hasSwim = PlayerAbilities.Instance != null && PlayerAbilities.Instance.HasSwim;
+
+        activeSinkSpeed = hasSwim ? swimSinkSpeed : drownSinkSpeed;
+        activeSwimUpForce = hasSwim ? swimUpForce : noSwimUpForce;
+        activeMaxSubmergeTime = hasSwim ? swimSubmergeTime : drownSubmergeTime;
     }
 
     private void HandleDrown()

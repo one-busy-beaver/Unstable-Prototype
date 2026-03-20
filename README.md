@@ -10,9 +10,10 @@ A 2D low horror game featured with exploration, secrets, and combat.
 
 - camera follow
 - scene transition
-- scene loader
-- exit-spawn id match
-- persistant items
+    - scene loader
+    - exit-spawn id match
+    - gated exit
+    - persistant items
 
 ### Character
 
@@ -81,9 +82,15 @@ A 2D low horror game featured with exploration, secrets, and combat.
 ### System 
 
 - camera confiner
-- scene fade
 - inventory
 - shader / illumination
+
+### UI
+
+- scene transition fade
+- ability and item unlock
+- locked door
+- inventory and abilities
 
 
 

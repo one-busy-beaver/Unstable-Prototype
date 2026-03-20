@@ -10,11 +10,6 @@ public class SceneExit : GatedInteraction
     [Header("Visuals (Editor Only)")]
     [SerializeField] private Color gizmoColor = new Color(0.65f, 0.89f, 0.34f, 0.5f); // #a6e356 with alpha
 
-    public override void Execute()
-    {
-        ExecuteTransition();
-    }
-
     void Reset()
     {
         autoTrigger = true;
@@ -27,11 +22,11 @@ public class SceneExit : GatedInteraction
     {
         if (autoTrigger && other.CompareTag("Player"))
         {
-            ExecuteTransition();
+            Execute();
         }
     }
 
-    public void ExecuteTransition()
+    public override void Execute()
     {
         if (SceneLoader.Instance != null)
             SceneLoader.Instance.LoadScene(sceneToLoad, exitedSceneID);

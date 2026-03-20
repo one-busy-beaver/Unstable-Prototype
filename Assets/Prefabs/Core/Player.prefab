@@ -588,7 +588,7 @@ MonoBehaviour:
   dashSpeed: 20
   dashTime: 0.15
   dashCooldown: 0.3
-  dashEffect: {fileID: 0}
+  dashEffect: {fileID: 5577193781993967511, guid: 6469b2cac5cc59d4e93c11f8540134a4, type: 3}
 --- !u!114 &3792904348860893158
 MonoBehaviour:
   m_ObjectHideFlags: 0

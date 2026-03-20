@@ -17,14 +17,13 @@ public class PlayerAbilities : MonoBehaviour
     private void Awake() { if (Instance == null) Instance = this; }
 
     // Call this from your ItemPickup script
-    public void Unlock(string abilityID)
+    public void Unlock(AbilityType ability)
     {
-        switch (abilityID)
+        switch (ability)
         {
-            case "Dash": _hasDash = true; break;
-            case "DoubleJump": _hasDoubleJump = true; break;
-            case "Swim": _hasSwim = true; break;
-            default: Debug.LogWarning($"Ability {abilityID} not found!"); break;
+            case AbilityType.Dash: _hasDash = true; break;
+            case AbilityType.DoubleJump: _hasDoubleJump = true; break;
+            case AbilityType.Swim: _hasSwim = true; break;
         }
     }
 }

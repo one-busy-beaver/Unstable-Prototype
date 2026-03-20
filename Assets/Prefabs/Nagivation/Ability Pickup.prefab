@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 8130209505463484259}
   - component: {fileID: -2539870076553886529}
   - component: {fileID: 1421471847283050128}
-  - component: {fileID: 8376382893290187454}
+  - component: {fileID: 7301104389780094940}
   m_Layer: 0
-  m_Name: GatedExit
+  m_Name: Ability Pickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -161,11 +161,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8fc16684a437d2488c90edd939041a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptText: Enter
-  interaction: {fileID: 8376382893290187454}
+  promptText: Pick up
+  interaction: {fileID: 7301104389780094940}
   localCanvas: {fileID: 3981211219180336485}
   localTextComponent: {fileID: 860997481796375974}
---- !u!114 &8376382893290187454
+--- !u!114 &7301104389780094940
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -174,13 +174,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 856283577005959118}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fee1ef80e2e37f148b9b55e8c357bbbf, type: 3}
+  m_Script: {fileID: 11500000, guid: 5bd777a486486394ca0e29df672b6c80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   autoTrigger: 0
-  sceneToLoad: 0
-  exitedSceneID: 0
-  gizmoColor: {r: 0.6509804, g: 0.8901961, b: 0.3372549, a: 0.44313726}
+  abilityToGrant: 1
+  destroyOnPickup: 1
 --- !u!1 &2113300191195696723
 GameObject:
   m_ObjectHideFlags: 0

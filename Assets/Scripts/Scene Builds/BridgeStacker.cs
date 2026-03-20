@@ -58,9 +58,13 @@ public class BridgeStacker : MonoBehaviour
 
     public void Build()
     {
+        if (this == null || columnPrefab == null) return;
+        
+#if UNITY_EDITOR
         // Fix: Prevent execution if this is a persistent asset template 
         // instead of an instance in the scene or prefab editor.
-        if (this == null || columnPrefab == null || UnityEditor.EditorUtility.IsPersistent(this)) return;
+        if (UnityEditor.EditorUtility.IsPersistent(this)) return;
+#endif
 
         // Clear existing children
         for (int i = transform.childCount - 1; i >= 0; i--)

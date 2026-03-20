@@ -64,10 +64,24 @@ A 2D low horror game featured with exploration, secrets, and combat. To check ou
 
 - spikes
 - moving platforms
+- one-way platforms
+
+### Scenes
+
+- tower front 
+    - mansion
+- tower entry
+    - sub rooms
+- tower staircase
+- tower exterior
+- tower top
+- tower basement
 
 ### Character
 
 - jump buffer
+- jump not moving forward bug
+- opposite key pressed bug
 - attack
 - death
 - health
@@ -99,14 +113,19 @@ A 2D low horror game featured with exploration, secrets, and combat. To check ou
 - character data save on scene load
 - inventory
 - camera confiner
+    - find player
+    - polygon collider outline
 - shader / illumination
 - audio player
 - save file
 
 ### UI
 
-- scene transition fade
-- ability and item unlock
-- inventory and abilities
-- control remap page
-- load save
+- main canvas
+    - pause menu (return to main menu)
+    - scene transition fade
+    - ability and item unlock
+    - inventory and abilities
+- main menu
+    - control remap page
+    - load save

@@ -538,7 +538,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b183ed26023acb74a895825097b42cb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visualize: 1
+  visualize: 0
   maxPoints: 15
   recordInterval: 0.05
 --- !u!114 &1364351675922517713

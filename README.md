@@ -2,74 +2,91 @@
 
 A 2D low horror game featured with exploration, secrets, and combat.
 
-## Goal of Prototype Stage
-
-Even though the main icon/theme of this game is to ascend a tower, psychologically, it makes sense for the player to first descend down in order to face the deepest fear in the subconsciousness. Something like "the final obstacle is always there at the very beginning" sounds like the right progression of this game. For level design, I should first focus on designing a vertical platformer challenge as well as many horizontal areas that serve as side stories.
-
 ## Features Implemented
 
 ### System
 
 - camera follow
 - scene transition
-- start menu
+- scene loader
+- exit-spawn id match
+- persistent items
+- bootstrap scene
 
 ### Character
 
-- walk
-- flip
-- double jump
+- walk & flip
+- jump & double jump
 - dash
+- swim
+- climb
 - line renderer
 
 ### Environment
 
-- floor (currently named as ground)
-- dev scene 1 (for hackathon)
-- level 1 (for hackathon)
+- ground 
+- water
+- rope
+- tile maps
+
+### Scenes
+
+- main menu
+- remote village
+    - house
+    - garage
+- tower front
+- tower entry (working)
+
+### Interactable
+
+- door
+- locked door
+
+### Environment
+
+- hazard 
+
+### NPC
+
+- enemy
+- boss
 
 ## Features to be Implemented
+
+### Interactable
+
+- item pickup
+- ability pickup
 
 ### System 
 
 - camera confiner
 - scene fade
-- audio player
 - inventory
 - shader / illumination
-- character data (later)
-- save file (later)
 
 ### Character
 
 - jump buffer
-- climb Vpole
-- climb Hpole
-- wall jump
-- wall climb
 - death
+- attack
 - health
 - hurt
-- weapon
-- parry
+
+## Wishlist
+
+### System 
+
+- audio player
+- character data
+- save file
+
+### Character
+
 - ledge climb
 - glide
-- zipline
+- zipline 
 - run
-- swim
-- abilities gained with item
-
-### Interactable
-
-- door???
-- items
-
-### Environment
-
-- collectables (activate double jump and dash)
-- hazard 
-
-### NPC
-
-- enemy...
-- boss...
+- wall jump
+- wall climb

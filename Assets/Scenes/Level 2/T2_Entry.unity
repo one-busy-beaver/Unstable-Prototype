@@ -4567,6 +4567,10 @@ PrefabInstance:
       propertyPath: exitedSceneID
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 5758714254754731640, guid: 718e9810b53110a4d8a04267ef8cdf9e, type: 3}
+      propertyPath: promptText
+      value: Exit
+      objectReference: {fileID: 0}
     - target: {fileID: 6579031134239648283, guid: 718e9810b53110a4d8a04267ef8cdf9e, type: 3}
       propertyPath: m_Name
       value: Tower Door

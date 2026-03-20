@@ -115,11 +115,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5039657650780611593, guid: 417cb33dda5099b4683eb9a49cb22202, type: 3}
       propertyPath: m_Offset.x
-      value: -0.010946393
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5039657650780611593, guid: 417cb33dda5099b4683eb9a49cb22202, type: 3}
       propertyPath: m_Offset.y
-      value: 0.00000029802322
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5372294378001209668, guid: 417cb33dda5099b4683eb9a49cb22202, type: 3}
       propertyPath: m_AnchoredPosition.y

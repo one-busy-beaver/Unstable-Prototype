@@ -1,38 +1,13 @@
 using UnityEngine;
 
-[RequireComponent(typeof(BoxCollider2D))]
-public class SceneExit : GatedInteraction
+public abstract class GatedInteraction: MonoBehaviour
 {
-    [Header("Transition Settings")]
-    [SerializeField] private SceneID sceneToLoad;
-    [SerializeField] private SceneID exitedSceneID;
-
+    [SerializeField] public bool autoTrigger = false; 
     [Header("Visuals (Editor Only)")]
     [SerializeField] private Color gizmoColor = new Color(0.65f, 0.89f, 0.34f, 0.5f); // #a6e356 with alpha
 
-    void Reset()
-    {
-        autoTrigger = true;
-    }
-
-    private void Awake() => GetComponent<BoxCollider2D>().isTrigger = true; // Ensure collider is set to trigger
-    
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (autoTrigger && other.CompareTag("Player"))
-        {
-            Execute();
-        }
-    }
-
-    public override void Execute()
-    {
-        if (SceneLoader.Instance != null)
-            SceneLoader.Instance.LoadScene(sceneToLoad, exitedSceneID);
-        else
-            Debug.LogError("SceneLoader missing!");
-    }
+    // Add this so child classes can define what happens on interaction
+    public abstract void Execute();
 
     // ================================ Visualization ================================
 

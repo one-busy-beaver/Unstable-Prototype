@@ -42,6 +42,7 @@ A 2D low horror game featured with exploration, secrets, and combat. To check ou
 
 - door
 - ability pickup
+- make dash an item from npc
 
 ### Scenes
 
@@ -80,14 +81,19 @@ A 2D low horror game featured with exploration, secrets, and combat. To check ou
 
 ### Scenes
 
-- tower front 
-    - mansion
+- remote village: turn to TF, more deco's
+- tower front: turn to RV, more deco's
+    - mansion 1 & 2
+- tower basement
 - tower entry
     - sub rooms
-- tower staircase
+    - enemies
+- tower body
+    - tear boss
 - tower exterior
+    - innocent enemies
 - tower top
-- tower basement
+    - final boss
 
 ### Character
 
@@ -107,11 +113,6 @@ A 2D low horror game featured with exploration, secrets, and combat. To check ou
     - (run)
     - (wall jump)
     - (wall climb)
-
-### NPC
-
-- enemy
-- boss
 
 ### Fun Stuff
 

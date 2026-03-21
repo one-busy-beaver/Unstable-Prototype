@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class GatedInteraction: MonoBehaviour
+public abstract class TriggeredInteraction: MonoBehaviour
 {
     [SerializeField] public bool autoTrigger = false; 
     [Header("Visuals (Editor Only)")]

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Talk : GatedInteraction
+public class Talk : TriggeredInteraction
 {
     public override void Execute()
     {}

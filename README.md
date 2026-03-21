@@ -13,27 +13,28 @@ A 2D low horror game featured with exploration, secrets, and combat. To check ou
     - scene loader
     - exit-spawn id match
     - gated exit
-    - persistant items
+    - persistent items
 
 ### Character
 
 - movements
-    - walk & flip (A, D)
-    - jump & double jump (Space)
-    - dash (Shift)
-    - swim & drown (Space)
-    - rope climb (W, S)
-    - interaction (E)
+    - walk & flip
+    - jump & double jump
+    - dash
+    - swim & drown
+    - rope climb
+    - attack (working)
+    - interact
 - data
-    - player abilities (persistant)
-    - player states (FSM)
+    - player abilities (persistent)
+    - player states
     - last safe ground storage
 - visualization
     - line renderer
 
 ### Environment
 
-- tile map
+- tilemap
 - ground 
 - water
 - rope
@@ -42,7 +43,7 @@ A 2D low horror game featured with exploration, secrets, and combat. To check ou
 
 - door
 - ability pickup
-- make dash an item from npc
+- npc
 
 ### Scenes
 
@@ -68,30 +69,33 @@ A 2D low horror game featured with exploration, secrets, and combat. To check ou
 
 ## Features to be Implemented
 
-### Interactables
-
-- item pickup
-- locked door
-
-### Environment
-
-- spikes
-- moving platforms
-- one-way platforms
+- decouple in-world UI with event trigger
 
 ### Scenes
 
-- remote village: turn to TF, more deco's
+- remote village:
+    - gate to TF
+    - house: 
+        - npc throws key (item pickup)
+    - garage: 
+        - lock and unlock gate
+        - dash from box
 - tower front: turn to RV, more deco's
-    - mansion 1 & 2
+    - mansion 1 & 2: 
+    -   lower the rope?
 - tower basement
+    - locked soul
 - tower entry
     - sub rooms
     - enemies
+    - spikes
+    - moving platforms
+    - one-way platforms
 - tower body
     - tear boss
 - tower exterior
     - innocent enemies
+    - double jump?
 - tower top
     - final boss
 

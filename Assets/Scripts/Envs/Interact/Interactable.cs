@@ -8,7 +8,7 @@ public class Interactable : MonoBehaviour
     public string promptText = "Interact"; 
 
     [Header("References")]
-    [SerializeField] private GatedInteraction interaction;
+    [SerializeField] private TriggeredInteraction interaction;
 
     [Header("World Space UI")]
     [SerializeField] private GameObject localCanvas;
@@ -47,8 +47,8 @@ public class Interactable : MonoBehaviour
     void FetchReferences()
     {
         // 1. Find GatedInteraction on this object (or siblings if needed)
-        if (interaction == null) interaction = GetComponent<GatedInteraction>();
-        if (interaction == null) interaction = GetComponentInParent<Transform>().GetComponentInChildren<GatedInteraction>();
+        if (interaction == null) interaction = GetComponent<TriggeredInteraction>();
+        if (interaction == null) interaction = GetComponentInParent<Transform>().GetComponentInChildren<TriggeredInteraction>();
 
         // 2. Find Canvas in children
         if (localCanvas == null)

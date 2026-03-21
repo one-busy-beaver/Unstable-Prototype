@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SceneExit : GatedInteraction
+public class SceneExit : TriggeredInteraction
 {
     [Header("Transition Settings")]
     [SerializeField] private SceneID sceneToLoad;

@@ -141,7 +141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9069310288792044652, guid: 8d842c84cf9f32d49a35c47b8b7452d2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.34
+      value: -6.15
       objectReference: {fileID: 0}
     - target: {fileID: 9069310288792044652, guid: 8d842c84cf9f32d49a35c47b8b7452d2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -199,7 +199,7 @@ GameObject:
   m_Component:
   - component: {fileID: 167036161}
   m_Layer: 0
-  m_Name: Nagivation
+  m_Name: Nav
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

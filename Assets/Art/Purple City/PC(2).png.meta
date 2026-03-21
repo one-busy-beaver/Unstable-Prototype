@@ -136,7 +136,7 @@ TextureImporter:
         serializedVersion: 2
         x: 1741
         y: 954
-        width: 234
+        width: 208
         height: 209
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -176,10 +176,10 @@ TextureImporter:
       name: PC(2)_3
       rect:
         serializedVersion: 2
-        x: 2447
+        x: 2964
         y: 727
-        width: 742
-        height: 496
+        width: 223
+        height: 292
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,33 +194,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PC(2)_7
-      rect:
-        serializedVersion: 2
-        x: 1242
-        y: 726
-        width: 460
-        height: 194
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: baeabdde062fbc04588c11f70bef4b42
-      internalID: -1043568898
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: PC(2)_8
       rect:
         serializedVersion: 2
         x: 1755
         y: 727
-        width: 220
+        width: 185
         height: 195
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -638,10 +617,10 @@ TextureImporter:
       name: PC(2)_37
       rect:
         serializedVersion: 2
-        x: 2962
-        y: 209
-        width: 138
-        height: 179
+        x: 2964
+        y: 210
+        width: 115
+        height: 159
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

@@ -72,19 +72,22 @@ A 2D low horror game featured with exploration, secrets, and combat. To check ou
 ## Features to be Implemented
 
 - decouple in-world UI with event trigger
+- one-way platform (fix rope/stair)
 
 ### Scenes
 
 - remote village:
-    - gate to TF
+    - path to TF
     - house: 
         - npc throws key (item pickup)
     - garage: 
         - lock and unlock gate
         - dash from box
-- tower front: turn to RV, more deco's
+- tower front: 
+    - path to RV
+        - more deco's
     - mansion 2: 
-    -   lower the rope?
+        - lower the rope
 - tower basement
     - locked soul
 - tower entry
@@ -92,7 +95,6 @@ A 2D low horror game featured with exploration, secrets, and combat. To check ou
     - enemies
     - spikes
     - moving platforms
-    - one-way platforms
 - tower body
     - tear boss
 - tower exterior

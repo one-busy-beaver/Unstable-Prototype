@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [ExecuteAlways]
-public class BridgeStacker : MonoBehaviour
+public class AssetStacker : MonoBehaviour
 {
     [Header("Assets")]
     public GameObject topPrefab;
@@ -10,13 +10,11 @@ public class BridgeStacker : MonoBehaviour
     [Header("Settings")]
     public float segmentHeight = 0.8f; // Vertical stack offset
     public float segmentWidth = 1.8f; // Horizontal stack offset
-    public float bridgeXOffset = -0.005f;
-    public float bridgeYOffset = 0.32f;
+    public float topXOffset = 0f;
+    public float topYOffset = 0f;
 
     [SerializeField] private int columnCount = 1; // Vertical stack
     [SerializeField] private int rowCount = 1;  // Horizontal stack
-
-    public bool isBridgeWithTop = false;
 
     // Encapsulate count to enforce rules
     public int Count
@@ -24,10 +22,7 @@ public class BridgeStacker : MonoBehaviour
         get => columnCount;
         set
         {
-            if (isBridgeWithTop)
-                columnCount = Mathf.Max(0, value); // Bridge: x >= 0
-            else
-                columnCount = Mathf.Max(1, value); // Column: x >= 1
+            columnCount = Mathf.Max(0, value); // Bridge: x >= 0
             Build();
         }
     }
@@ -47,8 +42,7 @@ public class BridgeStacker : MonoBehaviour
     {
         // Enforce constraints in Inspector
         rowCount = Mathf.Max(1, rowCount);
-        if (isBridgeWithTop) columnCount = Mathf.Max(0, columnCount);
-        else columnCount = Mathf.Max(1, columnCount);
+        columnCount = Mathf.Max(1, columnCount);
         
         // Delay call to avoid "SendMessage cannot be called during Awake, CheckConsistency, or OnValidate"
 #if UNITY_EDITOR
@@ -79,10 +73,10 @@ public class BridgeStacker : MonoBehaviour
             float currentY = 0;
 
             // 1. Place Top piece per row
-            if (isBridgeWithTop && topPrefab != null)
+            if (topPrefab != null)
             {
                 GameObject top = Instantiate(topPrefab, transform);
-                top.transform.localPosition = new Vector3(currentX + bridgeXOffset, bridgeYOffset, 0);
+                top.transform.localPosition = new Vector3(currentX + topXOffset, topYOffset, 0);
                 currentY -= segmentHeight;
             }
 

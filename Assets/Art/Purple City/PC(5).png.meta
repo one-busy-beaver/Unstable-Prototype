@@ -571,6 +571,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: PC(5)_22
+      rect:
+        serializedVersion: 2
+        x: 1324
+        y: 723
+        width: 108
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c71f72a9e591b44cae8abbf0221dea9
+      internalID: 2020859973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -597,6 +618,7 @@ TextureImporter:
       PC(5)_2: 486282177
       PC(5)_20: -48816003
       PC(5)_21: -1306103545
+      PC(5)_22: 2020859973
       PC(5)_3: 1833067520
       PC(5)_4: -1084371077
       PC(5)_5: 1441120630

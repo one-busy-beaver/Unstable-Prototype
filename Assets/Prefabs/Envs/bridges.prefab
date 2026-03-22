@@ -319,7 +319,7 @@ GameObject:
   - component: {fileID: 5012246515374364473}
   - component: {fileID: 9901516860916959}
   m_Layer: 3
-  m_Name: BridgeStack
+  m_Name: bridges
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

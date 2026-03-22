@@ -51,7 +51,9 @@ A 2D low horror game featured with exploration, secrets, and combat. To check ou
     - house
     - garage
 - tower front
-- tower entry (working)
+    - mansion 1
+    - mansion 2 
+- tower entry
 
 ### UI
 
@@ -81,7 +83,7 @@ A 2D low horror game featured with exploration, secrets, and combat. To check ou
         - lock and unlock gate
         - dash from box
 - tower front: turn to RV, more deco's
-    - mansion 1 & 2: 
+    - mansion 2: 
     -   lower the rope?
 - tower basement
     - locked soul

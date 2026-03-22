@@ -42,7 +42,7 @@ public class AssetStacker : MonoBehaviour
     {
         // Enforce constraints in Inspector
         rowCount = Mathf.Max(1, rowCount);
-        columnCount = Mathf.Max(1, columnCount);
+        columnCount = Mathf.Max(0, columnCount);
         
         // Delay call to avoid "SendMessage cannot be called during Awake, CheckConsistency, or OnValidate"
 #if UNITY_EDITOR

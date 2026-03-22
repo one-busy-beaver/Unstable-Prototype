@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed2da17af72a2584595bd7cd3d924b27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenuUI: {fileID: 1452761974}
+  pauseMenuUI: {fileID: 0}
 --- !u!1001 &973654827
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -191,7 +191,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7996059210525331306, guid: 259fff037ab90ac408090f97a4e143d7, type: 3}
       propertyPath: m_Name
-      value: Persistant
+      value: SYSTEM
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5909968876098350723, guid: 259fff037ab90ac408090f97a4e143d7, type: 3}
@@ -223,11 +223,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultScene: MainMenu
---- !u!1 &1452761974 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8058543326902281315, guid: 259fff037ab90ac408090f97a4e143d7, type: 3}
-  m_PrefabInstance: {fileID: 973654827}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

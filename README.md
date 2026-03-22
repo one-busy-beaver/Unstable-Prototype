@@ -73,6 +73,7 @@ A 2D low horror game featured with exploration, secrets, and combat. To check ou
 
 - decouple in-world UI with event trigger
 - one-way platform (fix rope/stair)
+- water surface (not submerged) jumpr force should be larger
 
 ### Scenes
 

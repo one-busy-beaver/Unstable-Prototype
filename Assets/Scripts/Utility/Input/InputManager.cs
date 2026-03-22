@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
 public class InputManager : MonoBehaviour
 {
     public static InputManager Instance { get; private set; }
@@ -48,14 +49,24 @@ public class InputManager : MonoBehaviour
             .WithControlsExcluding("<Mouse>/leftButton") // Ignore the click used to start rebinding
             .OnMatchWaitForAnother(0.1f) // Short delay to prevent accidental double-inputs
             .OnComplete(operation =>
-            {
-                operation.Dispose();
-                action.Enable();
-                SaveRebinds();
-                onUIUpdate?.Invoke(); // Trigger UI refresh
-            })
-            .Start();
+        {
+            CleanUpRebind(operation, action, onUIUpdate);
+            SaveRebinds();
+        })
+        .OnCancel(operation =>
+        {
+            CleanUpRebind(operation, action, onUIUpdate);
+        });
+
+        rebindOperation.Start();
     }
+
+    private void CleanUpRebind(InputActionRebindingExtensions.RebindingOperation operation, InputAction action, System.Action onUIUpdate)
+{
+    operation.Dispose();
+    action.Enable();
+    onUIUpdate?.Invoke();
+}
 
     private void SaveRebinds()
     {
@@ -77,5 +88,15 @@ public class InputManager : MonoBehaviour
     {
         InputAction action = Controls.asset.FindAction(actionName);
         return action?.GetBindingDisplayString(bindingIndex) ?? "";
+    }
+
+    public void ResetAllBindings()
+    {
+        // 1. Clear all active overrides in the Input System
+        Controls.asset.RemoveAllBindingOverrides();
+
+        // 2. Wipe the saved data from disk
+        PlayerPrefs.DeleteKey("InputRebinds"); 
+        PlayerPrefs.Save();
     }
 }

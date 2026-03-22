@@ -74,7 +74,7 @@ public class SceneLoader : MonoBehaviour
         }
         else
         {
-            Debug.LogError($"SceneLoader: No SpawnPoints found in {scene.name}!");
+            Debug.Log($"SceneLoader: No SpawnPoints found in {scene.name}!");
         }
 
         exitedSceneID = 0; // Reset for next time

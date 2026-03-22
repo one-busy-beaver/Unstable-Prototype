@@ -77,10 +77,12 @@ A 2D low horror game featured with exploration, secrets, and combat. To check ou
 ## Features to be Implemented
 
 - decouple in-world UI with event trigger
+    - combine sync text and UI
 - one-way platform (fix rope/stair)
 - water surface (not submerged) jump force should be larger
 - improve spawn-exit pair
 - pause menu bug: plays animation when paused
+- last safe ground: need to be smarter
 
 ### Scenes
 

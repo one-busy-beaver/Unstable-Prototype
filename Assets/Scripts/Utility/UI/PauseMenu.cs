@@ -7,7 +7,8 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        bool pausePresses = InputManager.Instance.Controls.Player.Pause.triggered;
+        if (pausePresses)
         {
             if (isPaused) Resume();
             else Pause();

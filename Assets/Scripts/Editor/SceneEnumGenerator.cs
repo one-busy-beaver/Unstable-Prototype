@@ -7,7 +7,8 @@ using System.Linq;
 public class SceneEnumGenerator : EditorWindow
 {
     // Change this path if you want the enum saved somewhere else
-    private const string FilePath = "Assets/Scripts/Interact/Nav/SceneID.cs"; 
+
+    private const string FilePath = "Assets/Scripts/Utility/IDs/SceneID.cs"; 
 
     [MenuItem("Tools/Generate Scene Enum")]
     public static void GenerateEnum()

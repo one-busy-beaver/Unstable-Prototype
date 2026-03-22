@@ -53,6 +53,7 @@ A 2D low horror game featured with exploration, secrets, and combat. To check ou
 - door
 - ability pickup
 - npc
+- release rope (event)
 
 ### Scenes
 

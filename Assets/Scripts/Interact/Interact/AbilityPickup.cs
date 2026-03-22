@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class AbilityPickup : TriggeredInteraction
+public class AbilityPickup : TriggerInteract
 {
     [Header("Ability Settings")]
     [SerializeField] private AbilityType abilityToGrant;

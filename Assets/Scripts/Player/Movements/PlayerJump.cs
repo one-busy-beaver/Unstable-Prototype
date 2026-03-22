@@ -34,6 +34,8 @@ public class PlayerJump : MonoBehaviour
 
     void Update()
     {
+        if (pState.isDashing) return;
+        
         jumpPressed = InputManager.Instance.Controls.Player.Jump.triggered; 
         jumpHeld = InputManager.Instance.Controls.Player.Jump.IsPressed();
 

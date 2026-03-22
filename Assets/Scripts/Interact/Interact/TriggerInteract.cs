@@ -21,7 +21,7 @@ public abstract class TriggerInteract: MonoBehaviour
         Gizmos.matrix = transform.localToWorldMatrix;
 
         Gizmos.color = gizmoColor;
-        Gizmos.DrawCube(box.offset, box.size);
+        //Gizmos.DrawCube(box.offset, box.size);
 
         Gizmos.color = new Color(gizmoColor.r, gizmoColor.g, gizmoColor.b, 1.0f);
         Gizmos.DrawWireCube(box.offset, box.size);

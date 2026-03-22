@@ -656,27 +656,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PC(2)_39
-      rect:
-        serializedVersion: 2
-        x: 315
-        y: 40
-        width: 149
-        height: 119
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0216d0beb4c83d646bc394a9f73a428e
-      internalID: -1525607942
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: PC(2)_40
       rect:
         serializedVersion: 2
@@ -735,27 +714,6 @@ TextureImporter:
       bones: []
       spriteID: dc3fe2888b5e30e4d86bdd4bf69d6836
       internalID: 1661988287
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PC(2)_43
-      rect:
-        serializedVersion: 2
-        x: 1105
-        y: 35
-        width: 146
-        height: 149
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 05202e13de8f3c44190fea8fa3a31b16
-      internalID: 59733522
       vertices: []
       indices: 
       edges: []

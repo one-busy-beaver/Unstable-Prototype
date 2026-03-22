@@ -19,6 +19,10 @@ A 2D low horror game featured with exploration, secrets, and combat. To check ou
 - saves
     - player abilities
     - world states
+- UI
+    - main menu
+    - pause menu
+    - key rebind
 
 ### Character
 
@@ -59,11 +63,6 @@ A 2D low horror game featured with exploration, secrets, and combat. To check ou
     - mansion 1
     - mansion 2 
 - tower entry
-
-### UI
-
-- main menu
-- pause menu (ESC)
 
 ### Dev Helpers
 

@@ -345,7 +345,7 @@ PrefabInstance:
       objectReference: {fileID: 596405508}
     - target: {fileID: -2539870076553886529, guid: e6a7ab372d25b3342a32d41d99fe38d9, type: 3}
       propertyPath: offsetHeight
-      value: 0.5
+      value: 0.72
       objectReference: {fileID: 0}
     - target: {fileID: 856283577005959118, guid: e6a7ab372d25b3342a32d41d99fe38d9, type: 3}
       propertyPath: m_Name
@@ -393,11 +393,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6197384928021475111, guid: e6a7ab372d25b3342a32d41d99fe38d9, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 266.9
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 6197384928021475111, guid: e6a7ab372d25b3342a32d41d99fe38d9, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 127.720955
+      value: 149.72095
       objectReference: {fileID: 0}
     - target: {fileID: 7301104389780094940, guid: e6a7ab372d25b3342a32d41d99fe38d9, type: 3}
       propertyPath: abilityToGrant
@@ -5314,7 +5314,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2593159684563989765, guid: 8dd21dbfc904a604fb9c04ff32b8ba59, type: 3}
       propertyPath: m_text
-      value: Talk
+      value: Are you heading toward the tower?
       objectReference: {fileID: 0}
     - target: {fileID: 3139899869760709187, guid: 8dd21dbfc904a604fb9c04ff32b8ba59, type: 3}
       propertyPath: localText
@@ -5322,15 +5322,19 @@ PrefabInstance:
       objectReference: {fileID: 5820571711762399239}
     - target: {fileID: 3139899869760709187, guid: 8dd21dbfc904a604fb9c04ff32b8ba59, type: 3}
       propertyPath: offsetHeight
-      value: 0.5
+      value: 1.11
       objectReference: {fileID: 0}
     - target: {fileID: 3139899869760709187, guid: 8dd21dbfc904a604fb9c04ff32b8ba59, type: 3}
       propertyPath: colliderToFollow
       value: 
       objectReference: {fileID: 5820571711762399240}
     - target: {fileID: 7097700630568991207, guid: 8dd21dbfc904a604fb9c04ff32b8ba59, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 7097700630568991207, guid: 8dd21dbfc904a604fb9c04ff32b8ba59, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 154.3853
+      value: 215.3853
       objectReference: {fileID: 0}
     - target: {fileID: 7718427192438892790, guid: 8dd21dbfc904a604fb9c04ff32b8ba59, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5371,6 +5375,10 @@ PrefabInstance:
     - target: {fileID: 7718427192438892790, guid: 8dd21dbfc904a604fb9c04ff32b8ba59, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7903181992972050467, guid: 8dd21dbfc904a604fb9c04ff32b8ba59, type: 3}
+      propertyPath: promptText
+      value: Are you heading toward the tower?
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

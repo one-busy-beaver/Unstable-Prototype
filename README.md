@@ -9,11 +9,16 @@ A 2D low horror game featured with exploration, secrets, and combat. To check ou
 ### System
 
 - camera follow
+    - zoom
+    - pan
 - scene transition
     - scene loader
     - exit-spawn id match
     - gated exit
     - persistent items
+- saves
+    - player abilities
+    - world states
 
 ### Character
 
@@ -23,11 +28,9 @@ A 2D low horror game featured with exploration, secrets, and combat. To check ou
     - dash
     - swim & drown
     - rope climb
-    - attack (working)
     - interact
-- data
-    - player abilities (persistent)
-    - player states
+- player states
+    - finite states logic
     - last safe ground storage
 - visualization
     - line renderer
@@ -35,9 +38,11 @@ A 2D low horror game featured with exploration, secrets, and combat. To check ou
 ### Environment
 
 - tilemap
-- ground 
-- water
-- rope
+    - ground 
+    - water
+    - play-plane
+    - background
+- rope/stair
 
 ### Interactables
 
@@ -73,7 +78,9 @@ A 2D low horror game featured with exploration, secrets, and combat. To check ou
 
 - decouple in-world UI with event trigger
 - one-way platform (fix rope/stair)
-- water surface (not submerged) jumpr force should be larger
+- water surface (not submerged) jump force should be larger
+- improve spawn-exit pair
+- pause menu bug: plays animation when paused
 
 ### Scenes
 

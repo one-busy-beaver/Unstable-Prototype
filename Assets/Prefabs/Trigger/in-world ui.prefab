@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 367463658735918196}
   - component: {fileID: 3324311586656431252}
   m_Layer: 5
-  m_Name: In World UI
+  m_Name: in-world ui
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

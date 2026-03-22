@@ -6,6 +6,15 @@
             "id": "6d45bd17-1b63-4d45-bdea-cf770226454c",
             "actions": [
                 {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "837e41ca-e149-402d-9812-174685ee021c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Jump",
                     "type": "Button",
                     "id": "44d168cf-3f30-47c0-b43e-7ad6b7115784",
@@ -42,15 +51,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Pause",
-                    "type": "Button",
-                    "id": "837e41ca-e149-402d-9812-174685ee021c",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Attack",
                     "type": "Button",
                     "id": "40385d2f-34e2-4770-a41a-f00f3b127de8",
@@ -58,20 +58,18 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Cast",
+                    "type": "Button",
+                    "id": "0eb8d7d4-8f7a-4ba8-b14a-0a07ecf6bab4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
-                {
-                    "name": "",
-                    "id": "f44c5937-ebad-4700-af16-86f28b79ee47",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
                 {
                     "name": "2D Vector",
                     "id": "a74e1812-45b1-436c-b265-e1704328d373",
@@ -141,11 +139,33 @@
                 {
                     "name": "",
                     "id": "c6f33190-6f94-4a3a-9c71-01070a349a93",
-                    "path": "<Keyboard>/x",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d84d27db-1f55-4ea7-b2e9-4845ce3a320e",
+                    "path": "<Keyboard>/c",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f1011ac9-6f3f-4309-8977-e7de75bb2d50",
+                    "path": "<Keyboard>/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Cast",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -173,12 +193,12 @@
                 },
                 {
                     "name": "",
-                    "id": "d84d27db-1f55-4ea7-b2e9-4845ce3a320e",
-                    "path": "<Keyboard>/c",
+                    "id": "f44c5937-ebad-4700-af16-86f28b79ee47",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Attack",
+                    "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

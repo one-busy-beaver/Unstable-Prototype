@@ -4,8 +4,8 @@ public class AbilityPickup : TriggeredInteraction
 {
     [Header("Ability Settings")]
     [SerializeField] private AbilityType abilityToGrant;
-
     [SerializeField] private bool destroyOnPickup = true;
+    [SerializeField] private Collectable col;
 
     public override void Execute()
     {
@@ -18,14 +18,8 @@ public class AbilityPickup : TriggeredInteraction
 
             if (destroyOnPickup)
             {
-                if (transform.parent != null)
-                {
-                    Destroy(transform.parent.gameObject);
-                }
-                else
-                {
-                    Destroy(gameObject);
-                }
+                col.OnPickUp();
+                Destroy(gameObject);
             }
         }
         else

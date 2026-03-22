@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1421471847283050128}
   - component: {fileID: 8376382893290187454}
   m_Layer: 0
-  m_Name: Triggered Exit
+  m_Name: door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

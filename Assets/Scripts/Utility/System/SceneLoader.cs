@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class SceneLoader : MonoBehaviour
 {
     public static SceneLoader Instance;
-    private SceneID exitedSceneID;
+    private ExitSpawnID targetSpawnID;
     [SerializeField] private GameObject playerPrefab;
     
 
@@ -31,11 +31,11 @@ public class SceneLoader : MonoBehaviour
         SpawnPoint selectedSpawn = null;
 
         // Priority 1: Look for the specific ID we requested
-        if (!string.IsNullOrEmpty(exitedSceneID.ToString()))
+        if (true)
         {
             foreach (SpawnPoint sp in allSpawns)
             {
-                if (sp.exitedSceneID == exitedSceneID)
+                if (sp.spawnID == targetSpawnID)
                 {
                     selectedSpawn = sp;
                     break;
@@ -78,12 +78,12 @@ public class SceneLoader : MonoBehaviour
             Debug.Log($"SceneLoader: No SpawnPoints found in {scene.name}!");
         }
 
-        exitedSceneID = 0; // Reset for next time
+        targetSpawnID = null; // Reset for next time
     }
 
-    public void LoadScene(SceneID sceneToLoad, SceneID pointToSpawn)
+    public void LoadScene(string sceneToLoad, ExitSpawnID pointToSpawn)
     {
-        exitedSceneID = pointToSpawn;
+        targetSpawnID = pointToSpawn;
         // Async does not pause the current scene
         SceneManager.LoadSceneAsync(sceneToLoad.ToString());
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

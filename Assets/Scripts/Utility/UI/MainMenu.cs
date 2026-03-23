@@ -7,11 +7,11 @@ public class MainMenu : MonoBehaviour
     [SerializeField] GameObject mainMenuPanel;
     [SerializeField] GameObject controlsPanel;
     [SerializeField] SceneID sceneToLoad;
-    [SerializeField] SceneID pointToSpawn;
+    [SerializeField] ExitSpawnID targetSpawnID;
 
     public void PlayGame()
     {
-        SceneLoader.Instance.LoadScene(sceneToLoad, pointToSpawn);
+        SceneLoader.Instance.LoadScene(sceneToLoad.ToString(), targetSpawnID);
     }
 
     public void ControlPanel()

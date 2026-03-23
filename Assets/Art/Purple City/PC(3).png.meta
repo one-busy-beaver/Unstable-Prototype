@@ -197,10 +197,10 @@ TextureImporter:
       name: PC(3)_25
       rect:
         serializedVersion: 2
-        x: 1379
-        y: 61
-        width: 141
-        height: 237
+        x: 1381
+        y: 63
+        width: 135
+        height: 232
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,10 +218,10 @@ TextureImporter:
       name: PC(3)_26
       rect:
         serializedVersion: 2
-        x: 1569
-        y: 61
-        width: 247
-        height: 237
+        x: 1574
+        y: 63
+        width: 240
+        height: 233
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

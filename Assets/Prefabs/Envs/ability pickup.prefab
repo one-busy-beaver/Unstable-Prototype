@@ -183,7 +183,7 @@ MonoBehaviour:
   gizmoColor: {r: 0.65, g: 0.89, b: 0.34, a: 0.3}
   abilityToGrant: 0
   destroyOnPickup: 1
-  col: {fileID: 0}
+  col: {fileID: 5191384482171227446}
 --- !u!1001 &2475972734472249656
 PrefabInstance:
   m_ObjectHideFlags: 0

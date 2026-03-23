@@ -1,5 +1,6 @@
 using UnityEngine;
 
+
 public class AbilityPickup : InteractEvent
 {
     [Header("Ability Settings")]

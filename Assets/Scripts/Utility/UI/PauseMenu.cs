@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
+    [SerializeField] ExitSpawnID mainMenuID;
     public GameObject pauseMenuUI;
     private bool isPaused = false;
 
@@ -32,6 +33,6 @@ public class PauseMenu : MonoBehaviour
     public void LoadMainMenu()
     {
         Resume();
-        SceneLoader.Instance.LoadScene(SceneID.Main_Menu, 0);
+        SceneLoader.Instance.LoadScene(SceneID.Main_Menu.ToString(), mainMenuID);
     }
 }

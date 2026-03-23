@@ -949,6 +949,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: PC_40
+      rect:
+        serializedVersion: 2
+        x: 3266
+        y: 448
+        width: 131
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c38f1d17564d5647b4e29097b59a209
+      internalID: 363921452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -995,6 +1016,7 @@ TextureImporter:
       PC_38: -137201529
       PC_39: -1297454852
       PC_4: 1073700966
+      PC_40: 363921452
       PC_5: 2018279168
       PC_6: -2105168254
       PC_7: 2049498870

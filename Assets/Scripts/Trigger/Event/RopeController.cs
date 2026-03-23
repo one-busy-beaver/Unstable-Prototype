@@ -1,7 +1,8 @@
 using System.Collections;
 using UnityEngine;
 
-public class RopeController : MonoBehaviour {
+public class RopeController : MonoBehaviour 
+{
     [SerializeField] EventID eventName;
     [SerializeField] float difference = 10;
     [SerializeField] float speed = 2f;
@@ -12,44 +13,46 @@ public class RopeController : MonoBehaviour {
     private Coroutine moveRoutine;
 
 
-    void Awake() {
+    void Awake() 
+    {
         // Capture the initial position to use as a base reference
         startPos = transform.position;
     }
 
-    void Start() {
-        // 1. Check initial state when the scene loads
+    void Start() 
+    {
+        // Check initial state when the scene loads
         UpdateRopePosition(WorldState.Instance.GetFlag(eventName));
     }
 
-    void OnEnable() {
-        // 2. Start listening for changes
+    void OnEnable() 
+    {
+        // Start listening for changes
         WorldState.OnStateChanged += HandleStateChange;
     }
 
-    void OnDisable() {
-        // 3. Stop listening if the object is destroyed/disabled to prevent errors
+    void OnDisable() 
+    {
+        // Stop listening if the object is destroyed/disabled to prevent errors
         WorldState.OnStateChanged -= HandleStateChange;
     }
 
-    private void HandleStateChange(EventID name, bool value) {
+    private void HandleStateChange(EventID name, bool value) 
+    {
         if (name == eventName) {
             if (moveRoutine != null) StopCoroutine(moveRoutine);
             moveRoutine = StartCoroutine(MoveRopeRoutine(value));
         }
     }
 
-    private void SetInitialPosition(bool isLowered) {
-        float yOffset = CalculateOffset(isLowered);
-        transform.position = new Vector3(startPos.x, startPos.y + yOffset, startPos.z);
-    }
-
-    private float CalculateOffset(bool isLowered) {
+    private float CalculateOffset(bool isLowered) 
+    {
         if (!isLowered) return 0;
         return invert ? difference : -difference;
     }
 
-    private IEnumerator MoveRopeRoutine(bool isLowered) {
+    private IEnumerator MoveRopeRoutine(bool isLowered) 
+    {
         float targetY = startPos.y + CalculateOffset(isLowered);
         Vector3 targetPos = new Vector3(startPos.x, targetY, startPos.z);
 
@@ -67,7 +70,8 @@ public class RopeController : MonoBehaviour {
         moveRoutine = null;
     }
 
-    private void UpdateRopePosition(bool isLowered) {
+    private void UpdateRopePosition(bool isLowered) 
+    {
         float yOffset = 0;
 
         if (isLowered) {

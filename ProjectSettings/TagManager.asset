@@ -44,9 +44,6 @@ TagManager:
   - name: Background
     uniqueID: 2250487065
     locked: 0
-  - name: Water
-    uniqueID: 2282362859
-    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
@@ -55,6 +52,9 @@ TagManager:
     locked: 0
   - name: Tilemap
     uniqueID: 3828414073
+    locked: 0
+  - name: Water
+    uniqueID: 2282362859
     locked: 0
   - name: Foreground
     uniqueID: 1099388377

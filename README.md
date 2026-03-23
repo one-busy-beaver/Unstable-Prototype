@@ -83,33 +83,32 @@ A 2D low horror game featured with exploration, secrets, and combat. To check ou
 - improve spawn-exit pair
 - pause menu bug: plays animation when paused
 - last safe ground: need to be smarter
+- climbing and double jump animation?
 
 ### Scenes
 
-- remote village:
-    - path to TF
-    - house: 
+- remote village
+    - house
         - npc throws key (item pickup)
-    - garage: 
+    - garage
         - lock and unlock gate
         - dash from box
-- tower front: 
+- tower front
     - path to RV
         - more deco's
-    - mansion 2: 
+    - mansion 2
         - lower the rope
 - tower basement
-    - locked soul
 - tower entry
-    - sub rooms
-    - enemies
     - spikes
     - moving platforms
+    - enemies
 - tower body
-    - tear boss
+    - tear boss?
+    - gain swim ability
 - tower exterior
     - innocent enemies
-    - double jump?
+    - gain double jump
 - tower top
     - final boss
 
@@ -123,14 +122,12 @@ A 2D low horror game featured with exploration, secrets, and combat. To check ou
 - death
 - health
 - hurt
-- item attacks
-- wishlist
-    - (ledge climb)
-    - (glide)
-    - (zipline) 
-    - (run)
-    - (wall jump)
-    - (wall climb)
+- cast
+- wall jump
+- (ledge climb)
+- (glide)
+- (zipline) 
+- (run)
 
 ### Fun Stuff
 
@@ -143,20 +140,14 @@ A 2D low horror game featured with exploration, secrets, and combat. To check ou
 
 ### System 
 
-- inventory
+- shader / illumination
 - camera confiner
     - find player
     - polygon collider outline
-- shader / illumination
-- audio player
-- save file
-
-### UI
-
-- main canvas
+- UI
     - scene transition fade
     - ability and item unlock
     - inventory and abilities
-- main menu
-    - control remap page
-    - load save
+- nice-to-have
+    - audio player
+    - save / load save

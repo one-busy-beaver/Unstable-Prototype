@@ -9,9 +9,6 @@ public enum SceneID
     Tower_Front,
     TF_Mansion_1,
     TF_Mansion_2,
-    T1_Base,
     T2_Entry,
-    T3_Body,
-    T4_Exterior,
-    T5_Top,
+    RV_Sky_Secret,
 }

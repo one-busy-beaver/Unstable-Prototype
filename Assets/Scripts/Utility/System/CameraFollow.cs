@@ -1,37 +1,33 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using Cinemachine;
 
 public class CameraFollow : MonoBehaviour
 {
-
     public static CameraFollow Instance;
-    private GameObject targetObject;
-
-    [Header("Follow")]
-    [SerializeField] private float followSpeed = 5f;
-    [SerializeField] private Vector3 offset = new Vector3(0, 0, -10f);
 
     [Header("Zoom")]
     [SerializeField] float zoomSpeed = 5f;
-    [SerializeField] float minZoom = 3f;
-    [SerializeField] float maxZoom = 8f;
-    private float targetZoom;
+    [SerializeField] float minZoom = -5f;
+    [SerializeField] float maxZoom = 5f;
 
     [Header("Pan")]
     [SerializeField] float panSpeed = 8f;
     [SerializeField] float recenterSpeed = 8f;
 
-
     [Header("Player Bounds")]
     [SerializeField] float maxHorizontalOffset = 3f;
     [SerializeField] float maxVerticalOffset = 2f;
 
-    Camera cam;
-    Vector2 manualOffset;
-    
+    private CinemachineVirtualCamera vcam;
+    private CinemachineConfiner2D confiner;
+    private CinemachineFramingTransposer transposer;
+    private float baseFOV;
+    private float zoomModifier = 0f;
+    private Vector2 manualOffset;
 
-    void Awake()
+    private void Awake()
     {
-        // Only allow one CameraFollow to exist
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -39,24 +35,15 @@ public class CameraFollow : MonoBehaviour
         }
         Instance = this;
 
-        cam = GetComponent<Camera>();
+        vcam = GetComponent<CinemachineVirtualCamera>();
+        confiner = GetComponent<CinemachineConfiner2D>(); 
+        transposer = vcam.GetCinemachineComponent<CinemachineFramingTransposer>();
 
-        // Set targetZoom to the camera's actual size so it doesn't start at 0
-        targetZoom = cam.orthographicSize;
+        baseFOV = vcam.m_Lens.FieldOfView;
     }
 
-    void Start()
-    {
-        // If the camera wakes up and has no target, try to find one immediately
-        if (targetObject == null)
-        {
-            GameObject existingPlayer = GameObject.FindWithTag("Player");
-            if (existingPlayer != null)
-            {
-                SetTarget(existingPlayer);
-            }
-        }
-    }
+    private void OnEnable() => SceneManager.sceneLoaded += OnSceneLoaded;
+    private void OnDisable() => SceneManager.sceneLoaded -= OnSceneLoaded;
 
     void Update()
     {
@@ -64,36 +51,58 @@ public class CameraFollow : MonoBehaviour
         HandlePan();
     }
 
-    void LateUpdate()
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        FollowPlayer();
+        if (scene.name == "_Bootstrap") return;
+
+        // Find the specific confiner in the newly loaded scene
+        GameObject confinerObj = GameObject.FindWithTag("Confiner");
+        
+        if (confinerObj != null && confiner != null)
+        {
+            if (confinerObj.TryGetComponent<Collider2D>(out var bounds)) 
+            {
+                // Forces Cinemachine to recalculate the bounds for the new shape
+                confiner.m_BoundingShape2D = bounds;
+                confiner.InvalidateCache(); 
+            }
+        }
+        else
+        {
+            Debug.Log($"CameraFollow: No object with tag 'Confiner' found in {scene.name}.");
+        }
     }
 
+    // Called directly by your SceneLoader to attach the newly spawned player
     public void SetTarget(GameObject newTarget)
     {
-        targetObject = newTarget;
+        if (vcam != null)
+        {
+            vcam.Follow = newTarget.transform;
+            // vcam.LookAt = newTarget.transform; // Uncomment if your game is Top-Down/3D and requires LookAt
+        }
     }
 
     void HandleZoom()
     {
-        float zoom = InputManager.Instance.Controls.Camera.Zoom.ReadValue<float>();
+        float zoomInput = InputManager.Instance.Controls.Camera.Zoom.ReadValue<float>();
 
-        if (Mathf.Abs(zoom) > 0.01f)
+        if (Mathf.Abs(zoomInput) > 0.01f)
         {
-            // Update the target based on input
-            targetZoom -= zoom * zoomSpeed * Time.deltaTime;
-            targetZoom = Mathf.Clamp(targetZoom, minZoom, maxZoom);
+            zoomModifier += Mathf.Sign(zoomInput) * zoomSpeed * Time.deltaTime;
         }
 
-        // Smoothly transition the actual camera size to the target
-        cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, targetZoom, Time.deltaTime * zoomSpeed * 10f);
+        zoomModifier = Mathf.Clamp(zoomModifier, minZoom, maxZoom);
+
+        float targetFOV = baseFOV - zoomModifier;
+
+        vcam.m_Lens.FieldOfView = Mathf.Lerp(vcam.m_Lens.FieldOfView, targetFOV, Time.deltaTime * zoomSpeed * 10f);
     }
 
     void HandlePan()
     {
         Vector2 input = InputManager.Instance.Controls.Camera.Pan.ReadValue<Vector2>();
 
-        // Handle X axis independently
         if (Mathf.Abs(input.x) > 0.01f)
         {
             manualOffset.x += input.x * panSpeed * Time.deltaTime;
@@ -103,7 +112,6 @@ public class CameraFollow : MonoBehaviour
             manualOffset.x = Mathf.Lerp(manualOffset.x, 0, recenterSpeed * Time.deltaTime);
         }
 
-        // Handle Y axis independently
         if (Mathf.Abs(input.y) > 0.01f)
         {
             manualOffset.y += input.y * panSpeed * Time.deltaTime;
@@ -115,22 +123,10 @@ public class CameraFollow : MonoBehaviour
 
         manualOffset.x = Mathf.Clamp(manualOffset.x, -maxHorizontalOffset, maxHorizontalOffset);
         manualOffset.y = Mathf.Clamp(manualOffset.y, -maxVerticalOffset, maxVerticalOffset);
-    }
 
-    void FollowPlayer()
-    {
-        // Ensure PlayerMovements.Instance exists before accessing
-        if (targetObject == null) return;
-
-        Vector3 target =
-            targetObject.transform.position +
-            offset +
-            (Vector3)manualOffset;
-
-        transform.position = Vector3.Lerp(
-            transform.position,
-            new Vector3(target.x, target.y, transform.position.z),
-            followSpeed * Time.deltaTime
-        );
+        if (transposer != null)
+        {
+            transposer.m_TrackedObjectOffset = new Vector3(manualOffset.x, manualOffset.y, 0);
+        }
     }
 }

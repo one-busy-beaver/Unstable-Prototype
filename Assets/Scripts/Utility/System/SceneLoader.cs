@@ -67,7 +67,8 @@ public class SceneLoader : MonoBehaviour
         {
             GameObject newPlayer = Instantiate(playerPrefab, selectedSpawn.transform.position, selectedSpawn.transform.rotation);
             
-            if (Camera.main != null && Camera.main.TryGetComponent<CameraFollow>(out var follow))
+            CameraFollow follow = FindAnyObjectByType<CameraFollow>();
+            if (follow != null)
             {
                 follow.SetTarget(newPlayer);
             }

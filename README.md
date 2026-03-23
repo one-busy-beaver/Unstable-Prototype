@@ -8,9 +8,10 @@ A 2D low horror game featured with exploration, secrets, and combat. To check ou
 
 ### System
 
-- camera follow
-    - zoom
+- camera
+    - confiner
     - pan
+    - zoom
 - scene transition
     - scene loader
     - exit-spawn id match
@@ -141,9 +142,6 @@ A 2D low horror game featured with exploration, secrets, and combat. To check ou
 ### System 
 
 - shader / illumination
-- camera confiner
-    - find player
-    - polygon collider outline
 - UI
     - scene transition fade
     - ability and item unlock

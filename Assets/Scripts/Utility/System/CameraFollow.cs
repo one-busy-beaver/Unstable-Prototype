@@ -7,9 +7,9 @@ public class CameraFollow : MonoBehaviour
     public static CameraFollow Instance;
 
     [Header("Zoom")]
-    [SerializeField] float zoomSpeed = 5f;
-    [SerializeField] float minZoom = -5f;
-    [SerializeField] float maxZoom = 5f;
+    [SerializeField] float zoomSpeed = 20f;
+    [SerializeField] float zoomOut = 5f;
+    [SerializeField] float zoomIn = 5f;
 
     [Header("Pan")]
     [SerializeField] float panSpeed = 8f;
@@ -89,14 +89,20 @@ public class CameraFollow : MonoBehaviour
 
         if (Mathf.Abs(zoomInput) > 0.01f)
         {
-            zoomModifier += Mathf.Sign(zoomInput) * zoomSpeed * Time.deltaTime;
+            zoomModifier += zoomInput * zoomSpeed * Time.deltaTime;
         }
 
-        zoomModifier = Mathf.Clamp(zoomModifier, minZoom, maxZoom);
+        zoomModifier = Mathf.Clamp(zoomModifier, -zoomOut, zoomIn);
 
         float targetFOV = baseFOV - zoomModifier;
 
         vcam.m_Lens.FieldOfView = Mathf.Lerp(vcam.m_Lens.FieldOfView, targetFOV, Time.deltaTime * zoomSpeed * 10f);
+
+        // Trick the Confiner2D by updating OrthographicSize
+        // formula: OrthoSize = Distance * tan(FOV / 2)
+        float distance = Mathf.Abs(vcam.transform.position.z); 
+        float halfFOVRad = vcam.m_Lens.FieldOfView * 0.5f * Mathf.Deg2Rad;
+        vcam.m_Lens.OrthographicSize = distance * Mathf.Tan(halfFOVRad);
     }
 
     void HandlePan()

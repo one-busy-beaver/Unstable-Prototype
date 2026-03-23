@@ -12,12 +12,12 @@ A 2D low horror game featured with exploration, secrets, and combat. To check ou
     - confiner
     - pan
     - zoom
-- scene transition
-    - scene loader
+- scene
+    - scene transition
     - exit-spawn id match
-    - gated exit
-    - persistent items
-- saves
+    - parallex effect
+    - bootstrap
+- game states
     - player abilities
     - world states
 - UI
@@ -35,8 +35,8 @@ A 2D low horror game featured with exploration, secrets, and combat. To check ou
     - rope climb
     - interact
 - player states
-    - finite states logic
-    - last safe ground storage
+    - finite state logic
+    - last-safe-ground storage
 - visualization
     - line renderer
 
@@ -47,38 +47,29 @@ A 2D low horror game featured with exploration, secrets, and combat. To check ou
     - water
     - play-plane
     - background
-- rope/stair
-
-### Interactables
-
-- door
-- ability pickup
-- npc
-- release rope (event)
+    - foreground
+- trigger
+    - exit/entrance
+    - rope/stair
+    - event
+    - ability pickup
+    - npc
 
 ### Scenes
 
 - remote village
     - house
     - garage
+    - sky secret
 - tower front
     - mansion 1
     - mansion 2 
 - tower entry
 
-### Dev Helpers
-
-- bootstrap scene
-- scene enum generator
-- align and sync text for display
-- auto asset stack (row and column)
-
 
 
 ## Features to be Implemented
 
-- decouple in-world UI with event trigger
-    - combine sync text and UI
 - one-way platform (fix rope/stair)
 - water surface (not submerged) jump force should be larger
 - improve spawn-exit pair
@@ -91,19 +82,18 @@ A 2D low horror game featured with exploration, secrets, and combat. To check ou
 - remote village
     - house
         - npc throws key (item pickup)
+        - conversation?
     - garage
-        - lock and unlock gate
+        - locked door
         - dash from box
 - tower front
-    - path to RV
-        - more deco's
-    - mansion 2
-        - lower the rope
+    - cabin
 - tower basement
 - tower entry
     - spikes
     - moving platforms
     - enemies
+    - gain cast???
 - tower body
     - tear boss?
     - gain swim ability

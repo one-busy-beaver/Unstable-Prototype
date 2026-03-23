@@ -94,7 +94,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7718427192438892790}
   - component: {fileID: 305802730101783327}
-  - component: {fileID: 3139899869760709187}
   - component: {fileID: 7903181992972050467}
   - component: {fileID: 7382923523573773352}
   m_Layer: 0
@@ -167,21 +166,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.7549975, y: 2.087706}
   m_EdgeRadius: 0
---- !u!114 &3139899869760709187
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 478453202306777574}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23839d0700bafd445b5250d1906238c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  localText: {fileID: 0}
-  colliderToFollow: {fileID: 0}
-  offsetHeight: 0.5
 --- !u!114 &7903181992972050467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,9 +179,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   promptText: Talk
+  offsetHeight: 0.5
   interaction: {fileID: 7382923523573773352}
   localCanvas: {fileID: 2255805167137805766}
   localTextComponent: {fileID: 2593159684563989765}
+  colliderToFollow: {fileID: 305802730101783327}
 --- !u!114 &7382923523573773352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,6 +197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   autoTrigger: 0
+  fill: 1
   gizmoColor: {r: 0.65, g: 0.89, b: 0.34, a: 0.5}
 --- !u!1 &742573104693437985
 GameObject:
@@ -501,9 +488,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4513126802960673526, guid: 084e75a9181ffa44ba4386cd65d410d4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 4859378694426183383, guid: 084e75a9181ffa44ba4386cd65d410d4, type: 3}
       propertyPath: m_Name
       value: In World UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 9213521556736468500, guid: 084e75a9181ffa44ba4386cd65d410d4, type: 3}
+      propertyPath: m_text
+      value: Talk
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

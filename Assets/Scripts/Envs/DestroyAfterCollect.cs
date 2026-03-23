@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Collectable : MonoBehaviour 
+public class DestroyAfterCollect : MonoBehaviour 
 {
     public CollectID uniqueID;
 

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour
 {
-    private Interactable _currentInteractable;
+    private InteractHandler _currentInteract;
 
     private void Update()
     {
@@ -11,28 +11,28 @@ public class PlayerInteraction : MonoBehaviour
         // Use the "Interact" trigger from Player Controls
         bool interactPressed = InputManager.Instance.Controls.Player.Interact.triggered;
 
-        if (_currentInteractable != null && interactPressed)
+        if (_currentInteract != null && interactPressed)
         {
-            _currentInteractable.Interact();
+            _currentInteract.Interact();
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         // Use TryGetComponent for better performance and cleaner code
-        if (other.TryGetComponent(out Interactable interactable))
+        if (other.TryGetComponent(out InteractHandler interactable))
         {
-            _currentInteractable = interactable;
-            _currentInteractable.TogglePrompt(true);
+            _currentInteract = interactable;
+            _currentInteract.TogglePrompt(true);
         }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.TryGetComponent(out Interactable interactable) && interactable == _currentInteractable)
+        if (other.TryGetComponent(out InteractHandler interactable) && interactable == _currentInteract)
         {
-            _currentInteractable.TogglePrompt(false);
-            _currentInteractable = null;
+            _currentInteract.TogglePrompt(false);
+            _currentInteract = null;
         }
     }
 }

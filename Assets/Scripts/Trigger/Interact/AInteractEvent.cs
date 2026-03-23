@@ -1,10 +1,11 @@
 using UnityEngine;
 
-public abstract class TriggerInteract: MonoBehaviour
+public abstract class InteractEvent: MonoBehaviour
 {
-    [SerializeField] public bool autoTrigger = false; 
+    [SerializeField] protected bool autoTrigger = false; 
+    [SerializeField] private bool fill = true;
     [Header("Visuals (Editor Only)")]
-    [SerializeField] private Color gizmoColor = new Color(0.65f, 0.89f, 0.34f, 0.5f); // #a6e356 with alpha
+    [SerializeField] private Color gizmoColor = new Color(0.65f, 0.89f, 0.34f, 0.3f); // #a6e356 with alpha
 
     // Add this so child classes can define what happens on interaction
     public abstract void Execute();
@@ -21,7 +22,7 @@ public abstract class TriggerInteract: MonoBehaviour
         Gizmos.matrix = transform.localToWorldMatrix;
 
         Gizmos.color = gizmoColor;
-        //Gizmos.DrawCube(box.offset, box.size);
+        if (fill) Gizmos.DrawCube(box.offset, box.size);
 
         Gizmos.color = new Color(gizmoColor.r, gizmoColor.g, gizmoColor.b, 1.0f);
         Gizmos.DrawWireCube(box.offset, box.size);

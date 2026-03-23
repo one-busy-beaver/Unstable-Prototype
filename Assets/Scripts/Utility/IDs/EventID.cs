@@ -1,4 +1,4 @@
 public enum EventID
 {
-    TF_RopeLowered
+    TF_LowerRope
 }

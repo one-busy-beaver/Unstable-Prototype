@@ -11,10 +11,9 @@ GameObject:
   - component: {fileID: 9157499590315058783}
   - component: {fileID: 5039657650780611593}
   - component: {fileID: 8130209505463484259}
-  - component: {fileID: -2539870076553886529}
   - component: {fileID: 1421471847283050128}
-  - component: {fileID: 7301104389780094940}
   - component: {fileID: 5191384482171227446}
+  - component: {fileID: 7569179286749954992}
   m_Layer: 0
   m_Name: ability pickup
   m_TagString: Untagged
@@ -136,21 +135,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-2539870076553886529
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 856283577005959118}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23839d0700bafd445b5250d1906238c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  localText: {fileID: 0}
-  colliderToFollow: {fileID: 5039657650780611593}
-  offsetHeight: 0.5
 --- !u!114 &1421471847283050128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,26 +148,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   promptText: Pick up
-  interaction: {fileID: 7301104389780094940}
+  offsetHeight: 0.5
+  interaction: {fileID: 7569179286749954992}
   localCanvas: {fileID: 3156929908241351430}
   localTextComponent: {fileID: 1692598241171465157}
---- !u!114 &7301104389780094940
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 856283577005959118}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bd777a486486394ca0e29df672b6c80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  autoTrigger: 0
-  gizmoColor: {r: 0.65, g: 0.89, b: 0.34, a: 0.5}
-  abilityToGrant: 1
-  destroyOnPickup: 1
-  col: {fileID: 5191384482171227446}
+  colliderToFollow: {fileID: 5039657650780611593}
 --- !u!114 &5191384482171227446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,6 +166,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uniqueID: 0
+--- !u!114 &7569179286749954992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856283577005959118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bd777a486486394ca0e29df672b6c80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoTrigger: 0
+  fill: 1
+  gizmoColor: {r: 0.65, g: 0.89, b: 0.34, a: 0.3}
+  abilityToGrant: 0
+  destroyOnPickup: 1
+  col: {fileID: 0}
 --- !u!1001 &2475972734472249656
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -347,9 +334,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4513126802960673526, guid: 084e75a9181ffa44ba4386cd65d410d4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 4859378694426183383, guid: 084e75a9181ffa44ba4386cd65d410d4, type: 3}
       propertyPath: m_Name
       value: In World UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 9213521556736468500, guid: 084e75a9181ffa44ba4386cd65d410d4, type: 3}
+      propertyPath: m_text
+      value: Pick up
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

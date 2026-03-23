@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Talk : TriggerInteract
+public class Talk : InteractEvent
 {
     public override void Execute()
     {}

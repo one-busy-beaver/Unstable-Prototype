@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class AbilityPickup : TriggerInteract
+public class AbilityPickup : InteractEvent
 {
     [Header("Ability Settings")]
     [SerializeField] private AbilityType abilityToGrant;
     [SerializeField] private bool destroyOnPickup = true;
-    [SerializeField] private Collectable col;
+    [SerializeField] private DestroyAfterCollect col;
 
     public override void Execute()
     {

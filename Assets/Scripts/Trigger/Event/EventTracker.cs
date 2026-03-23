@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EventTracker: TriggerInteract {
+public class EventTracker: InteractEvent {
     [SerializeField] EventID eventName;
 
     public override void Execute() {

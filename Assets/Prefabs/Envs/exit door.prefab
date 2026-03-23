@@ -11,8 +11,7 @@ GameObject:
   - component: {fileID: 9157499590315058783}
   - component: {fileID: 5039657650780611593}
   - component: {fileID: 8130209505463484259}
-  - component: {fileID: -2539870076553886529}
-  - component: {fileID: 1421471847283050128}
+  - component: {fileID: 5875659250036149356}
   - component: {fileID: 8376382893290187454}
   m_Layer: 0
   m_Name: exit door
@@ -134,22 +133,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-2539870076553886529
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 856283577005959118}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23839d0700bafd445b5250d1906238c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  localText: {fileID: 860997481796375974}
-  colliderToFollow: {fileID: 5039657650780611593}
-  offsetHeight: 0.5
---- !u!114 &1421471847283050128
+--- !u!114 &5875659250036149356
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -161,10 +145,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8fc16684a437d2488c90edd939041a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptText: Enter
+  promptText: Interact
+  offsetHeight: 0.5
   interaction: {fileID: 8376382893290187454}
   localCanvas: {fileID: 3981211219180336485}
   localTextComponent: {fileID: 860997481796375974}
+  colliderToFollow: {fileID: 5039657650780611593}
 --- !u!114 &8376382893290187454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,6 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   autoTrigger: 0
+  fill: 1
   gizmoColor: {r: 0.6509804, g: 0.8901961, b: 0.3372549, a: 0.44313726}
   sceneToLoad: 0
   exitedSceneID: 0
@@ -276,6 +263,10 @@ PrefabInstance:
     - target: {fileID: 4859378694426183383, guid: 084e75a9181ffa44ba4386cd65d410d4, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 9213521556736468500, guid: 084e75a9181ffa44ba4386cd65d410d4, type: 3}
+      propertyPath: m_text
+      value: Interact
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

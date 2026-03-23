@@ -6,7 +6,7 @@ public class RopeController : MonoBehaviour {
     [SerializeField] float difference = 10;
     [SerializeField] float speed = 2f;
     [Tooltip("Set to true for the interior rope if it moves UP when the flag is true.")]
-    [SerializeField] bool invert; // 
+    [SerializeField] bool invert;
     
     private Vector3 startPos;
     private Coroutine moveRoutine;

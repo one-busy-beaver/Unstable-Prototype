@@ -113,10 +113,10 @@ TextureImporter:
       name: PC(4)_0
       rect:
         serializedVersion: 2
-        x: 80
-        y: 557
-        width: 362
-        height: 326
+        x: 1470
+        y: 301
+        width: 154
+        height: 148
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -302,8 +302,8 @@ TextureImporter:
       name: PC(4)_16
       rect:
         serializedVersion: 2
-        x: 1448
-        y: 259
+        x: 1447
+        y: 258
         width: 264
         height: 262
       alignment: 0
@@ -546,6 +546,27 @@ TextureImporter:
       bones: []
       spriteID: aff5515a81d8379448bfcbff5b016413
       internalID: 488694619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC(4)_4
+      rect:
+        serializedVersion: 2
+        x: 1083
+        y: 561
+        width: 95
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b8efb33bcbe8334ab17d1fb00037065
+      internalID: 431835105
       vertices: []
       indices: 
       edges: []

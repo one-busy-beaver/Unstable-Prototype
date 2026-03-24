@@ -118,10 +118,8 @@ A 2D low horror game featured with exploration, secrets, and combat. To check ou
 - hurt
 - cast
 - wall jump
-- (ledge climb)
-- (glide)
-- (zipline) 
-- (run)
+- later: ledge climb, glide, zipline, run, parry
+- tool effects: double jump, dash cd, jump height, swim speed/time, health, dps, weapon effect
 
 ### Fun Stuff
 

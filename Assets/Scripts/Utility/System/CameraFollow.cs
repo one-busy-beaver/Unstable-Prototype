@@ -5,6 +5,7 @@ using Cinemachine;
 public class CameraFollow : MonoBehaviour
 {
     public static CameraFollow Instance;
+    public Collider2D activeBound;
 
     [Header("Zoom")]
     [SerializeField] float zoomSpeed = 20f;
@@ -47,7 +48,7 @@ public class CameraFollow : MonoBehaviour
 
     void Update()
     {
-        HandleZoom();
+        //HandleZoom();
         HandlePan();
     }
 
@@ -63,6 +64,7 @@ public class CameraFollow : MonoBehaviour
             if (confinerObj.TryGetComponent<Collider2D>(out var bounds)) 
             {
                 // Forces Cinemachine to recalculate the bounds for the new shape
+                activeBound = bounds;
                 confiner.m_BoundingShape2D = bounds;
                 confiner.InvalidateCache(); 
             }

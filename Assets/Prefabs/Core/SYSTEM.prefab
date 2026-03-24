@@ -115,6 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed2da17af72a2584595bd7cd3d924b27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainMenuID: {fileID: 0}
   pauseMenuUI: {fileID: 6281639200895882216}
 --- !u!1 &587691675483863772
 GameObject:
@@ -645,7 +646,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.21176471, g: 0.24705882, b: 0.3647059, a: 0}
+  m_BackGroundColor: {r: 0.1882353, g: 0.21568628, b: 0.3647059, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

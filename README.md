@@ -14,7 +14,8 @@ A 2D low horror game featured with exploration, secrets, and combat. To check ou
     - zoom
 - scene
     - scene transition
-    - exit-spawn id match
+    - exit-spawn pair
+        - use unity's GUID to keep it stable
     - parallex effect
     - bootstrap
 - game states
@@ -72,7 +73,6 @@ A 2D low horror game featured with exploration, secrets, and combat. To check ou
 
 - one-way platform (fix rope/stair)
 - water surface (not submerged) jump force should be larger
-- improve spawn-exit pair
 - pause menu bug: plays animation when paused
 - last safe ground: need to be smarter
 - climbing and double jump animation?

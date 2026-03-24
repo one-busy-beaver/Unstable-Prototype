@@ -932,9 +932,9 @@ TextureImporter:
       name: PC_19
       rect:
         serializedVersion: 2
-        x: 5885
-        y: 1955
-        width: 39
+        x: 5893
+        y: 1956
+        width: 21
         height: 126
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -966,6 +966,27 @@ TextureImporter:
       bones: []
       spriteID: 3c38f1d17564d5647b4e29097b59a209
       internalID: 363921452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_41
+      rect:
+        serializedVersion: 2
+        x: 2746
+        y: 600
+        width: 148
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73fed2001308d1d47a65a571a6794699
+      internalID: -2089641605
       vertices: []
       indices: 
       edges: []
@@ -1017,6 +1038,7 @@ TextureImporter:
       PC_39: -1297454852
       PC_4: 1073700966
       PC_40: 363921452
+      PC_41: -2089641605
       PC_5: 2018279168
       PC_6: -2105168254
       PC_7: 2049498870

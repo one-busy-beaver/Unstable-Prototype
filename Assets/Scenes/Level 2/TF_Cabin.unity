@@ -173,7 +173,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8044810536790341124, guid: 494dcbfa11ae6d64f92713bb23e464b9, type: 3}
       propertyPath: m_Name
-      value: PlayPlane
+      value: World
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

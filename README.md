@@ -48,13 +48,13 @@ A 2D low horror game featured with exploration, secrets, and combat. To check ou
     - water
     - play-plane
     - background
-    - foreground
+    - silhouette
 - trigger
-    - exit/entrance
+    - exit/door
     - rope/stair
-    - event
     - ability pickup
     - npc
+    - event
 
 ### Scenes
 
@@ -75,19 +75,21 @@ A 2D low horror game featured with exploration, secrets, and combat. To check ou
 - water surface (not submerged) jump force should be larger
 - pause menu bug: plays animation when paused
 - last safe ground: need to be smarter
-- climbing and double jump animation?
+- climbing animation
+- double jump particles
+- adjust zoom to confiner
 
 ### Scenes
 
 - remote village
+    - fish in the water
     - house
         - npc throws key (item pickup)
-        - conversation?
     - garage
         - locked door
-        - dash from box
 - tower front
     - cabin
+    - mansion background
 - tower basement
 - tower entry
     - spikes
@@ -107,8 +109,9 @@ A 2D low horror game featured with exploration, secrets, and combat. To check ou
 
 - bug fix
     - jump buffer
-    - jump not moving forward bug
+    - jump not moving forward bug?
     - opposite key pressed not moving bug
+    - ledge not detecting ground 
 - attack
 - death
 - health

@@ -1,31 +1,40 @@
 using UnityEngine;
 
 
-public class AbilityPickup : InteractEvent
+public class ItemPickup : InteractEvent
 {
     [Header("Ability Settings")]
-    [SerializeField] private AbilityType abilityToGrant;
+    [SerializeField] private CollectID uniqueID;
     [SerializeField] private bool destroyOnPickup = true;
-    [SerializeField] private DestroyAfterCollect col;
+
+    void Awake() {
+        if (WorldState.Instance.IsCollected(uniqueID)) {
+            Destroy(gameObject);
+        }
+    }
 
     public override void Execute()
     {
-        if (PlayerAbilities.Instance != null)
+        if (PlayerInventory.Instance != null)
         {
-            // Unlocks the ability based on the string ID provided in the Inspector
-            PlayerAbilities.Instance.Unlock(abilityToGrant);
+            PlayerInventory.Instance.Unlock(uniqueID);
             
-            Debug.Log($"Unlocked ability: {abilityToGrant}");
+            Debug.Log($"Unlocked ability: {uniqueID}");
 
             if (destroyOnPickup)
             {
-                col.OnPickUp();
+                OnPickUp();
                 Destroy(gameObject);
             }
         }
         else
         {
-            Debug.LogError("PlayerAbilities instance not found in the scene!");
+            Debug.LogError("PlayerInventory instance not found in the scene!");
         }
+    }
+
+    public void OnPickUp() {
+        WorldState.Instance.MarkAsCollected(uniqueID);
+        Destroy(gameObject);
     }
 }

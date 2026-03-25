@@ -89,9 +89,9 @@ public class PlayerJump : MonoBehaviour
 
     void UpdateJumpVariables()
     {
-        if (PlayerAbilities.Instance != null)
+        if (PlayerInventory.Instance != null)
         {
-            maxAirJumps = PlayerAbilities.Instance.HasDoubleJump ? 1 : 0;
+            maxAirJumps = PlayerInventory.Instance.HasDoubleJump ? 1 : 0;
         }
 
         if (pState.onGround)

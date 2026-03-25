@@ -1,5 +1,7 @@
 public enum CollectID
 {
-    Weapon,
-    Dash
+    Dash,
+    DoubleJump,
+    Swim,
+    Key
 }

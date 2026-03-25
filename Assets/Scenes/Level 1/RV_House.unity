@@ -13932,7 +13932,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7718427192438892790, guid: 8dd21dbfc904a604fb9c04ff32b8ba59, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.36
+      value: 4.74
       objectReference: {fileID: 0}
     - target: {fileID: 7718427192438892790, guid: 8dd21dbfc904a604fb9c04ff32b8ba59, type: 3}
       propertyPath: m_LocalPosition.y
@@ -13972,7 +13972,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7903181992972050467, guid: 8dd21dbfc904a604fb9c04ff32b8ba59, type: 3}
       propertyPath: promptText
-      value: Need help?
+      value: Cozy place!
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

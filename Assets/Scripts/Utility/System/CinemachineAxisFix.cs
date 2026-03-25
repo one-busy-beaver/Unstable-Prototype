@@ -3,7 +3,6 @@ using Cinemachine;
 
 [ExecuteInEditMode]
 [SaveDuringPlay]
-[AddComponentMenu("")]
 public class CinemachineAxisFix : CinemachineExtension
 {
     protected override void PostPipelineStageCallback(

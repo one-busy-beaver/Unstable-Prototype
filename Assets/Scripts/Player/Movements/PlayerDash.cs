@@ -38,7 +38,7 @@ public class PlayerDash : MonoBehaviour
     private void HandleDash()
     {
         // GATEKEEPER: Check if ability is unlocked
-        if (PlayerAbilities.Instance == null || !PlayerAbilities.Instance.HasDash) return;
+        if (PlayerInventory.Instance == null || !PlayerInventory.Instance.HasDash) return;
 
         if (dashPressed && canDash && !dashed)
         {

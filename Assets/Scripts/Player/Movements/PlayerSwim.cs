@@ -71,7 +71,7 @@ public class PlayerSwim : MonoBehaviour
 
     public void UpdateActiveAbilities()
     {
-        bool hasSwim = PlayerAbilities.Instance != null && PlayerAbilities.Instance.HasSwim;
+        bool hasSwim = PlayerInventory.Instance != null && PlayerInventory.Instance.HasSwim;
 
         activeSinkSpeed = hasSwim ? swimSinkSpeed : drownSinkSpeed;
         activeSwimUpForce = hasSwim ? swimUpForce : noSwimUpForce;

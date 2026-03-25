@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level 0/_Bootstrap.unity
     guid: 5f103d43d059fea46b0bbc67212a81f2
   - enabled: 1
@@ -41,16 +41,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level 3/T2_Entry.unity
     guid: 150de86e133fce241896db2d18f13764
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level 3/T3_Body.unity
     guid: 3d1b5d1919ad7fc49ab1d851658ad344
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level 3/T4_Exterior.unity
     guid: f89554df7c14c8340826949987417c79
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level 3/T5_Top.unity
     guid: bd7f32d11d823d549bd6ed9ba7158be7
-  - enabled: 1
-    path: Assets/Scenes/Level 2/TF_Mansion_1 1.unity
-    guid: 3119871af345b36469f2b0f24751a820
   m_configObjects: {}

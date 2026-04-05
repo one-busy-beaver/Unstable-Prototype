@@ -27,7 +27,7 @@ public class SceneLoader : MonoBehaviour
         if (scene.name == "_Bootstrap") return;
 
         // Find every SpawnPoint component in the new scene
-        SpawnPoint[] allSpawns = Object.FindObjectsByType<SpawnPoint>(FindObjectsSortMode.None);
+        SpawnPoint[] allSpawns = Object.FindObjectsByType<SpawnPoint>(FindObjectsInactive.Exclude);
         SpawnPoint selectedSpawn = null;
 
         // Priority 1: Look for the specific ID we requested

@@ -45,7 +45,7 @@ public class PlayerWalk : MonoBehaviour
 
     void HandleWalk()
     {
-        rb.velocity = new Vector2(walkSpeed * moveInputX, rb.velocity.y);
-        anim.SetBool("Walking", rb.velocity.x != 0 && pState.onGround);
+        rb.linearVelocity = new Vector2(walkSpeed * moveInputX, rb.linearVelocity.y);
+        anim.SetBool("Walking", rb.linearVelocity.x != 0 && pState.onGround);
     }
 }

@@ -60,12 +60,12 @@ public class PlayerSwim : MonoBehaviour
         // Use your existing InputManager
         if (InputManager.Instance.Controls.Player.Jump.triggered)
         {
-            rb.velocity = new Vector2(rb.velocity.x, activeSwimUpForce);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, activeSwimUpForce);
         }
-        else if (rb.velocity.y < -activeSinkSpeed)
+        else if (rb.linearVelocity.y < -activeSinkSpeed)
         {
             // Clamp downward velocity so you sink slowly instead of dropping like a rock
-            rb.velocity = new Vector2(rb.velocity.x, -activeSinkSpeed);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, -activeSinkSpeed);
         }
     }
 
@@ -94,7 +94,7 @@ public class PlayerSwim : MonoBehaviour
         currentSubmergeTime = 0f;
         
         // Dampen entry velocity and lower gravity so water feels heavy
-        rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f); 
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.5f); 
         rb.gravityScale = originalGravity * 0.5f; 
     }
 
@@ -116,7 +116,7 @@ public class PlayerSwim : MonoBehaviour
             Debug.LogWarning("LastSafeGround missing!");
         }
         
-        rb.velocity = Vector2.zero;
+        rb.linearVelocity = Vector2.zero;
         ExitWater();
     }
 }

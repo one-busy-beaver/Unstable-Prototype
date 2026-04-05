@@ -37,7 +37,7 @@ public class PlayerClimb : MonoBehaviour
         if (pState.canClimb && !pState.isClimbing && moveInput.y > 0.5f)
         {
             pState.isClimbing = true;
-            rb.velocity = Vector2.zero; // Kill horizontal momentum
+            rb.linearVelocity = Vector2.zero; // Kill horizontal momentum
             rb.gravityScale = 0f; // Disable gravity so player doesn't slide down
             
             // Snap player X position to the rope's center
@@ -51,7 +51,7 @@ public class PlayerClimb : MonoBehaviour
         if (pState.isClimbing)
         {
             // Climb up and down
-            rb.velocity = new Vector2(0, moveInput.y * climbSpeed);
+            rb.linearVelocity = new Vector2(0, moveInput.y * climbSpeed);
 
             // Jump off the rope
             if (jumpPressed)
@@ -60,7 +60,7 @@ public class PlayerClimb : MonoBehaviour
                 
                 // Jump in the direction the character is currently facing
                 float faceDirection = transform.localScale.x;
-                rb.velocity = new Vector2(faceDirection * jumpOffForce.x, jumpOffForce.y);
+                rb.linearVelocity = new Vector2(faceDirection * jumpOffForce.x, jumpOffForce.y);
             }
 
             // Naturally fall off if player climbs past the top or bottom of the rope

@@ -60,7 +60,7 @@ public class PlayerDash : MonoBehaviour
         rb.gravityScale = 0;
 
         // Dash at the direction the character is facing
-        rb.velocity = new Vector2(transform.localScale.x * dashSpeed, 0); 
+        rb.linearVelocity = new Vector2(transform.localScale.x * dashSpeed, 0); 
 
         if (pState.onGround)
         {

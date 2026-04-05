@@ -11,16 +11,20 @@ A 2D low horror game featured with exploration, secrets, and combat. To check ou
 - camera
     - confiner
     - pan
-    - zoom
+    - zoom (not working with confiner)
 - scene
-    - scene transition
+    - scene loading
     - exit-spawn pair
-        - use unity's GUID to keep it stable
+        - using unity's GUID for stability
     - parallex effect
     - bootstrap
 - game states
-    - player abilities
+    - player inventory
+        - abilities
+        - items
     - world states
+        - events
+        - picked-up items
 - UI
     - main menu
     - pause menu
@@ -52,7 +56,7 @@ A 2D low horror game featured with exploration, secrets, and combat. To check ou
 - trigger
     - exit/door
     - rope/stair
-    - ability pickup
+    - ability/item pickup
     - npc
     - event
 
@@ -69,74 +73,87 @@ A 2D low horror game featured with exploration, secrets, and combat. To check ou
 
 
 
-## Features to be Implemented
+## TODO
 
-- one-way platform (fix rope/stair)
-- water surface (not submerged) jump force should be larger
-- pause menu bug: plays animation when paused
-- last safe ground: need to be smarter
-- climbing animation
-- double jump particles
-- adjust zoom to confiner
+- changes
+    - change default key bindings
+        - A - dash
+        - S - cast/tool
+        - D - attack
+    - scenes
+        - change RV's gate to sideways, and make it auto-transition
+        - change all trigger texts to be only triggerable when on ground
+    - tilemap
+        - change player layer to default
+        - silhoutte to pure black
 
-### Scenes
+- fix
+    - fix rope and water jump height
+    - fix rope/stair: implement one-way platform
+    - fix pause menu: pause flip and animation when paused
 
-- remote village
-    - fish in the water
-    - house
-        - npc throws key (item pickup)
-    - garage
-        - locked door
-- tower front
-    - cabin
-    - mansion background
-- tower basement
-- tower entry
-    - spikes
-    - moving platforms
-    - enemies
-    - gain cast???
-- tower body
-    - tear boss?
-    - gain swim ability
-- tower exterior
-    - innocent enemies
-    - gain double jump
-- tower top
-    - final boss
+- character
+    - more movements
+        - attack
+        - death
+        - health
+        - hurt
+        - tools/cast
+        - wall jump
+    - bug fix
+        - jump buffer
+        - opposite key pressed not moving bug 
+        - last safe ground
+            - need to account for continuous jumping
+            - ledge not detecting as ground
+    - climbing animation
+    
+- enemies
+    - grass (flytrap) in TF
+    - small animals in lower flooes
+    - rotten animals in higher floors
+    - non-agreesive animale outside the tower
 
-### Character
+- particle systems    
+    - double jump particles
+    - enemies throw particles when head
 
-- bug fix
-    - jump buffer
-    - jump not moving forward bug?
-    - opposite key pressed not moving bug
-    - ledge not detecting ground 
-- attack
-- death
-- health
-- hurt
-- cast
-- wall jump
-- later: ledge climb, glide, zipline, run, parry
-- tool effects: double jump, dash cd, jump height, swim speed/time, health, dps, weapon effect
-
-### Fun Stuff
-
-- stochastic / cellular automata corruption
-- harmonic resonance platforms
-- particle systems
-- the "anxiety" vector field
-- procedural animation
-- roguelike map
-
-### System 
-
-- shader / illumination
 - UI
     - scene transition fade
     - ability and item unlock
     - inventory and abilities
-- nice-to-have
-    - audio player
-    - save / load save
+    
+- addition
+    - npc throws key
+    - locked door
+    - adjust zoom to confiner
+
+### Scenes
+
+- tower entry
+    - spikes
+        - forces you to use dash
+    - moving platforms
+        - harmonic resonance platforms???
+- tower body
+    - the "anxiety" vector field
+        - bullet dodging??
+    - tear boss?
+    - gain swim ability
+- tower exterior
+    - innocent enemies
+    - platforming
+    - gain double jump
+- tower basement
+    - weapon upgrade
+- tower top
+    - loose light
+    - stochastic / cellular automata corruption
+    - final boss
+
+### Character
+
+- later
+    - ledge climb, glide, zipline, run, parry
+- tool effects
+    - double jump, dash cd, jump height, swim speed/time, health, dps, weapon effect

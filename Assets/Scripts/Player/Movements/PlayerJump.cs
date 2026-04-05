@@ -62,24 +62,24 @@ public class PlayerJump : MonoBehaviour
             if (jumpBufferCounter > 0 && coyoteTimeCounter > 0)
             {
                 // Jump
-                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
                 pState.isJumping = true;
                 jumpBufferCounter = 0f;
             }
             else if (!pState.onGround && airJumpCounter < maxAirJumps && jumpPressed)
             {
                 // Air jump
-                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
                 pState.isJumping = true;
                 airJumpCounter++;
                 jumpBufferCounter = 0f;
             }
         }
 
-        if (!jumpHeld && rb.velocity.y > 0)
+        if (!jumpHeld && rb.linearVelocity.y > 0)
         {
             // Cancel jump (same line of code for released jump)
-            rb.velocity += Vector2.up * Physics2D.gravity.y * (riseMultiplier - 1) * Time.fixedDeltaTime;
+            rb.linearVelocity += Vector2.up * Physics2D.gravity.y * (riseMultiplier - 1) * Time.fixedDeltaTime;
 
             pState.isJumping = false;
         }
@@ -119,23 +119,23 @@ public class PlayerJump : MonoBehaviour
 
     void UpdateAirBorneState()
     {
-        if (rb.velocity.y < 0)
+        if (rb.linearVelocity.y < 0)
         {
-            if (Math.Abs(rb.velocity.y) < maxFallSpeed)
+            if (Math.Abs(rb.linearVelocity.y) < maxFallSpeed)
             {
                 // Falling: increase gravity to fall faster
-                rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.fixedDeltaTime;
+                rb.linearVelocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.fixedDeltaTime;
             }
             else
             {
                 // Falling: reached the max fall speed
-                rb.velocity = new Vector2(rb.velocity.x, -maxFallSpeed);
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, -maxFallSpeed);
             }
         }
-        else if (rb.velocity.y > 0 && !jumpHeld)
+        else if (rb.linearVelocity.y > 0 && !jumpHeld)
         {
             // Released jump: slower rise
-            rb.velocity += Vector2.up * Physics2D.gravity.y * (riseMultiplier - 1) * Time.fixedDeltaTime;
+            rb.linearVelocity += Vector2.up * Physics2D.gravity.y * (riseMultiplier - 1) * Time.fixedDeltaTime;
         }
     }
 }

@@ -25,7 +25,7 @@ public class RecoilHandler : MonoBehaviour
         isRecoiling = true;
         recoilTimer = duration;
 
-        rb.velocity = Vector2.zero; // Reset current velocity
+        rb.linearVelocity = Vector2.zero; // Reset current velocity
         rb.AddForce(direction * force, ForceMode2D.Impulse);
     }
 

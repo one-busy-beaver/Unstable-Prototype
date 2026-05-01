@@ -1,26 +1,21 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class PlayerAttack : MonoBehaviour
 {
     [Header("Attacking Settings")]
-    [SerializeField] Transform sideAttackTransform;
-    [SerializeField] Transform upAttackTransform;
-    [SerializeField] Transform downAttackTransform;
-
-    [SerializeField] Vector2 sideAttackArea = new Vector2(4.5f, 3.5f); 
-    [SerializeField] Vector2 upAttackArea = new Vector2(3.5f, 4.5f);
-    [SerializeField] Vector2 downAttackArea = new Vector2(3.5f, 4.5f);
-
+    
+    [SerializeField] PolygonCollider2D attackHitbox;
     [SerializeField] LayerMask attackableLayer;
     [SerializeField] float damage = 1.5f;
     [SerializeField] float timeBetweenAttack = 0.5f; // prevent infinite damage
     [SerializeField] float hitForce = 100;
 
     [SerializeField] GameObject slashEffect;
+    [SerializeField] Vector3 slashOffset = new Vector3(0.56f, -0.43f, 0f);
+    [SerializeField] float slashZRotation = 144.119f;
 
-    bool attack = false;
-    float moveInputY;
-    
+    bool attack = false;    
     float timeSinceAttack;
 
     // Player components
@@ -38,7 +33,6 @@ public class PlayerAttack : MonoBehaviour
     void Update()
     {
         attack = InputManager.Instance.Controls.Player.Attack.IsPressed();
-        moveInputY = InputManager.Instance.Controls.Player.Move.ReadValue<Vector2>().y;
         Attack();
     }
 
@@ -50,61 +44,55 @@ public class PlayerAttack : MonoBehaviour
             timeSinceAttack = 0;
             anim.SetTrigger("Attacking");
 
-            // side way attack
-            if (moveInputY == 0 || moveInputY < 0 && pState.onGround)
+            if (slashEffect != null)
             {
-                Hit(sideAttackTransform, sideAttackArea);
-                Instantiate(slashEffect, sideAttackTransform);
-            } 
-            // up attack
-            else if (moveInputY > 0)
-            {
-                Hit(upAttackTransform, upAttackArea);
-                SlashEffectAtAngle(slashEffect, 90, upAttackTransform);
+                bool isFlipped = transform.localScale.x < 0;
+
+                // Flip X position and Z rotation if we are facing left
+                float xPos = isFlipped ? -0.56f : 0.56f;
+                float zRot = isFlipped ? -144.119f : 144.119f;
+
+                Vector3 spawnPos = transform.position + new Vector3(xPos, -0.43f, 0);
+                Quaternion spawnRot = Quaternion.Euler(0, 0, zRot);
+
+                GameObject slash = Instantiate(slashEffect, spawnPos, spawnRot);
+
+                // Also flip the visual scale of the slash itself
+                if (isFlipped)
+                {
+                    slash.transform.localScale = new Vector3(-1, 1, 1);
+                }
+                //Destroy(slash, 0.5f);
             }
-            // down attack
-            else if (moveInputY < 0 && !pState.onGround)
-            {
-                Hit(downAttackTransform, downAttackArea);
-                SlashEffectAtAngle(slashEffect, -90, downAttackTransform);
-            }
+
+            ProcessHit();
         }
     }
 
-    void Hit(Transform _attackTransform, Vector2 _attackArea)
+    void ProcessHit()
     {
-        Collider2D[] objectsToHit = Physics2D.OverlapBoxAll(
-            _attackTransform.position, 
-            _attackArea,
-            0,
-            attackableLayer
-            );
-        if (objectsToHit.Length > 0) Debug.Log("Hit");
+        ContactFilter2D filter = new ContactFilter2D();
+        filter.SetLayerMask(attackableLayer);
+        filter.useLayerMask = true;
+        filter.useTriggers = true;
 
-        for (int i = 0; i < objectsToHit.Length; i++)
+        List<Collider2D> results = new List<Collider2D>();
+        
+        // This uses the Polygon Collider's exact shape
+        int hitCount = attackHitbox.Overlap(filter, results);
+
+        if (hitCount > 0)
         {
-            Collider2D curObj = objectsToHit[i];
-
-            if (curObj.GetComponent<Enemy>() != null)
+            foreach (Collider2D curObj in results)
             {
-                Vector2 hitDirection = (transform.position - curObj.transform.position).normalized;
-                curObj.GetComponent<Enemy>().EnemyHit(damage, hitDirection, hitForce);
+                Enemy enemy = curObj.GetComponent<Enemy>();
+                if (enemy != null)
+                {
+                    // Calculate direction: (Target - Self) to push away
+                    Vector2 hitDirection = (curObj.transform.position - transform.position).normalized;
+                    enemy.EnemyHit(damage, hitDirection, hitForce);
+                }
             }
         }
-    }
-
-    void SlashEffectAtAngle(GameObject _slashEffect, int _effectAngle, Transform _attackTransform)
-    {
-        _slashEffect = Instantiate(_slashEffect, _attackTransform);
-        _slashEffect.transform.eulerAngles = new Vector3(0, 0, _effectAngle);
-        _slashEffect.transform.localScale = new Vector2(transform.localScale.x, transform.localScale.y);
-    }
-
-    void OnDrawGizmos()
-    {
-        Gizmos.color = Color.cyan;
-        Gizmos.DrawWireCube(sideAttackTransform.position, sideAttackArea);
-        Gizmos.DrawWireCube(upAttackTransform.position, upAttackArea);
-        Gizmos.DrawWireCube(downAttackTransform.position, downAttackArea);
     }
 }

@@ -636,9 +636,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e6bf491effbc354ba7d2b119a6d17b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sideAttackTransform: {fileID: 4950847672355697696}
+  upAttackTransform: {fileID: 5958166900089320187}
+  downAttackTransform: {fileID: 8319246731274327532}
   sideAttackArea: {x: 4.5, y: 3.5}
   upAttackArea: {x: 3.5, y: 4.5}
   downAttackArea: {x: 3.5, y: 4.5}
+  attackableLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  damage: 2
+  timeBetweenAttack: 0.5
+  slashEffect: {fileID: 5523704522695444978, guid: 03dee74cf3e54bf4ead9edf771b039f8, type: 3}
 --- !u!114 &5803637589453038275
 MonoBehaviour:
   m_ObjectHideFlags: 0

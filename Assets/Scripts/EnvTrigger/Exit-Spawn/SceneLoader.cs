@@ -81,4 +81,10 @@ public class SceneLoader : MonoBehaviour
         targetSpawnID = pointToSpawn;
         SceneManager.LoadSceneAsync(sceneToLoad.ToString()); // Async does not pause the current scene
     }
+
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadSceneAsync("Main_Menu");
+    }
+
 }

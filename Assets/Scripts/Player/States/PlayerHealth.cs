@@ -1,12 +1,10 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] int currentHealth = 5;
-    [SerializeField] string mainMenuName = "Main_Menu"; // Exact name of your menu scene
-    [SerializeField] float deathDelay = 2f; // Time for animation to play
+    [SerializeField] float deathDelay = 1.5f; // Time for animation to play
 
     Animator anim;
     Rigidbody2D rb;
@@ -43,7 +41,7 @@ public class PlayerHealth : MonoBehaviour
     IEnumerator LoadMenuAfterDelay()
     {
         yield return new WaitForSeconds(deathDelay); // Wait for animation
-        SceneManager.LoadScene(mainMenuName); // Load the menu
+        SceneLoader.Instance.LoadMainMenu();
     }
 
     public void TakeDamage(int damage)

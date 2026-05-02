@@ -4,9 +4,11 @@ using UnityEngine.SceneManagement;
 public class SceneLoader : MonoBehaviour
 {
     public static SceneLoader Instance;
-    private ExitSpawnID targetSpawnID;
-    [SerializeField] private GameObject playerPrefab;
+    public string lastRespawnScene; // variable to remember where to send the player
+
+    [SerializeField] GameObject playerPrefab;
     
+    ExitSpawnID targetSpawnID;
 
     private void Awake()
     {
@@ -27,36 +29,29 @@ public class SceneLoader : MonoBehaviour
         if (scene.name == "_Bootstrap") return;
 
         // Find every SpawnPoint component in the new scene
-        SpawnPoint[] allSpawns = Object.FindObjectsByType<SpawnPoint>(FindObjectsInactive.Exclude);
-        SpawnPoint selectedSpawn = null;
+        SpawnPoint[] allSpawns = FindObjectsByType<SpawnPoint>(FindObjectsInactive.Exclude);
+        SpawnPoint targetSpawn = null;
+        SpawnPoint taggedSpawn = null;
 
-        // Priority 1: Look for the specific ID we requested
-        if (true)
+        // Look for the specific ID and "Respawn" Tag
+        foreach (SpawnPoint sp in allSpawns)
         {
-            foreach (SpawnPoint sp in allSpawns)
+            if (sp.spawnID == targetSpawnID)
             {
-                if (sp.spawnID == targetSpawnID)
-                {
-                    selectedSpawn = sp;
-                    break;
-                }
+                targetSpawn = sp;
+            }
+
+            if (sp.CompareTag("Respawn"))
+            {
+                taggedSpawn = sp;
+                lastRespawnScene = scene.name;
             }
         }
 
-        // Priority 2: "Respawn" Tag
-        if (selectedSpawn == null)
-        {
-            foreach (SpawnPoint sp in allSpawns)
-            {
-                if (sp.CompareTag("Respawn"))
-                {
-                    selectedSpawn = sp;
-                    break;
-                }
-            }
-        }
+        // specific ID > "Respawn" Tag
+        SpawnPoint selectedSpawn = targetSpawn? targetSpawn : taggedSpawn;
 
-        // Priority 3 (FALLBACK): If ID not found or empty, take the first one available
+        // FALLBACK: If ID not found or empty, take the first one available
         if (selectedSpawn == null && allSpawns.Length > 0)
         {
             selectedSpawn = allSpawns[0];
@@ -84,8 +79,6 @@ public class SceneLoader : MonoBehaviour
     public void LoadScene(string sceneToLoad, ExitSpawnID pointToSpawn)
     {
         targetSpawnID = pointToSpawn;
-        // Async does not pause the current scene
-        SceneManager.LoadSceneAsync(sceneToLoad.ToString());
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadSceneAsync(sceneToLoad.ToString()); // Async does not pause the current scene
     }
 }

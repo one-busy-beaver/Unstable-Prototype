@@ -19,7 +19,7 @@ public static class PlaytestTracker
         {
             // 1. Save the current scene name so the BootstrapManager knows where to go
             string currentScene = EditorSceneManager.GetActiveScene().name;
-            if (currentScene != SceneID._Bootstrap.ToString() && currentScene != SceneID.Main_Menu.ToString())
+            if (currentScene != "_Bootstrap" && currentScene != "Main_Menu")
             {
                 EditorPrefs.SetString(LastSceneKey, currentScene);
                 

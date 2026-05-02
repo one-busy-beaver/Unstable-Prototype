@@ -58,6 +58,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
+  m_UseReflectionProbes: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
@@ -115,8 +116,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed2da17af72a2584595bd7cd3d924b27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenuID: {fileID: 0}
   pauseMenuUI: {fileID: 6281639200895882216}
+  mainMenuSceneName: Main_Menu
+  mainMenuScene: {fileID: 102900000, guid: 375720926b347d24d8ab10ac859bbae3, type: 3}
 --- !u!1 &587691675483863772
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,6 +251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a960ffb8b50c6149aff047b893a4219, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lastRespawnScene: 
   playerPrefab: {fileID: 6095308487931501148, guid: d908690526c3d02479d63d4fcffc81cd, type: 3}
 --- !u!1 &1941464335120185387
 GameObject:
@@ -385,6 +388,7 @@ MonoBehaviour:
   _hasDash: 0
   _hasDoubleJump: 0
   _hasSwim: 0
+  _hasKey: 0
 --- !u!1 &6165992797070502026
 GameObject:
   m_ObjectHideFlags: 0
@@ -797,6 +801,7 @@ MonoBehaviour:
   m_BoundingShape2D: {fileID: 0}
   m_Damping: 0.5
   m_MaxWindowSize: -1
+  m_Padding: 0
 --- !u!114 &3507384526258779422
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ OcclusionCullingSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 9
+  serializedVersion: 10
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -38,13 +38,12 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 12
-  m_GIWorkflowMode: 1
+  serializedVersion: 13
+  m_BakeOnSceneLoad: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -67,9 +66,6 @@ LightmapSettings:
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
     m_TextureCompression: 1
-    m_FinalGather: 0
-    m_FinalGatherFiltering: 1
-    m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
     m_BakeBackend: 1
@@ -505,6 +501,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Quit
       objectReference: {fileID: 0}
+    - target: {fileID: 6045191264909855314, guid: e41fc0b8c1a51c848b9a54b95f66c2b6, type: 3}
+      propertyPath: m_ActiveFontFeatures.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7351538940043158635, guid: e41fc0b8c1a51c848b9a54b95f66c2b6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -772,20 +772,23 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
+  m_TextWrappingMode: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 0
+  m_ActiveFontFeatures: 
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -1409,6 +1412,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
+  m_UseReflectionProbes: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
@@ -1449,8 +1453,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainMenuPanel: {fileID: 1054778957}
   controlsPanel: {fileID: 1268789120523812077}
-  sceneToLoad: 2
-  targetSpawnID: {fileID: 11400000, guid: 5f5d34086aa91534782cdca633057e99, type: 2}
+  initialSceneName: Remote_Village
+  initialScene: {fileID: 102900000, guid: 2cda990e2423bbf4892e6590ba056729, type: 3}
 --- !u!1001 &1435371186
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1498,6 +1502,14 @@ PrefabInstance:
     - target: {fileID: 102170827112348743, guid: 259fff037ab90ac408090f97a4e143d7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843587881165457002, guid: 259fff037ab90ac408090f97a4e143d7, type: 3}
+      propertyPath: mainMenuScene
+      value: 
+      objectReference: {fileID: 102900000, guid: 375720926b347d24d8ab10ac859bbae3, type: 3}
+    - target: {fileID: 4843587881165457002, guid: 259fff037ab90ac408090f97a4e143d7, type: 3}
+      propertyPath: mainMenuSceneName
+      value: Main_Menu
       objectReference: {fileID: 0}
     - target: {fileID: 7996059210525331306, guid: 259fff037ab90ac408090f97a4e143d7, type: 3}
       propertyPath: m_Name
@@ -2164,6 +2176,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Controls
       objectReference: {fileID: 0}
+    - target: {fileID: 6045191264909855314, guid: e41fc0b8c1a51c848b9a54b95f66c2b6, type: 3}
+      propertyPath: m_ActiveFontFeatures.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7351538940043158635, guid: e41fc0b8c1a51c848b9a54b95f66c2b6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2827,6 +2843,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Play
       objectReference: {fileID: 0}
+    - target: {fileID: 6045191264909855314, guid: e41fc0b8c1a51c848b9a54b95f66c2b6, type: 3}
+      propertyPath: m_ActiveFontFeatures.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7351538940043158635, guid: e41fc0b8c1a51c848b9a54b95f66c2b6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -3184,6 +3204,10 @@ PrefabInstance:
     - target: {fileID: 6808659312188720948, guid: c92c2e5d3ba701c4f927a3e0fa9a1363, type: 3}
       propertyPath: m_text
       value: 'Game: Unstable'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6808659312188720948, guid: c92c2e5d3ba701c4f927a3e0fa9a1363, type: 3}
+      propertyPath: m_ActiveFontFeatures.Array.size
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

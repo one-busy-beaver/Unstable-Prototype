@@ -1,4 +1,7 @@
 using UnityEngine;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 public class MainMenu : MonoBehaviour
 {
@@ -6,12 +9,35 @@ public class MainMenu : MonoBehaviour
     [Header("UI Panels")]
     [SerializeField] GameObject mainMenuPanel;
     [SerializeField] GameObject controlsPanel;
-    [SerializeField] SceneID sceneToLoad;
-    [SerializeField] ExitSpawnID targetSpawnID;
+    
+    // This is hidden but stays in the metadata for the build
+    [HideInInspector] [SerializeField] string initialSceneName;
+
+#if UNITY_EDITOR
+    [Header("Scene Configuration")]
+    [Tooltip("Drag the first level of your game here.")]
+    [SerializeField] SceneAsset initialScene;
+
+    private void OnValidate()
+    {
+        // Automatically sync the string name whenever you change the asset in the inspector
+        if (initialScene != null)
+        {
+            initialSceneName = initialScene.name;
+        }
+    }
+#endif
 
     public void PlayGame()
     {
-        SceneLoader.Instance.LoadScene(sceneToLoad.ToString(), targetSpawnID);
+        string sceneToLoad = SceneLoader.Instance.lastRespawnScene;
+
+        if (string.IsNullOrEmpty(sceneToLoad))
+        {
+            sceneToLoad = initialSceneName;
+        }
+
+        SceneLoader.Instance.LoadScene(sceneToLoad, null);
     }
 
     public void ControlPanel()

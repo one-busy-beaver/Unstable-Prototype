@@ -40,6 +40,8 @@ public class PlayerJump : MonoBehaviour
         jumpHeld = InputManager.Instance.Controls.Player.Jump.IsPressed();
 
         UpdateJumpVariables();
+
+        anim.SetBool("Jumping", !pState.onGround);
         
         if ((!pState.inWater || pState.onGround) && !pState.isClimbing) 
         {
@@ -83,8 +85,6 @@ public class PlayerJump : MonoBehaviour
 
             pState.isJumping = false;
         }
-
-        anim.SetBool("Jumping", !pState.onGround);
     }
 
     void UpdateJumpVariables()
@@ -128,7 +128,7 @@ public class PlayerJump : MonoBehaviour
             }
             else
             {
-                // Falling: reached the max fall speed
+                // Falling: reached the max fall speedanim
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, -maxFallSpeed);
             }
         }

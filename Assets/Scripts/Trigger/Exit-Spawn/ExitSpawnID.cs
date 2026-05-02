@@ -1,7 +1,6 @@
 using UnityEngine;
 
 #if UNITY_EDITOR
-using UnityEditor.Search;
 using UnityEditor;
 #endif
 

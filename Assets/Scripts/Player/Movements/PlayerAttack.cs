@@ -14,13 +14,14 @@ public class PlayerAttack : MonoBehaviour
     float timeSinceAttack;
 
     // Player components
-    Rigidbody2D rb;
     Animator anim;
+    PlayerStates pState;
     Recoil recoil;
 
     void Start()
     {
         anim = GetComponent<Animator>();
+        pState = GetComponent<PlayerStates>();
         recoil = GetComponent<Recoil>();
     }
 
@@ -34,7 +35,7 @@ public class PlayerAttack : MonoBehaviour
     {
         timeSinceAttack += Time.deltaTime;
 
-        if (attack && timeSinceAttack >= timeBetweenAttack) {
+        if (attack && timeSinceAttack >= timeBetweenAttack && !pState.isClimbing) {
             timeSinceAttack = 0;
             anim.SetTrigger("Attacking");
 

@@ -1,22 +1,57 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] int currentHealth = 5;
-    [SerializeField] int maxHealth = 5;
-    Recoil recoil;
+    [SerializeField] string mainMenuName = "Main_Menu"; // Exact name of your menu scene
+    [SerializeField] float deathDelay = 2f; // Time for animation to play
 
-    void Awake() => recoil = GetComponent<Recoil>();
+    Animator anim;
+    Rigidbody2D rb;
+
+    bool isDead = false;
+
+    void Awake()
+    {
+        anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+    }
 
     void Update() => HandleDeath();
 
     void HandleDeath()
     {
-        if (currentHealth <= 0) { /* Handle Player Death */ }
+        if (currentHealth <= 0 && !isDead) 
+        {
+            isDead = true;
+            anim.SetTrigger("Die"); // Transition from Any State
+            
+            // Lock physics and input
+            rb.linearVelocity = Vector2.zero;
+            rb.simulated = false; 
+
+            // Stop other scripts
+            if (TryGetComponent<PlayerWalk>(out var walk)) walk.enabled = false;
+            if (TryGetComponent<PlayerJump>(out var jump)) jump.enabled = false;
+
+            StartCoroutine(LoadMenuAfterDelay());
+        }
+    }
+
+    IEnumerator LoadMenuAfterDelay()
+    {
+        yield return new WaitForSeconds(deathDelay); // Wait for animation
+        SceneManager.LoadScene(mainMenuName); // Load the menu
     }
 
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        if (currentHealth > 0)
+        {
+            anim.SetTrigger("Hurt");
+        }
     }
 }

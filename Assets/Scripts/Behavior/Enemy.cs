@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] GameObject sprite;
     [SerializeField] int health = 6;
     [SerializeField] int contactDamage = 1;
+    [SerializeField] float contactForce = 6f;
 
     [SerializeField] Color deathColor = new Color(0.7f, 0.7f, 0.7f, 1f);
     [SerializeField] List<Collider2D> damageHitboxes;
@@ -59,7 +60,12 @@ public class Enemy : MonoBehaviour
         // Look for a PlayerHealth component on contact
         if (collision.TryGetComponent(out PlayerHealth player))
         {
-            player.TakeDamage(contactDamage, transform.position);
+            player.TakeDamage(contactDamage);
+            
+            if (collision.TryGetComponent(out Recoil playerRecoil))
+            {
+                playerRecoil.TriggerRecoil(transform.position, false, contactForce);
+            }
         }
     }
 }

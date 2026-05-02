@@ -3,34 +3,37 @@ using UnityEngine;
 public class PlayerSwim : MonoBehaviour
 {
     [Header("Swimming Settings")]
-    [SerializeField] private float swimSinkSpeed = 4f;
-    [SerializeField] private float swimUpForce = 7f;
-    [SerializeField] private float swimSubmergeTime = 7f;
+    [SerializeField] float swimSinkSpeed = 4f;
+    [SerializeField] float swimUpForce = 7f;
+    [SerializeField] float swimSubmergeTime = 7f;
 
     [Header("Drowning Settings")]
-    [SerializeField] private float drownSinkSpeed = 2f;
-    [SerializeField] private float noSwimUpForce = 0f;
-    [SerializeField] private float drownSubmergeTime = 0.5f;
+    [SerializeField] float drownSinkSpeed = 2f;
+    [SerializeField] float noSwimUpForce = 0f;
+    [SerializeField] float drownSubmergeTime = 0.5f;
+    [SerializeField] int drownDamage = 1;
 
     [Header("Active Config")]
-    [SerializeField] private float activeSinkSpeed;
-    [SerializeField] private float activeSwimUpForce;
-    [SerializeField] private float activeMaxSubmergeTime;
+    [SerializeField] float activeSinkSpeed;
+    [SerializeField] float activeSwimUpForce;
+    [SerializeField] float activeMaxSubmergeTime;
     
     // Player components
-    private Rigidbody2D rb;
-    private PlayerStates pState;
-    private LastSafeGround tracker;
+    Rigidbody2D rb;
+    PlayerStates pState;
+    LastSafeGround tracker;
+    PlayerHealth health;
 
     // Private variables
-    private float currentSubmergeTime;    
-    private float originalGravity;
+    float currentSubmergeTime;    
+    float originalGravity;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         pState = GetComponent<PlayerStates>();
         tracker = GetComponent<LastSafeGround>();
+        health = GetComponent<PlayerHealth>();
         originalGravity = rb.gravityScale;
     }
 
@@ -106,7 +109,9 @@ public class PlayerSwim : MonoBehaviour
     }
 
     private void DrownAndRespawn()
-    {
+    {   
+        health.TakeDamage(drownDamage);
+
         if (tracker != null)
         {
             transform.position = tracker.GetLastSafePosition();

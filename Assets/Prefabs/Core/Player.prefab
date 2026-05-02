@@ -515,6 +515,7 @@ MonoBehaviour:
   drownSinkSpeed: 2
   noSwimUpForce: 0
   drownSubmergeTime: 0.5
+  drownDamage: 1
   activeSinkSpeed: 0
   activeSwimUpForce: 0
   activeMaxSubmergeTime: 0
@@ -547,7 +548,7 @@ MonoBehaviour:
   attackHitbox: {fileID: 5726540258790642486}
   attackableLayer:
     serializedVersion: 2
-    m_Bits: 640
+    m_Bits: 512
   damage: 2
   timeBetweenAttack: 0.5
 --- !u!114 &5803637589453038275
@@ -702,12 +703,12 @@ PolygonCollider2D:
     - - {x: 2.087305, y: 0.49095166}
       - {x: 1.5507584, y: 0.7529801}
       - {x: 0.58758926, y: 1.0642685}
-      - {x: -0.44149303, y: 1.1535512}
-      - {x: -1.333971, y: 1.1736517}
-      - {x: -1.2706833, y: 0.1864636}
-      - {x: -0.6396256, y: -0.3534489}
-      - {x: 1.9798989, y: -1.2552017}
-      - {x: 2.8992844, y: -1.2803916}
+      - {x: -0.43232822, y: 1.2543643}
+      - {x: -1.1140156, y: 1.2561351}
+      - {x: -0.4275198, y: 0.7271879}
+      - {x: -0.21071911, y: -0.031541526}
+      - {x: -0.20731837, y: -1.198562}
+      - {x: 2.9235592, y: -1.1751988}
       - {x: 2.972941, y: -0.6770328}
       - {x: 2.66055, y: -0.10716474}
   m_UseDelaunayMesh: 1

@@ -15,9 +15,8 @@ public class PlayerHealth : MonoBehaviour
         if (currentHealth <= 0) { /* Handle Player Death */ }
     }
 
-    public void TakeDamage(int damage, Vector2 sourcePos)
+    public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        recoil.TriggerRecoil(sourcePos);
     }
 }

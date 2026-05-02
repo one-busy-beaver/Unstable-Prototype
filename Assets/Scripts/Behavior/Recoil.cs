@@ -11,15 +11,15 @@ public class Recoil : MonoBehaviour
 
     void Awake() => rb = GetComponent<Rigidbody2D>();
 
-    public void TriggerRecoil(Vector2 hitSourcePosition)
+    public void TriggerRecoil(Vector2 hitSourcePosition, bool snap = true, float multiplier = 1f)
     {
         if (IsRecoiling) return;
         
         // Calculate direction from source to this object
         Vector2 rawDir = ((Vector2)transform.position - hitSourcePosition).normalized;
-        Vector2 snappedDir = SnapToCardinal(rawDir);
+        Vector2 snappedDir = snap ? SnapToCardinal(rawDir) : rawDir;
         
-        StartCoroutine(RecoilRoutine(snappedDir));
+        StartCoroutine(RecoilRoutine(snappedDir, multiplier));
     }
 
     Vector2 SnapToCardinal(Vector2 dir)
@@ -30,7 +30,7 @@ public class Recoil : MonoBehaviour
             return new Vector2(0, Mathf.Sign(dir.y));
     }
 
-    IEnumerator RecoilRoutine(Vector2 direction)
+    IEnumerator RecoilRoutine(Vector2 direction, float multiplier)
     {
         IsRecoiling = true;
         
@@ -39,7 +39,7 @@ public class Recoil : MonoBehaviour
         {
             timer += Time.deltaTime;
             // Set velocity directly for a consistent, short burst
-            rb.linearVelocity = direction * recoilSpeed; 
+            rb.linearVelocity = direction * recoilSpeed * multiplier; 
             yield return null;
         }
 

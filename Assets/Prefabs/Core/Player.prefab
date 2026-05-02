@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 8766499525630223019}
   - component: {fileID: 4374004544040625091}
   - component: {fileID: 5803637589453038275}
+  - component: {fileID: 6668163666994237844}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -548,7 +549,6 @@ MonoBehaviour:
     m_Bits: 128
   damage: 2
   timeBetweenAttack: 0.5
-  hitForce: 30
 --- !u!114 &5803637589453038275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -561,6 +561,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa57c6bdbad606243b0e766348c21539, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerPlatformDrop
+--- !u!114 &6668163666994237844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6095308487931501148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36003af6f5452d444b7c88322857a8e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Recoil
+  recoilTime: 0.15
+  recoilSpeed: 5
 --- !u!1 &7871733578589014881
 GameObject:
   m_ObjectHideFlags: 0

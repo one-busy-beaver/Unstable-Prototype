@@ -96,7 +96,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""name"": ""Pause"",
                     ""type"": ""Button"",
                     ""id"": ""837e41ca-e149-402d-9812-174685ee021c"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -123,7 +123,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""name"": ""Dash"",
                     ""type"": ""Button"",
                     ""id"": ""b890abe3-c86b-474e-beac-48cb8ab4145b"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -132,7 +132,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""name"": ""Interact"",
                     ""type"": ""Button"",
                     ""id"": ""a82db5e6-3dcc-4970-a09d-ffc79aff9bd1"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -141,7 +141,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""name"": ""Attack"",
                     ""type"": ""Button"",
                     ""id"": ""40385d2f-34e2-4770-a41a-f00f3b127de8"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -150,7 +150,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""name"": ""Cast"",
                     ""type"": ""Button"",
                     ""id"": ""0eb8d7d4-8f7a-4ba8-b14a-0a07ecf6bab4"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -215,7 +215,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""054db064-5f9b-436d-b8c8-663aee53d31a"",
-                    ""path"": ""<Keyboard>/z"",
+                    ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -237,7 +237,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""d84d27db-1f55-4ea7-b2e9-4845ce3a320e"",
-                    ""path"": ""<Keyboard>/c"",
+                    ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -248,7 +248,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""f1011ac9-6f3f-4309-8977-e7de75bb2d50"",
-                    ""path"": ""<Keyboard>/x"",
+                    ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

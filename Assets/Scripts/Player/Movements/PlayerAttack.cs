@@ -11,10 +11,6 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] float timeBetweenAttack = 0.5f; // prevent infinite damage
     [SerializeField] float hitForce = 100;
 
-    [SerializeField] GameObject slashEffect;
-    [SerializeField] Vector3 slashOffset = new Vector3(0.56f, -0.43f, 0f);
-    [SerializeField] float slashZRotation = 144.119f;
-
     bool attack = false;    
     float timeSinceAttack;
 
@@ -43,27 +39,6 @@ public class PlayerAttack : MonoBehaviour
         if (attack && timeSinceAttack >= timeBetweenAttack) {
             timeSinceAttack = 0;
             anim.SetTrigger("Attacking");
-
-            if (slashEffect != null)
-            {
-                bool isFlipped = transform.localScale.x < 0;
-
-                // Flip X position and Z rotation if we are facing left
-                float xPos = isFlipped ? -0.56f : 0.56f;
-                float zRot = isFlipped ? -144.119f : 144.119f;
-
-                Vector3 spawnPos = transform.position + new Vector3(xPos, -0.43f, 0);
-                Quaternion spawnRot = Quaternion.Euler(0, 0, zRot);
-
-                GameObject slash = Instantiate(slashEffect, spawnPos, spawnRot);
-
-                // Also flip the visual scale of the slash itself
-                if (isFlipped)
-                {
-                    slash.transform.localScale = new Vector3(-1, 1, 1);
-                }
-                //Destroy(slash, 0.5f);
-            }
 
             ProcessHit();
         }

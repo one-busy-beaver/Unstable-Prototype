@@ -11,12 +11,14 @@ public class Recoil : MonoBehaviour
 
     void Awake() => rb = GetComponent<Rigidbody2D>();
 
-    public void TriggerRecoil(Vector2 direction)
+    public void TriggerRecoil(Vector2 hitSourcePosition)
     {
         if (IsRecoiling) return;
         
-        // Snap to 4 cardinal directions
-        Vector2 snappedDir = SnapToCardinal(direction);
+        // Calculate direction from source to this object
+        Vector2 rawDir = ((Vector2)transform.position - hitSourcePosition).normalized;
+        Vector2 snappedDir = SnapToCardinal(rawDir);
+        
         StartCoroutine(RecoilRoutine(snappedDir));
     }
 

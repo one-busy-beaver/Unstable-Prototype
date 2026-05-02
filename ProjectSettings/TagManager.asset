@@ -13,9 +13,9 @@ TagManager:
   - Water
   - UI
   - Rope
-  - Attackable
-  - 
-  - 
+  - EnemyBody
+  - Player
+  - Enemy
   - 
   - 
   - 

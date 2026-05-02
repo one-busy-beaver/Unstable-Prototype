@@ -1,27 +1,65 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] float health = 6;
-    
+    [SerializeField] GameObject sprite;
+    [SerializeField] int health = 6;
+    [SerializeField] int contactDamage = 1;
 
-    void Update()
-    {
-        HanldeDeath();
-    }
+    [SerializeField] Color deathColor = new Color(0.7f, 0.7f, 0.7f, 1f);
+    [SerializeField] List<Collider2D> damageHitboxes;
 
-    void HanldeDeath()
+    Recoil recoil;
+    bool isDead = false;
+
+    void Awake()
     {
-        if (health <= 0)
+        recoil = GetComponent<Recoil>();
+
+        // Ensure all assigned colliders are triggers
+        foreach (var col in damageHitboxes)
         {
-            Destroy(gameObject);
+            if (col != null) col.isTrigger = true;
         }
     }
 
-    public void EnemyHit(float _damageDone)
+    void Update() => HandleDeath();
+
+    public void EnemyHit(int damage, Vector2 sourcePos)
     {
-        health -= _damageDone;
-        if (health <= 0)
-            Destroy(gameObject);
+        health -= damage;
+        recoil.TriggerRecoil(sourcePos);
+    }
+
+    void HandleDeath()
+    {
+        if (isDead) return;
+        
+        if (health <= 0) 
+        {
+            isDead = true;
+
+            // Turn the sprite gray
+            sprite.GetComponent<SpriteRenderer>().color = deathColor;
+
+            // Disable all hitboxes so it can't hurt the player or be hit again
+            foreach (var col in damageHitboxes)
+            {
+                col.enabled = false;
+            }
+
+            // Optional: If you have a separate movement/AI script, 
+            // you should disable it here as well.
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        // Look for a PlayerHealth component on contact
+        if (collision.TryGetComponent(out PlayerHealth player))
+        {
+            player.TakeDamage(contactDamage, transform.position);
+        }
     }
 }

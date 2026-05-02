@@ -3,15 +3,15 @@ using UnityEngine;
 public class PlayerWalk : MonoBehaviour
 {
     [Header("Walking Settings")]
-    [SerializeField] private float walkSpeed = 8f;
+    [SerializeField] float walkSpeed = 8f;
     
     // Player components
-    private Rigidbody2D rb;
-    private Animator anim;
-    private PlayerStates pState;
+    Rigidbody2D rb;
+    Animator anim;
+    PlayerStates pState;
 
     // Private variables
-    private float moveInputX;
+    float moveInputX;
 
     void Start()
     {

@@ -3,22 +3,24 @@ using UnityEngine;
 public class PlayerClimb : MonoBehaviour
 {
     [Header("Climbing Settings")]
-    [SerializeField] private float climbSpeed = 6f;
-    [SerializeField] private Vector2 jumpOffForce = new Vector2(10f, 10f);
+    [SerializeField] float climbSpeed = 6f;
+    [SerializeField] Vector2 jumpOffForce = new Vector2(10f, 10f);
 
     // Player components
-    private Rigidbody2D rb;
-    private PlayerStates pState;
+    Rigidbody2D rb;
+    Animator anim;
+    PlayerStates pState;
 
     // Private variables
     Vector2 moveInput;
     bool jumpPressed;
-    private float originalGravity;
-    private Transform currentRope; // Stores the rope to snap to
+    float originalGravity;
+    Transform currentRope; // Stores the rope to snap to
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         pState = GetComponent<PlayerStates>();
         originalGravity = rb.gravityScale;
     }
@@ -31,7 +33,7 @@ public class PlayerClimb : MonoBehaviour
         HandleClimb();
     }
 
-    private void HandleClimb()
+    void HandleClimb()
     {
         // Attach to rope (Ignore unless pressing UP)
         if (pState.canClimb && !pState.isClimbing && moveInput.y > 0.5f)
@@ -53,6 +55,10 @@ public class PlayerClimb : MonoBehaviour
             // Climb up and down
             rb.linearVelocity = new Vector2(0, moveInput.y * climbSpeed);
 
+            anim.SetBool("Climbing", true);
+            float animPlaySpeed = Mathf.Abs(moveInput.y) > 0.1f ? 1f : 0f;
+            anim.SetFloat("climbSpeed", animPlaySpeed);
+
             // Jump off the rope
             if (jumpPressed)
             {
@@ -64,16 +70,17 @@ public class PlayerClimb : MonoBehaviour
             }
 
             // Naturally fall off if player climbs past the top or bottom of the rope
-            if (!pState.canClimb)
+            if (!pState.canClimb || pState.onGround)
             {
                 DetachFromRope();
             }
         }
     }
 
-    private void DetachFromRope()
+    void DetachFromRope()
     {
         pState.isClimbing = false;
+        anim.SetBool("Climbing", false);
         rb.gravityScale = originalGravity; // Restore gravity
     }
 

@@ -3,7 +3,6 @@ using System.Collections;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] int currentHealth = 5;
     [SerializeField] float deathDelay = 1.5f; // Time for animation to play
 
     Animator anim;
@@ -21,7 +20,7 @@ public class PlayerHealth : MonoBehaviour
 
     void HandleDeath()
     {
-        if (currentHealth <= 0 && !isDead) 
+        if (PlayerInventory.Instance.currentHealth <= 0 && !isDead) 
         {
             isDead = true;
             anim.SetTrigger("Die"); // Transition from Any State
@@ -46,8 +45,8 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
-        if (currentHealth > 0)
+        PlayerInventory.Instance.currentHealth -= damage;
+        if (PlayerInventory.Instance.currentHealth > 0)
         {
             anim.SetTrigger("Hurt");
         }

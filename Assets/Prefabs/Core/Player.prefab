@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 5803637589453038275}
   - component: {fileID: 6668163666994237844}
   - component: {fileID: 2109084533402678747}
+  - component: {fileID: 8238105533132594328}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -81,6 +82,7 @@ Transform:
   m_Children:
   - {fileID: 8817662664141713333}
   - {fileID: 1820784873338373850}
+  - {fileID: 5173960531018117174}
   - {fileID: 5185167233011599096}
   - {fileID: 5459110455288341024}
   m_Father: {fileID: 0}
@@ -589,8 +591,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0dc935feff1c24fbeccd3ddd1b8f5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
-  currentHealth: 5
-  maxHealth: 5
+  deathDelay: 1.5
+--- !u!114 &8238105533132594328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6095308487931501148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a69d5f756634e8243a9d09ef0780a809, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerCast
+  fireballPrefab: {fileID: 495572911099881207, guid: 8681903cf1292264f883f50d5e9bc3dd, type: 3}
+  launchPoint: {fileID: 5173960531018117174}
+  castCooldown: 0.5
 --- !u!1 &7871733578589014881
 GameObject:
   m_ObjectHideFlags: 0
@@ -603,7 +619,7 @@ GameObject:
   m_Layer: 8
   m_Name: Head Sensor
   m_TagString: Untagged
-  m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -712,6 +728,37 @@ PolygonCollider2D:
       - {x: 2.972941, y: -0.6770328}
       - {x: 2.66055, y: -0.10716474}
   m_UseDelaunayMesh: 1
+--- !u!1 &8883658369355114563
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5173960531018117174}
+  m_Layer: 8
+  m_Name: Launch Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5173960531018117174
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8883658369355114563}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.57, y: -0.68, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 967022338603152300}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &7980488885675497576
 PrefabInstance:
   m_ObjectHideFlags: 0

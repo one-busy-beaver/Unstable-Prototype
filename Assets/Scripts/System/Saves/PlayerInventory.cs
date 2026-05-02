@@ -4,6 +4,10 @@ public class PlayerInventory : MonoBehaviour
 {
     public static PlayerInventory Instance;
 
+    [Header("Player Stats")]
+    public int currentHealth = 5;
+    public int maxHealth = 5;
+
     [Header("Unlocked Abilities")]
     [SerializeField] private bool _hasDash = false;
     [SerializeField] private bool _hasDoubleJump = false;
@@ -40,5 +44,14 @@ public class PlayerInventory : MonoBehaviour
             case CollectID.Swim: _hasSwim = true; break;
             case CollectID.Key: _hasKey = true; break;
         }
+    }
+
+    public void UpdateHealth(int amount)
+    {
+        // Clamp health between 0 and maxHealth
+        // currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth)
+        currentHealth += amount;
+        if (currentHealth > maxHealth) currentHealth = maxHealth;
+        if (currentHealth < 0) currentHealth = 0;
     }
 }

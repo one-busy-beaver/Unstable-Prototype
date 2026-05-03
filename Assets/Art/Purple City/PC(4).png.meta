@@ -110,28 +110,6 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PC(4)_0
-      rect:
-        serializedVersion: 2
-        x: 1470
-        y: 301
-        width: 154
-        height: 148
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 190a018d2b7befb4985c7bd2e17e3964
-      internalID: -2110327108
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: PC(4)_2
       rect:
         serializedVersion: 2
@@ -198,50 +176,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PC(4)_16
-      rect:
-        serializedVersion: 2
-        x: 1447
-        y: 258
-        width: 264
-        height: 262
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8dd1f17c38820a14582a2823c9ac7332
-      internalID: 275810926
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PC(4)_21
-      rect:
-        serializedVersion: 2
-        x: 2903
-        y: 336
-        width: 91
-        height: 129
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 00074fa137acf7b44acfac9040eabef5
-      internalID: -1031790893
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: PC(4)_31
       rect:
         serializedVersion: 2
@@ -294,7 +228,7 @@ TextureImporter:
         width: 603
         height: 447
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []

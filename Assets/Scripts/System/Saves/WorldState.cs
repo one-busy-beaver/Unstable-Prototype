@@ -8,6 +8,9 @@ public class WorldState : MonoBehaviour
     private HashSet<CollectID> collectedItems = new HashSet<CollectID>();
     private HashSet<EventID> worldEvent = new HashSet<EventID>();
 
+    // Session: Enemies and Health/Fireball pickups (Resets on death)
+    private HashSet<SessionID> sessionList = new HashSet<SessionID>();
+
     // An event that other scripts can subscribe to
     public static event Action<EventID, bool> OnStateChanged;
 
@@ -15,14 +18,25 @@ public class WorldState : MonoBehaviour
     {
         if (Instance == null) {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
         } else {
             Destroy(gameObject);
         }
     }
 
+    // --- Permanent Logic ---
     public void MarkAsCollected(CollectID id) => collectedItems.Add(id);
     public bool IsCollected(CollectID id) => collectedItems.Contains(id);
+
+    // --- Session Logic (Enemies & Resources) ---
+    public void MarkAsDead(SessionID uniqueID) => sessionList.Add(uniqueID);
+    public bool IsDead(SessionID uniqueID) => sessionList.Contains(uniqueID);
+
+    // Call this when the player dies and goes back to Main Menu
+    public void ResetSession()
+    {
+        sessionList.Clear();
+        Debug.Log("WorldState: Session reset. Enemies and resources will respawn.");
+    }
 
     public void SetFlag(EventID eventName, bool value) {
         if (value) worldEvent.Add(eventName);

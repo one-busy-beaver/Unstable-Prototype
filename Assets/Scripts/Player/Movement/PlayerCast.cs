@@ -16,8 +16,9 @@ public class PlayerCast : MonoBehaviour
     {
         cooldownTimer += Time.deltaTime;
 
-        // Use whatever input key you prefer
-        if (InputManager.Instance.Controls.Player.Cast.triggered && cooldownTimer >= castCooldown)
+        if (InputManager.Instance.Controls.Player.Cast.triggered && 
+            cooldownTimer >= castCooldown &&
+            PlayerInventory.Instance.currentFireballs > 0)
         {
             Cast();
         }
@@ -26,12 +27,11 @@ public class PlayerCast : MonoBehaviour
     void Cast()
     {
         cooldownTimer = 0;
+        PlayerInventory.Instance.UpdateFireballs(-1);
+
         anim.SetTrigger("Casting");
 
-        // We instantiate the fireball at the launch point
         GameObject ball = Instantiate(fireballPrefab, launchPoint.position, Quaternion.identity);
-        
-        // Pass the player's current facing direction (1 or -1) to the fireball
         float direction = transform.localScale.x;
         ball.GetComponent<Fireball>().Setup(direction);
     }

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
-[CreateAssetMenu(fileName = "MewID", menuName = "Navigation/Exit Spawn ID")]
+[CreateAssetMenu(fileName = "NewID", menuName = "Data/Exit Spawn ID")]
 public class ExitSpawnID: ScriptableObject
 {
     // This is the string your game will actually use to load the scene at runtime.

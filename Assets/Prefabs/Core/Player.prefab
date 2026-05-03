@@ -55,9 +55,9 @@ GameObject:
   - component: {fileID: 4011736607006245582}
   - component: {fileID: 3792904348860893158}
   - component: {fileID: 8766499525630223019}
-  - component: {fileID: 4374004544040625091}
   - component: {fileID: 5803637589453038275}
   - component: {fileID: 6668163666994237844}
+  - component: {fileID: 4374004544040625091}
   - component: {fileID: 2109084533402678747}
   - component: {fileID: 8238105533132594328}
   m_Layer: 8
@@ -435,7 +435,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84e0425af742ac34d81cacbd4ee18e3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  updateInterval: 0.5
+  updateInterval: 0.2
 --- !u!114 &1466120380951991599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -535,24 +535,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   climbSpeed: 6
   jumpOffForce: {x: 10, y: 10}
---- !u!114 &4374004544040625091
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6095308487931501148}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e6bf491effbc354ba7d2b119a6d17b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackHitbox: {fileID: 5726540258790642486}
-  attackableLayer:
-    serializedVersion: 2
-    m_Bits: 512
-  damage: 2
-  timeBetweenAttack: 0.5
 --- !u!114 &5803637589453038275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -579,6 +561,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Recoil
   recoilTime: 0.15
   recoilSpeed: 5
+--- !u!114 &4374004544040625091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6095308487931501148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e6bf491effbc354ba7d2b119a6d17b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackHitbox: {fileID: 5726540258790642486}
+  attackableLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  damage: 2
+  timeBetweenAttack: 0.5
 --- !u!114 &2109084533402678747
 MonoBehaviour:
   m_ObjectHideFlags: 0

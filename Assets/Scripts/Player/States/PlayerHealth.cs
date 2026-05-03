@@ -40,6 +40,7 @@ public class PlayerHealth : MonoBehaviour
     IEnumerator LoadMenuAfterDelay()
     {
         yield return new WaitForSeconds(deathDelay); // Wait for animation
+        WorldState.Instance.ResetSession();
         SceneLoader.Instance.LoadMainMenu();
     }
 

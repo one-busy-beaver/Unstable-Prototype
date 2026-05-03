@@ -91,10 +91,6 @@ A 2D low horror game featured with exploration, secrets, and combat. To check ou
     - base
 
 ## TODO
-
-- character
-        - wall jump
-        - opposite key pressed not moving bug 
     
 - enemies
     - grass (flytrap) in TF

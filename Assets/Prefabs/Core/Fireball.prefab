@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Fireball
   speed: 15
-  damage: 3
+  damage: 6
   lifetime: 1
 --- !u!50 &4563372103234306747
 Rigidbody2D:

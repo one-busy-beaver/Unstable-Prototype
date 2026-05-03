@@ -3,7 +3,7 @@ using UnityEngine;
 public class LastSafeGround : MonoBehaviour
 {
     [Header("Settings")]
-    [SerializeField] private float updateInterval = 0.5f; // How often to save position
+    [SerializeField] private float updateInterval = 0.2f; // How often to save position
 
     private PlayerStates pState;
     private Vector3 lastSafePosition;

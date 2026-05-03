@@ -4,6 +4,7 @@ using System.Collections.Generic;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] GameObject sprite;
+    [SerializeField] SessionID enemyID;
     [SerializeField] int health = 6;
     [SerializeField] int contactDamage = 1;
     [SerializeField] float contactForce = 6f;
@@ -16,6 +17,13 @@ public class Enemy : MonoBehaviour
 
     void Awake()
     {
+        if (WorldState.Instance.IsDead(enemyID))
+        {
+            // If dead, just disable it immediately or set to death state
+            gameObject.SetActive(false); 
+            return;
+        }
+
         recoil = GetComponent<Recoil>();
 
         // Ensure all assigned colliders are triggers
@@ -40,6 +48,7 @@ public class Enemy : MonoBehaviour
         if (health <= 0) 
         {
             isDead = true;
+            WorldState.Instance.MarkAsDead(enemyID);
 
             // Turn the sprite gray
             sprite.GetComponent<SpriteRenderer>().color = deathColor;

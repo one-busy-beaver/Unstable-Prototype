@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1820784873338373850}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Ground Sensor
   m_TagString: Untagged
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
@@ -573,7 +573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e6bf491effbc354ba7d2b119a6d17b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackHitbox: {fileID: 5726540258790642486}
+  attackObject: {fileID: 8340052995127892781}
   attackableLayer:
     serializedVersion: 2
     m_Bits: 1536
@@ -616,7 +616,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8817662664141713333}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Head Sensor
   m_TagString: Untagged
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
@@ -648,7 +648,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5185167233011599096}
   - component: {fileID: 5726540258790642486}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Attack Hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -737,7 +737,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5173960531018117174}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Launch Point
   m_TagString: Untagged
   m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
@@ -781,7 +781,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1935727932583938401, guid: 03dee74cf3e54bf4ead9edf771b039f8, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1935727932583938401, guid: 03dee74cf3e54bf4ead9edf771b039f8, type: 3}
       propertyPath: m_IsActive

@@ -133,15 +133,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4335906697826857743, guid: 6777cfb6fcc8b5f4f86ef6a1113f3c9a, type: 3}
       propertyPath: m_text
-      value: Pick up Health
+      value: Pick up fireball
       objectReference: {fileID: 0}
     - target: {fileID: 6316815258189049711, guid: 6777cfb6fcc8b5f4f86ef6a1113f3c9a, type: 3}
       propertyPath: type
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6316815258189049711, guid: 6777cfb6fcc8b5f4f86ef6a1113f3c9a, type: 3}
+      propertyPath: sessionID
+      value: 
+      objectReference: {fileID: 11400000, guid: 2f1bf9f4849f5ea4ea219d401a7e7a3d, type: 2}
     - target: {fileID: 6881541867779327051, guid: 6777cfb6fcc8b5f4f86ef6a1113f3c9a, type: 3}
       propertyPath: promptText
-      value: Pick up Health
+      value: Pick up fireball
       objectReference: {fileID: 0}
     - target: {fileID: 8877443313643402682, guid: 6777cfb6fcc8b5f4f86ef6a1113f3c9a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -220,11 +224,11 @@ PrefabInstance:
       objectReference: {fileID: 1084702542}
     - target: {fileID: 7481405542845388724, guid: f6c5cae64b25e124aa13b71a02374fe7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.55
+      value: 11.57
       objectReference: {fileID: 0}
     - target: {fileID: 7481405542845388724, guid: f6c5cae64b25e124aa13b71a02374fe7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.14
+      value: 4.9
       objectReference: {fileID: 0}
     - target: {fileID: 7481405542845388724, guid: f6c5cae64b25e124aa13b71a02374fe7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -499,6 +503,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 377813705004548392, guid: 494dcbfa11ae6d64f92713bb23e464b9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1368109577}
+    - targetCorrespondingSourceObject: {fileID: 377813705004548392, guid: 494dcbfa11ae6d64f92713bb23e464b9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1737893111}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 494dcbfa11ae6d64f92713bb23e464b9, type: 3}
 --- !u!4 &723405729 stripped
@@ -535,15 +542,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4335906697826857743, guid: 6777cfb6fcc8b5f4f86ef6a1113f3c9a, type: 3}
       propertyPath: m_text
-      value: Pick up Fireball
+      value: Pick up health
       objectReference: {fileID: 0}
     - target: {fileID: 6316815258189049711, guid: 6777cfb6fcc8b5f4f86ef6a1113f3c9a, type: 3}
       propertyPath: type
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6316815258189049711, guid: 6777cfb6fcc8b5f4f86ef6a1113f3c9a, type: 3}
+      propertyPath: sessionID
+      value: 
+      objectReference: {fileID: 11400000, guid: a2399dcca3f4c2344959a95979dc6f2e, type: 2}
     - target: {fileID: 6881541867779327051, guid: 6777cfb6fcc8b5f4f86ef6a1113f3c9a, type: 3}
       propertyPath: promptText
-      value: Pick up Fireball
+      value: Pick up health
       objectReference: {fileID: 0}
     - target: {fileID: 8877443313643402682, guid: 6777cfb6fcc8b5f4f86ef6a1113f3c9a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9891,11 +9902,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1421471847283050128, guid: e6a7ab372d25b3342a32d41d99fe38d9, type: 3}
       propertyPath: promptText
-      value: Pick up Key
+      value: Pick up key
       objectReference: {fileID: 0}
     - target: {fileID: 1692598241171465157, guid: e6a7ab372d25b3342a32d41d99fe38d9, type: 3}
       propertyPath: m_text
-      value: Pick up Key
+      value: Pick up key
       objectReference: {fileID: 0}
     - target: {fileID: 1692598241171465157, guid: e6a7ab372d25b3342a32d41d99fe38d9, type: 3}
       propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
@@ -10064,16 +10075,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 723405732}
     m_Modifications:
     - target: {fileID: 3458548634179700866, guid: f6c5cae64b25e124aa13b71a02374fe7, type: 3}
+      propertyPath: health
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3458548634179700866, guid: f6c5cae64b25e124aa13b71a02374fe7, type: 3}
       propertyPath: contents
       value: 
       objectReference: {fileID: 367936487}
     - target: {fileID: 7481405542845388724, guid: f6c5cae64b25e124aa13b71a02374fe7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.52
+      value: -2.49
       objectReference: {fileID: 0}
     - target: {fileID: 7481405542845388724, guid: f6c5cae64b25e124aa13b71a02374fe7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.14
+      value: 4.85
       objectReference: {fileID: 0}
     - target: {fileID: 7481405542845388724, guid: f6c5cae64b25e124aa13b71a02374fe7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -10138,7 +10153,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 723405732}
     m_Modifications:
     - target: {fileID: 3458548634179700866, guid: f6c5cae64b25e124aa13b71a02374fe7, type: 3}
       propertyPath: health
@@ -10150,11 +10165,11 @@ PrefabInstance:
       objectReference: {fileID: 1281544991}
     - target: {fileID: 7481405542845388724, guid: f6c5cae64b25e124aa13b71a02374fe7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.468616
+      value: 4.518
       objectReference: {fileID: 0}
     - target: {fileID: 7481405542845388724, guid: f6c5cae64b25e124aa13b71a02374fe7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.61
+      value: 0.532
       objectReference: {fileID: 0}
     - target: {fileID: 7481405542845388724, guid: f6c5cae64b25e124aa13b71a02374fe7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -10432,4 +10447,3 @@ SceneRoots:
   m_Roots:
   - {fileID: 1191636069}
   - {fileID: 723405728}
-  - {fileID: 1737893110}

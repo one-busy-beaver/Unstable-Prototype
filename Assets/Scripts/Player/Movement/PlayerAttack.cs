@@ -5,7 +5,7 @@ public class PlayerAttack : MonoBehaviour
 {
     [Header("Attacking Settings")]
     
-    [SerializeField] PolygonCollider2D attackHitbox;
+    [SerializeField] GameObject attackObject;
     [SerializeField] LayerMask attackableLayer;
     [SerializeField] int damage = 2;
     [SerializeField] float timeBetweenAttack = 0.5f; // prevent infinite damage
@@ -23,6 +23,7 @@ public class PlayerAttack : MonoBehaviour
         anim = GetComponent<Animator>();
         pState = GetComponent<PlayerStates>();
         recoil = GetComponent<Recoil>();
+        attackObject.SetActive(false);
     }
 
     void Update()
@@ -51,6 +52,9 @@ public class PlayerAttack : MonoBehaviour
         filter.useTriggers = true;
 
         List<Collider2D> results = new List<Collider2D>();
+        attackObject.SetActive(true);
+
+        PolygonCollider2D attackHitbox = attackObject.GetComponent<PolygonCollider2D>();
         int hitCount = attackHitbox.Overlap(filter, results);
 
         if (hitCount > 0) Debug.Log("I'm hitting something");
@@ -72,5 +76,6 @@ public class PlayerAttack : MonoBehaviour
                 breakable.ObjectHit(damage);
             }
         }
+        attackObject.SetActive(false);
     }
 }

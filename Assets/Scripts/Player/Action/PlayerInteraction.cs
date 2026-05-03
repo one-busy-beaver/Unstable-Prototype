@@ -6,9 +6,6 @@ public class PlayerInteraction : MonoBehaviour
 
     private void Update()
     {
-        if (InputManager.Instance == null || InputManager.Instance.Controls == null) return;
-
-        // Use the "Interact" trigger from Player Controls
         bool interactPressed = InputManager.Instance.Controls.Player.Interact.triggered;
 
         if (_currentInteract != null && interactPressed)

@@ -5,33 +5,31 @@ using UnityEngine.Events;
 public class InteractHandler : MonoBehaviour
 {
     [Header("UI Settings")]
-    [SerializeField] private string promptText = "Interact"; 
-    [SerializeField] private float offsetHeight = 0.5f;
+    [SerializeField] string promptText = "Interact"; 
+    [SerializeField] float offsetHeight = 0.5f;
 
     [Header("References")]
-    [SerializeField] private InteractEvent interaction;
+    [SerializeField] InteractEvent interaction;
     
 
     [Header("World Space UI")]
-    [SerializeField] private GameObject localCanvas;
-    [SerializeField] private TextMeshProUGUI localTextComponent;
-    [SerializeField] private Collider2D colliderToFollow;
+    [SerializeField] GameObject localCanvas;
+    [SerializeField] TextMeshProUGUI localTextComponent;
+    [SerializeField] Collider2D colliderToFollow;
 
-    private void OnValidate()
+    void OnValidate()
     {
         FetchReferences();
         SyncUI();
     }
 
-    private void Awake()
+    void Awake()
     {
-        if (localCanvas != null) localCanvas.SetActive(false);
+        localCanvas.SetActive(false);
     }
 
     public void TogglePrompt(bool show)
-    {
-        if (localCanvas == null) return;
-        
+    {        
         if (show) SyncUI();
         localCanvas.SetActive(show);
     }
@@ -42,6 +40,11 @@ public class InteractHandler : MonoBehaviour
         {
             interaction.Execute();
         }
+    }
+
+    public void SetPromptText(string newText)
+    {
+        promptText = newText;
     }
 
     void FetchReferences()
@@ -69,7 +72,7 @@ public class InteractHandler : MonoBehaviour
         }
     }
 
-    private void SyncUI()
+    void SyncUI()
     {
         if (localTextComponent == null) return;
 

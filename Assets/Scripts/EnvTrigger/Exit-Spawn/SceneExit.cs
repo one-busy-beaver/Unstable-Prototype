@@ -12,7 +12,7 @@ public class SceneExit : InteractEvent
     private void Awake() => GetComponent<BoxCollider2D>().isTrigger = true;
     
 
-    private void OnTriggerEnter2D(Collider2D other)
+    protected void OnTriggerEnter2D(Collider2D other)
     {
         if (autoTrigger && other.CompareTag("Player"))
         {

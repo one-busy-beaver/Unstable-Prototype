@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using Unity.VisualScripting;
 
 public class PlayerInventory : MonoBehaviour
 {
@@ -15,20 +16,22 @@ public class PlayerInventory : MonoBehaviour
     public int maxFireballs = 10;
 
     [Header("Unlocked Abilities")]
-    [SerializeField] private bool _hasDash = false;
-    [SerializeField] private bool _hasDoubleJump = false;
-    [SerializeField] private bool _hasSwim = false;
+    [SerializeField] bool _hasDash = false;
+    [SerializeField] bool _hasDoubleJump = false;
+    [SerializeField] bool _hasSwim = false;
 
     [Header("Unlocked Items")]
-    [SerializeField] private bool _hasBaseKey = false;
+    [SerializeField] bool _hasBaseKey = false;
+    [SerializeField] bool _hasCourage = false;
 
     // Public "Getters"
     public bool HasDash => _hasDash;
     public bool HasDoubleJump => _hasDoubleJump;
     public bool HasSwim => _hasSwim;
     public bool HasBaseKey => _hasBaseKey;
+    public bool HasCourage => _hasCourage;
 
-    private void Awake() 
+    void Awake() 
     { 
         if (Instance == null) 
         {
@@ -49,6 +52,7 @@ public class PlayerInventory : MonoBehaviour
             case CollectID.DoubleJump: _hasDoubleJump = true; break;
             case CollectID.Swim: _hasSwim = true; break;
             case CollectID.BaseKey: _hasBaseKey = true; break;
+            case CollectID.Courage: _hasCourage = true; break;
         }
     }
 

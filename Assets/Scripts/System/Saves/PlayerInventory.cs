@@ -15,6 +15,11 @@ public class PlayerInventory : MonoBehaviour
     public int currentFireballs = 0; // Player starts at 0
     public int maxFireballs = 10;
 
+    [Header("Combat Stats")]
+    public int baseDamage = 2;
+    public int courageDamage = 5;
+    public int currentDamage = 2; // The one enemies actually read
+
     [Header("Unlocked Abilities")]
     [SerializeField] bool _hasDash = false;
     [SerializeField] bool _hasDoubleJump = false;
@@ -52,8 +57,14 @@ public class PlayerInventory : MonoBehaviour
             case CollectID.DoubleJump: _hasDoubleJump = true; break;
             case CollectID.Swim: _hasSwim = true; break;
             case CollectID.BaseKey: _hasBaseKey = true; break;
-            case CollectID.Courage: _hasCourage = true; break;
+            case CollectID.Courage: 
+                _hasCourage = true; 
+                currentDamage = courageDamage; // Boost damage immediately
+                break;
         }
+
+        // Ring the bell so the sword turns yellow instantly!
+        OnInventoryChanged?.Invoke();
     }
 
     public void UpdateHealth(int amount)

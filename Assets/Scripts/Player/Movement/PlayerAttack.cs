@@ -7,7 +7,6 @@ public class PlayerAttack : MonoBehaviour
     
     [SerializeField] GameObject attackObject;
     [SerializeField] LayerMask attackableLayer;
-    [SerializeField] int damage = 2;
     [SerializeField] float timeBetweenAttack = 0.5f; // prevent infinite damage
 
     bool attack = false;    
@@ -59,6 +58,7 @@ public class PlayerAttack : MonoBehaviour
 
         if (hitCount > 0) Debug.Log("I'm hitting something");
 
+        int damage = PlayerInventory.Instance.currentDamage;
         foreach (Collider2D curObj in results)
         {
             Vector2 attackDir = new Vector2(transform.localScale.x, 0);

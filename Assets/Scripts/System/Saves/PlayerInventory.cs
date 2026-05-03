@@ -1,8 +1,10 @@
 using UnityEngine;
+using System;
 
 public class PlayerInventory : MonoBehaviour
 {
     public static PlayerInventory Instance;
+    public static event Action OnInventoryChanged;
 
     [Header("Player Stats")]
     public int currentHealth = 5;
@@ -57,6 +59,8 @@ public class PlayerInventory : MonoBehaviour
         currentHealth += amount;
         if (currentHealth > maxHealth) currentHealth = maxHealth;
         if (currentHealth < 0) currentHealth = 0;
+
+        OnInventoryChanged?.Invoke();
     }
 
     public void UpdateFireballs(int amount)
@@ -64,5 +68,7 @@ public class PlayerInventory : MonoBehaviour
         currentFireballs += amount;
         if (currentFireballs > maxFireballs) currentFireballs = maxFireballs;
         if (currentFireballs < 0) currentFireballs = 0;
+
+        OnInventoryChanged?.Invoke();
     }
 }

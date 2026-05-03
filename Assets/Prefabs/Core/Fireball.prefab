@@ -30,8 +30,8 @@ Transform:
   m_GameObject: {fileID: 495572911099881207}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24.35538, y: -2.1432362, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -24.35538, y: -2.1445, z: 0}
+  m_LocalScale: {x: 1.7354, y: 1.7354, z: 1.7354}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -130,8 +130,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Fireball
   speed: 15
-  damage: 6
-  lifetime: 1
+  damage: 20
+  lifetime: 1.5
 --- !u!50 &4563372103234306747
 Rigidbody2D:
   serializedVersion: 5

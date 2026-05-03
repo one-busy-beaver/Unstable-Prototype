@@ -22,6 +22,9 @@ public class PlayerWalk : MonoBehaviour
 
     void Update()
     {
+        // Exit early if the game is paused
+        if (Time.timeScale == 0) return;
+    
         moveInputX = InputManager.Instance.Controls.Player.Move.ReadValue<Vector2>().x;
 
         if (!pState.isDashing)

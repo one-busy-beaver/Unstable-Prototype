@@ -45,7 +45,8 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        PlayerInventory.Instance.currentHealth -= damage;
+        PlayerInventory.Instance.UpdateHealth(-damage);
+        
         if (PlayerInventory.Instance.currentHealth > 0)
         {
             anim.SetTrigger("Hurt");

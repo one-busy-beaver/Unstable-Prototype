@@ -27,8 +27,10 @@ A 2D low horror game featured with exploration, secrets, and combat. To check ou
         - picked-up items
 - UI
     - main menu
+        - key rebind
+    - HUD
     - pause menu
-    - key rebind
+    
 
 ### Character
 
@@ -97,10 +99,6 @@ A 2D low horror game featured with exploration, secrets, and combat. To check ou
     - small animals in lower flooes
     - rotten animals in higher floors
     - non-agreesive animale outside the tower
-
-- particle systems    
-    - double jump particles
-    - enemies throw particles when head
 
 - UI
     - scene transition fade

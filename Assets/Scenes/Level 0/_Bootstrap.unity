@@ -197,6 +197,22 @@ PrefabInstance:
       propertyPath: m_BackGroundColor.r
       value: 0.21176471
       objectReference: {fileID: 0}
+    - target: {fileID: 2210682812150898599, guid: 259fff037ab90ac408090f97a4e143d7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210682812150898599, guid: 259fff037ab90ac408090f97a4e143d7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210682812150898599, guid: 259fff037ab90ac408090f97a4e143d7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210682812150898599, guid: 259fff037ab90ac408090f97a4e143d7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2276799583069948111, guid: 259fff037ab90ac408090f97a4e143d7, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -220,6 +236,22 @@ PrefabInstance:
     - target: {fileID: 3746407499512871273, guid: 259fff037ab90ac408090f97a4e143d7, type: 3}
       propertyPath: minZoom
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4679055686463933586, guid: 259fff037ab90ac408090f97a4e143d7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4679055686463933586, guid: 259fff037ab90ac408090f97a4e143d7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4679055686463933586, guid: 259fff037ab90ac408090f97a4e143d7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4679055686463933586, guid: 259fff037ab90ac408090f97a4e143d7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5253803444027242736, guid: 259fff037ab90ac408090f97a4e143d7, type: 3}
       propertyPath: m_AnchorMax.y

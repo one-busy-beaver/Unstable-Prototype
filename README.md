@@ -63,17 +63,23 @@ A 2D low horror game featured with exploration, secrets, and combat. To check ou
     - play-plane
     - background
     - silhouette
-- trigger
+- props
     - exit/door
     - rope/stair
-    - ability/item pickup
     - npc
-    - event
     - one-way platform
+- event
+    - trigger
+    - storage
+- ability/item
+    - pickup
+    - storage
+    - session vs persistant
+    - breakable box
 - enemy
-    - hitboxes
-        - contact damage 
-        - body volume (ignore physics with player)
+    - contact damage 
+    - body volume (ignore physics with player)
+    - session storage
 
 ### Scenes
 
@@ -92,50 +98,9 @@ A 2D low horror game featured with exploration, secrets, and combat. To check ou
     - top
     - base
 
-## TODO
-    
-- enemies
-    - grass (flytrap) in TF
-    - small animals in lower flooes
-    - rotten animals in higher floors
-    - non-agreesive animale outside the tower
+## Later
 
-- UI
-    - scene transition fade
-    - ability and item unlock
-    - inventory and abilities
-    
-- addition
-    - npc throws key
-    - locked door
-    - adjust zoom to confiner
-
-### Scenes
-
-- tower entry
-    - spikes
-        - forces you to use dash
-    - moving platforms
-        - harmonic resonance platforms???
-- tower body
-    - the "anxiety" vector field
-        - bullet dodging??
-    - tear boss?
-    - gain swim ability
-- tower exterior
-    - innocent enemies
-    - platforming
-    - gain double jump
-- tower basement
-    - weapon upgrade
-- tower top
-    - loose light
-    - stochastic / cellular automata corruption
-    - final boss
-
-### Character
-
-- later
+- character
     - ledge climb, glide, zipline, run, parry
 - tool effects
     - double jump, dash cd, jump height, swim speed/time, health, dps, weapon effect

@@ -33,6 +33,10 @@ public class PlayerHealth : MonoBehaviour
             if (TryGetComponent<PlayerWalk>(out var walk)) walk.enabled = false;
             if (TryGetComponent<PlayerJump>(out var jump)) jump.enabled = false;
 
+            // Restore health and fireballs
+            PlayerInventory.Instance.currentHealth = PlayerInventory.Instance.maxHealth;
+            PlayerInventory.Instance.currentFireballs = 0;
+
             StartCoroutine(LoadMenuAfterDelay());
         }
     }

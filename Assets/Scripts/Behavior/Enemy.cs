@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] GameObject sprite;
+    [SerializeField] List<GameObject> sprites;
     [SerializeField] SessionID enemyID;
     [SerializeField] int health = 6;
     [SerializeField] int contactDamage = 1;
@@ -29,7 +29,7 @@ public class Enemy : MonoBehaviour
         // Ensure all assigned colliders are triggers
         foreach (var col in damageHitboxes)
         {
-            if (col != null) col.isTrigger = true;
+            col.isTrigger = true;
         }
     }
 
@@ -51,8 +51,11 @@ public class Enemy : MonoBehaviour
             WorldState.Instance.MarkAsDead(enemyID);
 
             // Turn the sprite gray
-            sprite.GetComponent<SpriteRenderer>().color = deathColor;
-
+            foreach (var sprite in sprites)
+            {
+                sprite.GetComponent<SpriteRenderer>().color = deathColor;
+            }
+            
             // Disable all hitboxes so it can't hurt the player or be hit again
             foreach (var col in damageHitboxes)
             {

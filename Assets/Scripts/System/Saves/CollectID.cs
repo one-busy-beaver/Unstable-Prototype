@@ -3,5 +3,6 @@ public enum CollectID
     Dash,
     DoubleJump,
     Swim,
-    BaseKey
+    BaseKey,
+    None
 }

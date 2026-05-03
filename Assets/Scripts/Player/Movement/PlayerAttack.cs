@@ -57,16 +57,19 @@ public class PlayerAttack : MonoBehaviour
 
         foreach (Collider2D curObj in results)
         {
+            Vector2 attackDir = new Vector2(transform.localScale.x, 0);
+
             Enemy enemy = curObj.GetComponent<Enemy>();
             if (enemy != null) 
             {
-                Vector2 attackDir = new Vector2(transform.localScale.x, 0);
-
-                // Trigger player recoil
                 recoil.TriggerRecoil((Vector2)transform.position + attackDir);
-
-                // Apply damage and trigger Enemy Recoil
                 enemy.EnemyHit(damage, transform.position);
+            }
+
+            Breakable breakable = curObj.GetComponent<Breakable>();
+            if (breakable != null)
+            {
+                breakable.ObjectHit(damage);
             }
         }
     }

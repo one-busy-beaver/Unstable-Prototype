@@ -13,6 +13,8 @@ public class ItemPickup : InteractEvent
         }
     }
 
+    public CollectID ID => uniqueID;
+
     public override void Execute()
     {
         if (PlayerInventory.Instance != null)

@@ -19,6 +19,8 @@ public class SessionPickup : InteractEvent
         }
     }
 
+    public SessionID ID => sessionID;
+
     public override void Execute()
     {
         if (PlayerInventory.Instance != null)

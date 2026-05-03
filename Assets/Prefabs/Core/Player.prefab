@@ -576,7 +576,7 @@ MonoBehaviour:
   attackHitbox: {fileID: 5726540258790642486}
   attackableLayer:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 1536
   damage: 2
   timeBetweenAttack: 0.5
 --- !u!114 &2109084533402678747

@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8fc16684a437d2488c90edd939041a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  promptText: Pick up Health
+  promptText: Pick up health
   offsetHeight: 0.5
   interaction: {fileID: 6316815258189049711}
   localCanvas: {fileID: 44690802081092556}
@@ -186,6 +186,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8877443313643402682}
     m_Modifications:
+    - target: {fileID: 367463658735918196, guid: 084e75a9181ffa44ba4386cd65d410d4, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1395543068029468782, guid: 084e75a9181ffa44ba4386cd65d410d4, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -276,7 +280,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9213521556736468500, guid: 084e75a9181ffa44ba4386cd65d410d4, type: 3}
       propertyPath: m_text
-      value: Pick up Health
+      value: Pick up health
       objectReference: {fileID: 0}
     - target: {fileID: 9213521556736468500, guid: 084e75a9181ffa44ba4386cd65d410d4, type: 3}
       propertyPath: 'm_ActiveFontFeatures.Array.data[0]'

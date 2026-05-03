@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8be9710cac3e594dae0fd34d2558588, type: 3}
-  m_Name: tower t1-t2
+  m_Name: tower t3-t4
   m_EditorClassIdentifier: 
-  sceneNameA: T2_Exterior
-  sceneNameB: T1_Entry
-  sceneA: {fileID: 102900000, guid: f89554df7c14c8340826949987417c79, type: 3}
-  sceneB: {fileID: 102900000, guid: 150de86e133fce241896db2d18f13764, type: 3}
+  sceneNameA: T4_Top
+  sceneNameB: T3_Body
+  sceneA: {fileID: 102900000, guid: bd7f32d11d823d549bd6ed9ba7158be7, type: 3}
+  sceneB: {fileID: 102900000, guid: 3d1b5d1919ad7fc49ab1d851658ad344, type: 3}

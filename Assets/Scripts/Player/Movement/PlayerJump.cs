@@ -94,7 +94,7 @@ public class PlayerJump : MonoBehaviour
             maxAirJumps = PlayerInventory.Instance.HasDoubleJump ? 1 : 0;
         }
 
-        if (pState.onGround)
+        if (pState.onGround || pState.canClimb)
         {
             pState.isJumping = false;
             coyoteTimeCounter = coyoteTime;

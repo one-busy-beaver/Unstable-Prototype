@@ -9638,7 +9638,7 @@ MonoBehaviour:
   - {fileID: 1328209329}
   - {fileID: 1467588997}
   - {fileID: 1758103035}
-  enemyID: {fileID: 0}
+  enemyID: {fileID: 11400000, guid: b16a83d10d23aea4d93b85f228576e34, type: 2}
   health: 100
   contactDamage: 2
   contactForce: 6

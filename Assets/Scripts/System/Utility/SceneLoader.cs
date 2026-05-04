@@ -86,18 +86,16 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadMainMenu()
     {
-        SceneManager.LoadSceneAsync("Main_Menu");
-
         // Reset session pickups and enemies
         WorldState.Instance.ResetSession();
 
-        HUDPanel.SetActive(false);
-
         // Restore player health and fireballs
         PlayerInventory.Instance.UpdateHealth(5);
-        PlayerInventory.Instance.UpdateFireballs(0);
+        PlayerInventory.Instance.UpdateFireballs(-10);
 
-        WorldState.Instance.ResetSession();
+        HUDPanel.SetActive(false);
+
+        SceneManager.LoadSceneAsync("Main_Menu");
     }
 
 }

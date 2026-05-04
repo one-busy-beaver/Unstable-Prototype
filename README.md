@@ -104,7 +104,19 @@ A 2D low horror game featured with exploration, secrets, and combat. To check ou
 
 ## Later
 
+Alignment: character is fully grown at the beginning, but tools from the environment can give it additional abilities (including combat tactics)
+
+- bug fix
+    - fireball not shooting breakables
+    - unlock not refreshing enter
+
+- refactor
+    - break into MVC model so that enemies can use the same behavior
+    - in world UI
+    - prefab and art assets are so messy
+
 - character
-    - ledge climb, glide, zipline, run, parry
+    - wall jump, ledge climb, glide, zipline, run, parry
+
 - tool effects
     - double jump, dash cd, jump height, swim speed/time, health, dps, weapon effect

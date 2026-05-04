@@ -90,8 +90,8 @@ public class SceneLoader : MonoBehaviour
         WorldState.Instance.ResetSession();
 
         // Restore player health and fireballs
-        PlayerInventory.Instance.currentHealth = PlayerInventory.Instance.maxHealth;
-        PlayerInventory.Instance.currentFireballs = 0;
+        PlayerInventory.Instance.UpdateHealth(5);
+        PlayerInventory.Instance.UpdateFireballs(0);
     }
 
 }

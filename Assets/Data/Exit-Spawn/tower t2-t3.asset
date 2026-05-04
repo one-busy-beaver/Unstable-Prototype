@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8be9710cac3e594dae0fd34d2558588, type: 3}
   m_Name: tower t2-t3
   m_EditorClassIdentifier: 
-  sceneNameA: T3_Body
+  sceneNameA: T3_Top
   sceneNameB: T2_Exterior
-  sceneA: {fileID: 102900000, guid: 3d1b5d1919ad7fc49ab1d851658ad344, type: 3}
+  sceneA: {fileID: 102900000, guid: 9aaa56c95ff700d45a51049706d72b17, type: 3}
   sceneB: {fileID: 102900000, guid: f89554df7c14c8340826949987417c79, type: 3}

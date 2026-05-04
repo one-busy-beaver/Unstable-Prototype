@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] List<Collider2D> damageHitboxes;
 
     Recoil recoil;
-    bool isDead = false;
+    protected bool isDead = false;
 
     void Awake()
     {
@@ -33,7 +33,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    void Update() => HandleDeath();
+    protected void Update() => HandleDeath();
 
     public void EnemyHit(int damage, Vector2 sourcePos)
     {

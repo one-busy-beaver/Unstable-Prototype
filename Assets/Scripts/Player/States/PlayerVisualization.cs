@@ -5,7 +5,7 @@ public class PlayerVisualization : MonoBehaviour
 {
     [Header("Visualization Settings")]
     [SerializeField] bool visualize = true;
-    [SerializeField] private int maxPoints = 15;  // how long the trail lasts
+    [SerializeField] private int maxPoints = 10;  // how long the trail lasts
     [SerializeField] private float recordInterval = 0.05f;
 
     // Player components
@@ -25,7 +25,12 @@ public class PlayerVisualization : MonoBehaviour
 
     void Update()
     {
-        if (visualize) DrawTrail();
+        bool hasCourage = PlayerInventory.Instance != null && PlayerInventory.Instance.HasCourage;
+
+    if (visualize || hasCourage)
+        {
+            DrawTrail();
+        }
     }
 
     void DrawTrail()

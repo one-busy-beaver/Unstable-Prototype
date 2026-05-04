@@ -250,6 +250,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4678637475285322626, guid: 259fff037ab90ac408090f97a4e143d7, type: 3}
+      propertyPath: _hasCourage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678637475285322626, guid: 259fff037ab90ac408090f97a4e143d7, type: 3}
       propertyPath: _hasDoubleJump
       value: 1
       objectReference: {fileID: 0}

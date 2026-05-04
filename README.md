@@ -51,9 +51,11 @@ A 2D low horror game featured with exploration, secrets, and combat. To check ou
     - ammo
     - finite state logic
     - last-safe-ground storage
+    - ground sensor
     - submerge sensor
-- visualization
-    - line renderer
+- others
+    - damage upgrade
+    - line renderer (visualization)
 
 ### Environment
 
@@ -71,6 +73,7 @@ A 2D low horror game featured with exploration, secrets, and combat. To check ou
 - event
     - trigger
     - storage
+    - locked door
 - ability/item
     - pickup
     - storage
@@ -83,20 +86,21 @@ A 2D low horror game featured with exploration, secrets, and combat. To check ou
 
 ### Scenes
 
-- remote village
+- level 1
+    - remote village
     - house
     - garage
     - sky secret
-- tower front
+- level 2
+    - tower front
     - mansion 1
     - mansion 2 
     - cabin
-- tower 
-    - entry
-    - body
-    - exterior
-    - top
-    - base
+- level 3 
+    - tower entry
+    - tower exterior
+    - tower top
+    - tower basement
 
 ## Later
 

@@ -9,6 +9,10 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] LayerMask attackableLayer;
     [SerializeField] float timeBetweenAttack = 0.5f; // prevent infinite damage
 
+    [SerializeField] private AudioClip hitSound;
+    AudioSource audioSource;
+
+
     bool attack = false;    
     float timeSinceAttack;
 
@@ -23,6 +27,7 @@ public class PlayerAttack : MonoBehaviour
         pState = GetComponent<PlayerStates>();
         recoil = GetComponent<Recoil>();
         attackObject.SetActive(false);
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -56,7 +61,11 @@ public class PlayerAttack : MonoBehaviour
         PolygonCollider2D attackHitbox = attackObject.GetComponent<PolygonCollider2D>();
         int hitCount = attackHitbox.Overlap(filter, results);
 
-        if (hitCount > 0) Debug.Log("I'm hitting something");
+        if (hitCount > 0) 
+        {
+            Debug.Log("I'm hitting something");
+            audioSource.PlayOneShot(hitSound);
+        }
 
         int damage = PlayerInventory.Instance.currentDamage;
         foreach (Collider2D curObj in results)

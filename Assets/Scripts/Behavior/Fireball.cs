@@ -8,11 +8,18 @@ public class Fireball : MonoBehaviour
     [SerializeField] float sizeMultiplier = 1.5f;
     [SerializeField] float lifetime = 1f;
 
+    [SerializeField] private AudioClip hitSound;
+    AudioSource audioSource;
+
     Rigidbody2D rb;
 
     void Awake() => rb = GetComponent<Rigidbody2D>();
 
-    void Start() => Destroy(gameObject, lifetime); // Self-destruct after a few seconds
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+        Destroy(gameObject, lifetime); // Self-destruct after a few seconds
+    }
 
     public void Setup(float direction)
     {
@@ -40,6 +47,7 @@ public class Fireball : MonoBehaviour
         Enemy enemy = collision.GetComponent<Enemy>();
         if (enemy != null)
         {
+            AudioSource.PlayClipAtPoint(hitSound, transform.position);
             enemy.EnemyHit(damage, transform.position);
             Destroy(gameObject);
             return; // Exit early so we don't check ground
@@ -51,6 +59,7 @@ public class Fireball : MonoBehaviour
         if (breakable != null)
         {
             // Call the same method your sword uses to break objects
+            AudioSource.PlayClipAtPoint(hitSound, transform.position);
             breakable.ObjectHit(damage); 
             Destroy(gameObject);
             return;

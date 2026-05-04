@@ -449,7 +449,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visualize: 0
-  maxPoints: 15
+  maxPoints: 10
   recordInterval: 0.05
 --- !u!114 &1364351675922517713
 MonoBehaviour:
@@ -577,7 +577,6 @@ MonoBehaviour:
   attackableLayer:
     serializedVersion: 2
     m_Bits: 1536
-  damage: 2
   timeBetweenAttack: 0.5
 --- !u!114 &2109084533402678747
 MonoBehaviour:

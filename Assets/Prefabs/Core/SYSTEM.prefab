@@ -251,6 +251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lastRespawnScene: 
+  HUDPanel: {fileID: 2734134373618017366}
   playerPrefab: {fileID: 6095308487931501148, guid: d908690526c3d02479d63d4fcffc81cd, type: 3}
 --- !u!1 &1941464335120185387
 GameObject:
@@ -704,10 +705,14 @@ MonoBehaviour:
   maxHealth: 5
   currentFireballs: 0
   maxFireballs: 10
+  baseDamage: 2
+  courageDamage: 5
+  currentDamage: 2
   _hasDash: 0
   _hasDoubleJump: 0
   _hasSwim: 0
   _hasBaseKey: 0
+  _hasCourage: 0
 --- !u!1 &6165992797070502026
 GameObject:
   m_ObjectHideFlags: 0
